@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "framework7": "^5.0.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
@@ -31,6 +32,7 @@
     ]
   },
   "devDependencies": {
+    "@material-ui/core": "^4.5.0",
     "@storybook/addon-actions": "^5.2.3",
     "@storybook/addon-links": "^5.2.3",
     "@storybook/addons": "^5.2.3",
