@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import Home from "../icons/footerHome";
+
 import List from "../icons/footerList";
 import Plus from "../icons/footerPlus";
+import HomeActive from "../icons/footerHomeActive";
 
 const StyledContainer = styled.div`
   display: flex;
 `;
 
-const FooterBar = styled.div`
+const FooterBar = styled.nav`
   color: #1d1f2e;
   position: absolute;
   background: #1d1f2e;
@@ -17,6 +18,7 @@ const FooterBar = styled.div`
   position: fixed;
   z-index: 10;
   box-shadow: 0 -8px 8px -2px #00ceff;
+  list-style: none;
 
   bottom: 0;
   left: 0;
@@ -27,7 +29,7 @@ const FooterBar = styled.div`
 `;
 
 const StyledHomeButton = styled.div`
-  position: fixed;
+  /* position: fixed; */
   border: none;
   z-index: 1;
 
@@ -43,17 +45,28 @@ const StyledHomeButton = styled.div`
   /* right: 0; */
 `;
 
-export default function Footer() {
+const sizes = {
+  small: { width: "40px", height: "20px" },
+  medium: { width: "60px", height: "30px" },
+  large: { width: "80px", height: "40px" }
+};
+
+export default function Footer(children) {
   return (
     <>
       <StyledContainer>
         <FooterBar>
-          <Home />
-
-          <StyledHomeButton>
+          <a href="/Plus/">
             <Plus />
-          </StyledHomeButton>
-          <List />
+          </a>
+          {/* <StyledHomeButton> */}
+          <a href="/Home/">
+            <HomeActive />
+          </a>
+          {/* </StyledHomeButton>{" "} */}
+          <a href="/List/">
+            <List />
+          </a>
         </FooterBar>
       </StyledContainer>
     </>

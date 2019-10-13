@@ -41,6 +41,7 @@
     "express": "^4.17.1",
     "prettier": "^1.18.2",
     "proptypes": "^1.1.0",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-router": "^5.1.2",
     "styled-components": "^4.4.0"
   }

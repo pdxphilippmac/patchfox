@@ -1,54 +1,48 @@
-// import React from "react";
-// import ListItem from "../components/ListItem";
-// import { action } from "@storybook/addon-actions";
-// import List from "../components/List";
+import React from "react";
+import Footer from "../components/Footer";
+import PlusActive from "../icons/footerPlusActive";
+import List from "../icons/footerList";
+import HomeActive from "../icons/footerHomeActive";
+import styled from "styled-components";
 
-// export default {
-//   title: "Lists"
-// };
+export default {
+  title: "FooterBarFinal"
+};
 
-// export const Main = () => <ListItem onClick={action("clicked")}>CSS</ListItem>;
-// export const MainActive = () => (
-//   <ListItem active onClick={action("clicked")}>
-//     CSS
-//   </ListItem>
+const StyledHomeButton = styled.div`
+  /* position: fixed; */
+  border: none;
+  z-index: 1;
+
+  background: #1d1f2e;
+  box-shadow: 0 -8px 8px 0px #00ceff;
+  border-radius: 50%;
+
+  left: 40%;
+  bottom: -10;
+  :hover {
+    box-shadow: 0 -8px 8px 0px #00ebff;
+  }
+  /* right: 0; */
+`;
+
+// export const FooterBarActive = () => <Footer />;
+
+export const FooterBarHomeActive = () => (
+  <Footer>
+    <StyledHomeButton>
+      <HomeActive />
+    </StyledHomeButton>
+  </Footer>
+);
+export const FooterBarPlusActive = children => (
+  <Footer>
+    <StyledHomeButton>{children}</StyledHomeButton>
+  </Footer>
+);
+
+// export const FooterBarLISTActive = () => (
+//   <Footer>
+//     <List />
+//   </Footer>
 // );
-
-// export const FooterFinal = () => {
-//   const [activeItem, setActiveItem] = React.useState("css");
-//   return (
-//     <List>
-//       <ListItem
-//         active={activeItem === "css"}
-//         onClick={() => setActiveItem("css")}
-//         details={
-//           <List indent>
-//             <ListItem>Animations</ListItem>
-//             <ListItem>Positions</ListItem>
-//             <ListItem>Inline</ListItem>
-//           </List>
-//         }
-//       >
-//         CSS
-//       </ListItem>
-//       <ListItem
-//         active={activeItem === "js"}
-//         onClick={() => setActiveItem("js")}
-//       >
-//         JavaScript
-//       </ListItem>
-//       <ListItem
-//         active={activeItem === "react"}
-//         onClick={() => setActiveItem("react")}
-//       >
-//         React
-//       </ListItem>
-//       <ListItem
-//         active={activeItem === "html"}
-//         onClick={() => setActiveItem("html")}
-//       >
-//         HTML
-//       </ListItem>
-//     </List>
-//   );
-// };
