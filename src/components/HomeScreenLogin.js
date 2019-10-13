@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import styled from "styled-components";
-import { redirectTo } from "@reach/router";
 
 export default function HomescreenPasswordInput(props) {
   const [email, setEmail] = useState("");
@@ -19,30 +18,33 @@ export default function HomescreenPasswordInput(props) {
     display: flex;
     justify-items: center;
     justify-content: center;
-    padding: 60px;
+    padding: 8px;
   `;
-  const divStyle = {
+  const inputStyle = {
+    fontFamily: "futura",
+    fontSize: "17px",
     color: "white",
-    background: "#2E2E2E",
+    background: "#2E2E2EE6",
     padding: "8px",
-    margin: "2px",
+    margin: "8px",
     borderRadius: "10px",
     textAlign: "center",
     minWidth: "200px",
-    boxShadow: "0 -8px 8px -2px #00ceff",
+    boxShadow: "0 8px 8px -2px #00ceff",
 
     border: "2px solid #00CEFF"
   };
 
   const LoginButtonStyle = {
+    fontFamily: "futura",
     color: "white",
-    background: "#2E2E2E",
+    background: "#2E2E2EE6",
     padding: "8px",
     margin: "5px",
     borderRadius: "10px",
     textAlign: "center",
 
-    boxShadow: "0 -8px 8px -2px #00ceff",
+    boxShadow: "0 8px 8px -2px #00ceff",
 
     border: "2px solid #00CEFF"
   };
@@ -50,30 +52,29 @@ export default function HomescreenPasswordInput(props) {
   return (
     <StyledDiv>
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email" bsSize="large">
+        <FormGroup>
           <FormControl
-            style={divStyle}
+            style={inputStyle}
             autoFocus
             placeholder="Please Email"
             type="email"
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={event => setEmail(event.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
+        <FormGroup>
           <FormControl
-            style={divStyle}
+            block
+            style={inputStyle}
             placeholder="Please Password"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={event => setPassword(event.target.value)}
             type="password"
           />
         </FormGroup>
         <StyledDiv>
           <Button
             style={LoginButtonStyle}
-            block
-            bsSize="large"
             disabled={!validateForm()}
             type="submit"
           >
