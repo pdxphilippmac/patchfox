@@ -8,6 +8,7 @@ import NeonGlow from "../components/NeonGlow";
 import AlterNeonGlow from "../components/AlterNeonGlow";
 import AlterHomescreenLogo from "../icons/alterhomescreenlogo";
 import HomescreenPasswordInput from "../components/HomeScreenLogin";
+import UpdateNotification from "../icons/UpdateNotification";
 
 const Background = styled.div`
   background: darkgray;
@@ -39,3 +40,4 @@ export const AlterGlowLogo = () => <AlterNeonGlow />;
 export const HomeScreenInput = () => (
   <HomescreenPasswordInput></HomescreenPasswordInput>
 );
+export const Notification = () => <UpdateNotification />;

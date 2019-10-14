@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import AlterHomescreenLogo from "./icons/alterhomescreenlogo";
 import styled from "styled-components";
 import AlterNeonGlow from "./components/AlterNeonGlow";
+import ListItemContainer from "./components/List";
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import HomeActive from "./icons/footerHomeActive";
@@ -42,6 +43,7 @@ const StyledListTag = styled.h1`
   color: lightgreen;
   border: red;
   display: flex;
+  font-family: "futura";
 
   justify-content: center;
 `;
@@ -98,9 +100,14 @@ function Plus() {
 function List() {
   return (
     <>
+      <GlobalStyles />
       <>
         <StyledDiv>
           <StyledListTag>Hello this is List-Path</StyledListTag>
+          <ListItemContainer />
+          <ListItemContainer />
+          <ListItemContainer />
+          <ListItemContainer />
         </StyledDiv>
       </>
     </>
