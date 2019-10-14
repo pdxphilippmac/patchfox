@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
 const FooterBar = styled.nav`
   color: #1d1f2e;
   position: absolute;
-  background: #1d1f2e;
+  background: #1d1f2ee6;
   height: 60px;
   width: 100vw;
   position: fixed;
@@ -45,12 +45,6 @@ const StyledHomeButton = styled.div`
   /* right: 0; */
 `;
 
-const sizes = {
-  small: { width: "40px", height: "20px" },
-  medium: { width: "60px", height: "30px" },
-  large: { width: "80px", height: "40px" }
-};
-
 export default function Footer(children) {
   return (
     <>
@@ -59,11 +53,11 @@ export default function Footer(children) {
           <a href="/Plus/">
             <Plus />
           </a>
-          {/* <StyledHomeButton> */}
-          <a href="/Home/">
-            <HomeActive />
-          </a>
-          {/* </StyledHomeButton>{" "} */}
+          <StyledHomeButton>
+            <a href="/Home/">
+              <HomeActive />
+            </a>
+          </StyledHomeButton>
           <a href="/List/">
             <List />
           </a>
