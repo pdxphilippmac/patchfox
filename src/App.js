@@ -7,8 +7,9 @@ import styled from "styled-components";
 import AlterNeonGlow from "./components/AlterNeonGlow";
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import HomeActive from "./icons/footerHomeActive";
-import PlusActive from "./icons/footerPlusActive";
+// import HomeActive from "./icons/footerHomeActive";
+// import PlusActive from "./icons/footerPlusActive";
+// import ListActive from "./icons/footerlistActive";
 const StyledDiv = styled.div`
   height: 100vh;
 
@@ -37,43 +38,28 @@ const StyledDiv = styled.div`
 
 // export default App;
 
+const StyledListTag = styled.h1`
+  color: lightgreen;
+  border: red;
+  display: flex;
+
+  justify-content: center;
+`;
+
 export default function App() {
   return (
     <Router>
       <div>
-        <Footer>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">
-                  <HomeActive />
-                </Link>
-              </li>
-              <li>
-                <Link to="/about">
-                  <PlusActive />
-                </Link>
-              </li>
-              <li>
-                <Link to="/users">Users</Link>
-              </li>
-            </ul>
-          </nav>
-        </Footer>
+        <Footer />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route exact path="/Home" component={Home} />
+          <Route path="/Plus" component={Plus} />
+          <Route path="/List" component={List} />
+          {/* <Route path="/contact" component={Contact} />
+        <Route component={Notfound} /> */}
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
@@ -96,10 +82,27 @@ function Home() {
   );
 }
 
-function About() {
-  return <h2>About</h2>;
+function Plus() {
+  return (
+    <>
+      <GlobalStyles />
+      <>
+        <StyledDiv>
+          <StyledListTag>Hello this is Plus-Path</StyledListTag>
+        </StyledDiv>
+      </>
+    </>
+  );
 }
 
-function Users() {
-  return <h2>Users</h2>;
+function List() {
+  return (
+    <>
+      <>
+        <StyledDiv>
+          <StyledListTag>Hello this is List-Path</StyledListTag>
+        </StyledDiv>
+      </>
+    </>
+  );
 }
