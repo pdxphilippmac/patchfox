@@ -4,6 +4,10 @@ import HomescreenLogo from "../icons/homescreenLogo";
 import LockSymbol from "../icons/lockSymbol";
 import LogoLetter from "../icons/homescreenLettering";
 import AlternativeLogoLetter from "../icons/alternateHomescreenLettering";
+import NeonGlow from "../components/NeonGlow";
+import AlterNeonGlow from "../components/AlterNeonGlow";
+import AlterHomescreenLogo from "../icons/alterhomescreenlogo";
+import HomescreenPasswordInput from "../components/HomeScreenLogin";
 
 const Background = styled.div`
   background: darkgray;
@@ -26,4 +30,12 @@ export const AlternativeHomescreenLettering = () => (
 );
 
 export const Logo = () => <HomescreenLogo />;
+export const UpsideDownLogo = () => <AlterHomescreenLogo />;
 export const SignInLogo = () => <LockSymbol />;
+
+export const GlowLogo = () => <NeonGlow />;
+export const AlterGlowLogo = () => <AlterNeonGlow />;
+
+export const HomeScreenInput = () => (
+  <HomescreenPasswordInput></HomescreenPasswordInput>
+);

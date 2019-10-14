@@ -2,15 +2,19 @@ import React from "react";
 import Plus from "../icons/footerPlus";
 import Home from "../icons/footerHome";
 import List from "../icons/footerList";
-import Footer from "../components/Footer";
+
+import PlusActive from "../icons/footerPlusActive";
+import HomeActive from "../icons/footerHomeActive";
+import ListActive from "../icons/footerlistActive";
 export default {
   title: "FooterComponents"
 };
 
-export const Plus_Active = () => <Plus />;
+export const PlusIcon = () => <Plus />;
+export const PlusIconActive = () => <PlusActive />;
 
-export const Home_Inactive = () => <Home />;
+export const HomeIcon = () => <Home />;
+export const HomeIconActive = () => <HomeActive />;
 
-export const List_Inactive = () => <List />;
-
-export const FooterBar = () => <Footer />;
+export const ListIcon = () => <List />;
+export const ListIconActive = () => <ListActive />;

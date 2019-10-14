@@ -3,7 +3,8 @@ import GlobalStyles from "./GlobalStyles";
 import Footer from "./components/Footer";
 import HomescreenLogo from "./icons/homescreenLogo";
 import styled from "styled-components";
-import NeonGlow from "./components/NeonGlow";
+import AlterNeonGlow from "./components/AlterNeonGlow";
+import { HomeScreenInput } from "./stories/homescreen.stories";
 
 const StyledDiv = styled.div`
   height: 100vh;
@@ -22,7 +23,8 @@ function App() {
         <StyledDiv>
           <HomescreenLogo />
 
-          <NeonGlow />
+          <AlterNeonGlow />
+          <HomeScreenInput />
         </StyledDiv>
       </>
       <Footer />

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Home(className, onClick) {
+export default function HomeActive(className, onClick) {
   return (
     <svg
       className={className}
@@ -20,12 +20,16 @@ export default function Home(className, onClick) {
         >
           <feOffset dy="3" input="SourceAlpha" />
           <feGaussianBlur stdDeviation="10" result="blur" />
-          <feFlood flood-color="#ff0080" />
+          <feFlood flood-color="#00CEFF" />
           <feComposite operator="in" in2="blur" />
           <feComposite in="SourceGraphic" />
         </filter>
       </defs>
-      <g transform="translate(-136.5 -619.297)">
+      <g
+        id="Group_6"
+        data-name="Group 6"
+        transform="translate(-136.5 -619.297)"
+      >
         <g transform="matrix(1, 0, 0, 1, 136.5, 619.3)" filter="url(#Path_4)">
           <path
             id="Path_4-2"
@@ -33,7 +37,7 @@ export default function Home(className, onClick) {
             d="M32.607-1209.566l-11.268-10.141a3.091,3.091,0,0,0-4.133,0,2.385,2.385,0,0,0-.788,1.77v16.352h3.475a.72.72,0,0,1,.558,1.176l-4.9,5.992a.721.721,0,0,1-1.115,0l-4.9-5.992a.72.72,0,0,1,.557-1.176h3.475v-14.843l-7.626,6.862A2.793,2.793,0,0,0,5-1207.494v14.472a2.933,2.933,0,0,0,3.006,2.854H30.54a2.932,2.932,0,0,0,3-2.854v-14.472a2.793,2.793,0,0,0-.938-2.072"
             transform="translate(26.5 1249.2)"
             fill="none"
-            stroke="#ff0080"
+            stroke="#00CEFF"
             stroke-width="2"
             fill-rule="evenodd"
           />
