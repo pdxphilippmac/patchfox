@@ -44,9 +44,6 @@ const StyledHomeButton = styled.div`
   }
   /* right: 0; */
 `;
-const Home = styled(HomeActive)`
-  z-index: 400;
-`;
 
 export default function Footer(children) {
   return (

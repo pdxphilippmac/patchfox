@@ -6,11 +6,12 @@ import AlterHomescreenLogo from "./icons/alterhomescreenlogo";
 import styled from "styled-components";
 import AlterNeonGlow from "./components/AlterNeonGlow";
 import Foo from "./components/toggleButtonTest";
-import ListItemContainer from "./components/LibraryList";
+
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import LibraryContainer from "./components/LibraryList";
 import Modal from "./components/Modal";
+import Seachbar from "./components/Search";
 // import HomeActive from "./icons/footerHomeActive";
 // import PlusActive from "./icons/footerPlusActive";
 // import ListActive from "./icons/footerlistActive";
@@ -84,7 +85,7 @@ function Plus() {
       <>
         <StyledPageDiv>
           <Modal>
-            <StyledListTag>This is Plus-Path</StyledListTag>
+            <Seachbar />
           </Modal>
           <Foo />
         </StyledPageDiv>

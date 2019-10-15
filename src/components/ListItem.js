@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { games } from "../api/gamingAPI";
-// import { games } from "../api/gamingAPI";
 
 const ListItem = styled.article`
   display: flex;
