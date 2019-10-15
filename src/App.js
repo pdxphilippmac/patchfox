@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import AlterHomescreenLogo from "./icons/alterhomescreenlogo";
 import styled from "styled-components";
 import AlterNeonGlow from "./components/AlterNeonGlow";
+import Foo from "./components/toggleButtonTest";
 import ListItemContainer from "./components/List";
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -14,6 +15,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const StyledDiv = styled.div`
   height: 100vh;
 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+`;
+const StyledPageDiv = styled.div`
+  height: 100vh;
+  background: #1d1f2ee6;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -88,10 +97,11 @@ function Plus() {
   return (
     <>
       <GlobalStyles />
+
       <>
-        <StyledDiv>
+        <StyledPageDiv>
           <StyledListTag>Hello this is Plus-Path</StyledListTag>
-        </StyledDiv>
+        </StyledPageDiv>
       </>
     </>
   );
@@ -102,13 +112,17 @@ function List() {
     <>
       <GlobalStyles />
       <>
-        <StyledDiv>
-          <StyledListTag>Hello this is List-Path</StyledListTag>
+        <StyledPageDiv>
+          <StyledListTag>
+            <Foo />
+          </StyledListTag>
           <ListItemContainer />
           <ListItemContainer />
           <ListItemContainer />
           <ListItemContainer />
-        </StyledDiv>
+          <ListItemContainer />
+          <ListItemContainer />
+        </StyledPageDiv>
       </>
     </>
   );
