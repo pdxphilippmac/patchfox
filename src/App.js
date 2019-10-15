@@ -6,7 +6,7 @@ import AlterHomescreenLogo from "./icons/alterhomescreenlogo";
 import styled from "styled-components";
 import AlterNeonGlow from "./components/AlterNeonGlow";
 import Foo from "./components/toggleButtonTest";
-import ListItemContainer from "./components/List";
+import ListItemContainer from "./components/LibraryList";
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import HomeActive from "./icons/footerHomeActive";
@@ -116,11 +116,6 @@ function List() {
           <StyledListTag>
             <Foo />
           </StyledListTag>
-          <ListItemContainer />
-          <ListItemContainer />
-          <ListItemContainer />
-          <ListItemContainer />
-          <ListItemContainer />
           <ListItemContainer />
         </StyledPageDiv>
       </>

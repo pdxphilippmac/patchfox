@@ -1,26 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import UpdateNotification from "../icons/UpdateNotification";
-import { prototype } from "stack-utils";
+// import { games } from "../api/gamingAPI";
 
-const ListContainerBorder = styled.div`
+const ListItem = styled.article`
   display: flex;
-  justify-content: space-between;
-  background-color: #3b3434e6;
-  margin: 5px;
-  color: white;
-  padding: 10px;
-  border-radius: 4px;
-  font-family: "futura";
-  box-shadow: 0 4px 4px 0px #00ceff;
-  border: #707070e6 solid 0.5px;
+  background: red;
+  margin: 2px;
+  border: 2px yellow solid;
+  text-align: center;
+  padding: 2px;
 `;
 
-export default function ListContainer(props) {
-  return (
-    <ListContainerBorder>
-      Game Name{props.name}
-      <UpdateNotification />
-    </ListContainerBorder>
-  );
+export default function Game(props) {
+  return <ListItem>{props.game.title}</ListItem>;
 }

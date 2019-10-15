@@ -1,5 +1,5 @@
 import React from "react";
-import ListContainer from "../components/List";
+import ListContainer from "../components/LibraryList";
 
 export default {
   title: "ListPage"
