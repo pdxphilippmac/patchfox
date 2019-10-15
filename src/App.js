@@ -1,11 +1,17 @@
 import React from "react";
+
 import GlobalStyles from "./GlobalStyles";
 import Footer from "./components/Footer";
-import HomescreenLogo from "./icons/homescreenLogo";
+import AlterHomescreenLogo from "./icons/alterhomescreenlogo";
 import styled from "styled-components";
 import AlterNeonGlow from "./components/AlterNeonGlow";
+import Foo from "./components/toggleButtonTest";
+import ListItemContainer from "./components/List";
 import { HomeScreenInput } from "./stories/homescreen.stories";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import HomeActive from "./icons/footerHomeActive";
+// import PlusActive from "./icons/footerPlusActive";
+// import ListActive from "./icons/footerlistActive";
 const StyledDiv = styled.div`
   height: 100vh;
 
@@ -14,22 +20,110 @@ const StyledDiv = styled.div`
   flex-grow: 1;
   justify-content: center;
 `;
+const StyledPageDiv = styled.div`
+  height: 100vh;
+  background: #1d1f2ee6;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+`;
 
-function App() {
+// function App() {
+//   return (
+//     <>
+//       <GlobalStyles />
+//       <>
+//         <StyledDiv>
+//           <AlterHomescreenLogo />
+
+//           <AlterNeonGlow />
+//           <HomeScreenInput />
+//         </StyledDiv>
+//       </>
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default App;
+
+const StyledListTag = styled.h1`
+  color: lightgreen;
+  border: red;
+  display: flex;
+  font-family: "futura";
+
+  justify-content: center;
+`;
+
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <Footer />
+
+        <Switch>
+          <Route exact path="/Home" component={Home} />
+          <Route path="/Plus" component={Plus} />
+          <Route path="/List" component={List} />
+          {/* <Route path="/contact" component={Contact} />
+        <Route component={Notfound} /> */}
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
   return (
     <>
       <GlobalStyles />
       <>
         <StyledDiv>
-          <HomescreenLogo />
+          <AlterHomescreenLogo />
 
           <AlterNeonGlow />
           <HomeScreenInput />
         </StyledDiv>
       </>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
 
-export default App;
+function Plus() {
+  return (
+    <>
+      <GlobalStyles />
+
+      <>
+        <StyledPageDiv>
+          <StyledListTag>Hello this is Plus-Path</StyledListTag>
+        </StyledPageDiv>
+      </>
+    </>
+  );
+}
+
+function List() {
+  return (
+    <>
+      <GlobalStyles />
+      <>
+        <StyledPageDiv>
+          <StyledListTag>
+            <Foo />
+          </StyledListTag>
+          <ListItemContainer />
+          <ListItemContainer />
+          <ListItemContainer />
+          <ListItemContainer />
+          <ListItemContainer />
+          <ListItemContainer />
+        </StyledPageDiv>
+      </>
+    </>
+  );
+}
