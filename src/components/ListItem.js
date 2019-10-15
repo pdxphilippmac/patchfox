@@ -5,13 +5,19 @@ import { games } from "../api/gamingAPI";
 
 const ListItem = styled.article`
   display: flex;
-  background: red;
-  margin: 2px;
-  border: 2px yellow solid;
+  justify-content: space-around;
+
+  margin: 10px;
+
   text-align: center;
-  padding: 2px;
+  padding: 3px;
 `;
 
 export default function Game(props) {
-  return <ListItem>{props.game.title}</ListItem>;
+  return (
+    <ListItem>
+      {props.game.title}
+      {/* {props.game.version} */}
+    </ListItem>
+  );
 }

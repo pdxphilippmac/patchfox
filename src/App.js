@@ -10,6 +10,7 @@ import ListItemContainer from "./components/LibraryList";
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import LibraryContainer from "./components/LibraryList";
+import Modal from "./components/Modal";
 // import HomeActive from "./icons/footerHomeActive";
 // import PlusActive from "./icons/footerPlusActive";
 // import ListActive from "./icons/footerlistActive";
@@ -29,25 +30,6 @@ const StyledPageDiv = styled.div`
   flex-grow: 1;
   justify-content: center;
 `;
-
-// function App() {
-//   return (
-//     <>
-//       <GlobalStyles />
-//       <>
-//         <StyledDiv>
-//           <AlterHomescreenLogo />
-
-//           <AlterNeonGlow />
-//           <HomeScreenInput />
-//         </StyledDiv>
-//       </>
-//       <Footer />
-//     </>
-//   );
-// }
-
-// export default App;
 
 const StyledListTag = styled.h1`
   color: lightgreen;
@@ -102,6 +84,7 @@ function Plus() {
       <>
         <StyledPageDiv>
           <StyledListTag>Hello this is Plus-Path</StyledListTag>
+          <Modal />
         </StyledPageDiv>
       </>
     </>

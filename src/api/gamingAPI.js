@@ -7,6 +7,18 @@ export const games = [
   },
   {
     imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Warcraft 1",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
     title: "Spyro",
     version: "1.1.2",
     changes: "-fix bug -fix graphic etc"
