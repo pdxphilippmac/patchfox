@@ -9,6 +9,7 @@ import Foo from "./components/toggleButtonTest";
 import ListItemContainer from "./components/LibraryList";
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import LibraryContainer from "./components/LibraryList";
 // import HomeActive from "./icons/footerHomeActive";
 // import PlusActive from "./icons/footerPlusActive";
 // import ListActive from "./icons/footerlistActive";
@@ -116,7 +117,7 @@ function List() {
           <StyledListTag>
             <Foo />
           </StyledListTag>
-          <ListItemContainer />
+          <LibraryContainer />
         </StyledPageDiv>
       </>
     </>

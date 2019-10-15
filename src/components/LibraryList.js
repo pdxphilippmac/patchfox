@@ -3,7 +3,7 @@ import styled from "styled-components";
 import UpdateNotification from "../icons/UpdateNotification";
 // import { prototype } from "stack-utils";
 import { games } from "../api/gamingAPI";
-import Game from "../components/List";
+import Game from "./ListItem";
 
 const ListContainerBorder = styled.div`
   display: flex;
@@ -20,12 +20,16 @@ const ListContainerBorder = styled.div`
 
 export default function LibraryContainer(children) {
   return (
-    <ListContainerBorder>
-      {games.map(game => {
-        return <Game game={game} />;
+    <>
+      {games.map((game, index) => {
+        return (
+          <ListContainerBorder game={game}>
+            <Game key={game.title} game={game} />
+          </ListContainerBorder>
+        );
       })}
 
       <UpdateNotification />
-    </ListContainerBorder>
+    </>
   );
 }
