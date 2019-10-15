@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const Container = styled.div`
   background: #1d1f2ee6;
 
-  box-shadow: 0 0 10px ${props => props.theme.shadow};
+  box-shadow: 0 4px 4px 0px #ff0080;
   border-radius: 10px;
   display: ${props => (props.show ? "flex" : "none")};
   flex-direction: column;

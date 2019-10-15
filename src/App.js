@@ -83,8 +83,10 @@ function Plus() {
 
       <>
         <StyledPageDiv>
-          <StyledListTag>Hello this is Plus-Path</StyledListTag>
-          <Modal />
+          <Modal>
+            <StyledListTag>This is Plus-Path</StyledListTag>
+          </Modal>
+          <Foo />
         </StyledPageDiv>
       </>
     </>
@@ -95,11 +97,15 @@ function List() {
   return (
     <>
       <GlobalStyles />
+
       <>
         <StyledPageDiv>
-          <StyledListTag>
-            <Foo />
-          </StyledListTag>
+          {/* <select>
+        <option>Hello</option>
+        <option>Test</option>
+        <option>jo</option>
+      </select> */}
+          <StyledListTag></StyledListTag>
           <LibraryContainer />
         </StyledPageDiv>
       </>
