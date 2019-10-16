@@ -50,7 +50,7 @@ export default function Footer(children) {
     <>
       <StyledContainer>
         <FooterBar>
-          <a href="/Plus/">
+          <a href="/Add/">
             <Plus />
           </a>
           <StyledHomeButton>
@@ -58,7 +58,7 @@ export default function Footer(children) {
               <HomeActive />
             </a>
           </StyledHomeButton>
-          <a href="/List/">
+          <a href="/Library/">
             <List />
           </a>
         </FooterBar>
