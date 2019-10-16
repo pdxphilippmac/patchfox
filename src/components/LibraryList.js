@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import UpdateNotification from "../icons/UpdateNotification";
-import { prototype } from "stack-utils";
+// import { prototype } from "stack-utils";
+import { games } from "../api/gamingAPI";
+import Game from "./ListItem";
 
 const ListContainerBorder = styled.div`
   display: flex;
@@ -16,11 +18,18 @@ const ListContainerBorder = styled.div`
   border: #707070e6 solid 0.5px;
 `;
 
-export default function ListContainer(props) {
+export default function LibraryContainer(children) {
   return (
-    <ListContainerBorder>
-      Game Name{props.name}
+    <>
+      {games.map((game, index) => {
+        return (
+          <ListContainerBorder game={game}>
+            <Game key={game.title} game={game} />
+          </ListContainerBorder>
+        );
+      })}
+
       <UpdateNotification />
-    </ListContainerBorder>
+    </>
   );
 }

@@ -6,9 +6,12 @@ import AlterHomescreenLogo from "./icons/alterhomescreenlogo";
 import styled from "styled-components";
 import AlterNeonGlow from "./components/AlterNeonGlow";
 import Foo from "./components/toggleButtonTest";
-import ListItemContainer from "./components/List";
+
 import { HomeScreenInput } from "./stories/homescreen.stories";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import LibraryContainer from "./components/LibraryList";
+import Modal from "./components/Modal";
+import Seachbar from "./components/Search";
 // import HomeActive from "./icons/footerHomeActive";
 // import PlusActive from "./icons/footerPlusActive";
 // import ListActive from "./icons/footerlistActive";
@@ -28,25 +31,6 @@ const StyledPageDiv = styled.div`
   flex-grow: 1;
   justify-content: center;
 `;
-
-// function App() {
-//   return (
-//     <>
-//       <GlobalStyles />
-//       <>
-//         <StyledDiv>
-//           <AlterHomescreenLogo />
-
-//           <AlterNeonGlow />
-//           <HomeScreenInput />
-//         </StyledDiv>
-//       </>
-//       <Footer />
-//     </>
-//   );
-// }
-
-// export default App;
 
 const StyledListTag = styled.h1`
   color: lightgreen;
@@ -100,7 +84,10 @@ function Plus() {
 
       <>
         <StyledPageDiv>
-          <StyledListTag>Hello this is Plus-Path</StyledListTag>
+          <Modal>
+            <Seachbar />
+          </Modal>
+          <Foo />
         </StyledPageDiv>
       </>
     </>
@@ -111,17 +98,16 @@ function List() {
   return (
     <>
       <GlobalStyles />
+
       <>
         <StyledPageDiv>
-          <StyledListTag>
-            <Foo />
-          </StyledListTag>
-          <ListItemContainer />
-          <ListItemContainer />
-          <ListItemContainer />
-          <ListItemContainer />
-          <ListItemContainer />
-          <ListItemContainer />
+          {/* <select>
+        <option>Hello</option>
+        <option>Test</option>
+        <option>jo</option>
+      </select> */}
+          <StyledListTag></StyledListTag>
+          <LibraryContainer />
         </StyledPageDiv>
       </>
     </>

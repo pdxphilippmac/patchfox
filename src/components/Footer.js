@@ -16,7 +16,7 @@ const FooterBar = styled.nav`
   height: 60px;
   width: 100vw;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 -8px 8px -2px #00ceff;
   list-style: none;
 
@@ -31,7 +31,7 @@ const FooterBar = styled.nav`
 const StyledHomeButton = styled.div`
   /* position: fixed; */
   border: none;
-  z-index: 1;
+  z-index: -5001;
 
   background: #1d1f2e;
   box-shadow: 0 -8px 8px 0px #00ceff;
