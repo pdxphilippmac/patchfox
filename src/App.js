@@ -8,18 +8,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 export default function App() {
   return (
     <Router>
-      <div>
-        <Footer />
-
-        <Switch>
-          <Route exact path="/Home" component={Home} />
-          <Route path="/Add" component={Add} />
-          <Route path="/Library" component={Library} />
-          {/* <Route path="/contact" component={Contact} />
+      <Footer />
+      <Switch>
+        <Route exact path="/Home" component={Home} />
+        <Route path="/Add" component={Add} />
+        <Route path="/Library" component={Library} />
+        {/* <Route path="/contact" component={Contact} />
         <Route component={Notfound} /> */}
-        </Switch>
-        <Footer />
-      </div>
+      </Switch>
+      <Footer />
     </Router>
   );
 }
