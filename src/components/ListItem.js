@@ -15,6 +15,7 @@ export default function Game(props) {
   return (
     <ListItem>
       {props.game.title}
+
       {/* {props.game.version} */}
     </ListItem>
   );
