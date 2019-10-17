@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
-import Modal from "../components/Modal";
+
 import Seachbar from "../components/Search";
-import Foo from "../components/toggleButtonTest";
 
 const StyledPageDiv = styled.div`
   height: 100vh;
@@ -15,16 +14,15 @@ const StyledPageDiv = styled.div`
 `;
 
 export default function Add() {
+  const [search, setSearch] = useState("");
+  console.log(search);
   return (
     <>
       <GlobalStyles />
 
       <>
         <StyledPageDiv>
-          <Modal>
-            <Seachbar />
-          </Modal>
-          <Foo />
+          <Seachbar onChange={event => setSearch(event.target.value)} />
         </StyledPageDiv>
       </>
     </>

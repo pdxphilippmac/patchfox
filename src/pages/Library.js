@@ -19,12 +19,6 @@ export default function Library() {
 
       <>
         <StyledPageDiv>
-          {/* <select>
-        <option>Hello</option>
-        <option>Test</option>
-        <option>jo</option>
-      </select> */}
-
           <LibraryContainer />
         </StyledPageDiv>
       </>
