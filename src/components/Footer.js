@@ -4,6 +4,7 @@ import styled from "styled-components";
 import List from "../icons/footerList";
 import Plus from "../icons/footerPlus";
 import HomeActive from "../icons/footerHomeActive";
+import { buildUp } from "../utils/animations";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ const FooterBar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation: ${buildUp} 6s ease-out 1 both;
 `;
 
 const StyledHomeButton = styled.div`
@@ -36,6 +38,7 @@ const StyledHomeButton = styled.div`
   background: #1d1f2e;
   box-shadow: 0 -8px 8px 0px #00ceff;
   border-radius: 50%;
+  animation: ${buildUp} 6s ease-out 1 both;
 
   left: 40%;
   bottom: -10;
