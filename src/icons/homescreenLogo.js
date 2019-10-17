@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { buildUp } from "../utils/animations";
 
 const StyledLogodiv = styled.div`
   justify-content: center;
   display: flex;
+  animation: ${buildUp} 6s ease-out 1 both;
 `;
 
 export default function HomescreenLogo() {

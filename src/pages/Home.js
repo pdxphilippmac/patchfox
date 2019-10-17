@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AlterHomescreenLogo from "../icons/alterhomescreenlogo";
 import AlterNeonGlow from "../components/AlterNeonGlow";
 import HomeScreenInput from "../components/HomeScreenLogin";
+import { buildUp } from "../utils/animations";
 const StyledDiv = styled.div`
   height: 100vh;
 
@@ -22,6 +23,7 @@ export default function Home() {
           <AlterHomescreenLogo />
 
           <AlterNeonGlow />
+
           <HomeScreenInput />
         </StyledDiv>
       </>
