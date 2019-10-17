@@ -15,12 +15,16 @@ const SearchInput = styled.input`
   border: 2px solid #00ceff;
 `;
 
-export default function Seachbar({ onChange }) {
+export default function Seachbar({ onChange, onSearch }) {
+  function handleInputChange(event) {
+    const value = event.target.value;
+    onSearch(value);
+  }
   return (
     <SearchInput
       type="search"
       placeholder="Search your Games"
-      onChange={onChange}
+      onChange={handleInputChange}
     />
   );
 }
