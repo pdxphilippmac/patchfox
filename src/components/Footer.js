@@ -7,7 +7,6 @@ import HomeActive from "../icons/footerHomeActive";
 
 import { buildUp } from "../utils/animations";
 
-
 const StyledContainer = styled.div`
   display: flex;
 `;
@@ -22,7 +21,7 @@ const FooterBar = styled.nav`
   z-index: 100;
   /* box-shadow: 0 -8px 8px -2px #00ceff; */
   list-style: none;
-  /* animation: ${blendInHome} 10s ease-in 1 both; */
+
   bottom: 0;
   left: 0;
   right: 0;
@@ -50,7 +49,6 @@ const FooterBarAnimated = styled.nav`
   justify-content: space-between;
 
   animation: ${buildUp} 6s ease-out 1 both;
-
 `;
 const StyledHomeButton = styled.div`
   /* position: fixed; */
