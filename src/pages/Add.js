@@ -3,6 +3,7 @@ import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
 import { games } from "../api/gamingAPI";
 import Seachbar from "../components/Search";
+import { searchItem } from "../utils/animations";
 
 const StyledPageDiv = styled.div`
   height: 100vh;
@@ -23,8 +24,9 @@ const SearchItem = styled.article`
   padding: 10px;
   border-radius: 4px;
   font-family: "futura";
-  box-shadow: 0 4px 4px 0px #00ceff;
+
   border: #707070e6 solid 0.5px;
+  animation: ${searchItem} 3s ease-out 1 both;
 `;
 
 export default function Add({ handleInputChange }) {
@@ -42,27 +44,21 @@ export default function Add({ handleInputChange }) {
     <>
       <GlobalStyles />
 
-      <>
-        <StyledPageDiv>
-          <Seachbar
-            handleInputChange={setSearch}
-            onSearch={handleSearch}
-            onChange={event => handleInputChange(event.target.value)}
-          />
+      <StyledPageDiv>
+        <Seachbar
+          handleInputChange={setSearch}
+          onSearch={handleSearch}
+          onChange={event => handleInputChange(event.target.value)}
+        />
 
-          {filteredGames.map(game => (
-            <FilteredGame
-              key={game.title}
-              onClick={() => console.log(game)}
-              game={game}
-            >
-              <>
-                <SearchItem>{game.title}</SearchItem>
-              </>
-            </FilteredGame>
-          ))}
-        </StyledPageDiv>
-      </>
+        {filteredGames.map(game => (
+          <FilteredGame key={game.title} game={game}>
+            <>
+              <SearchItem>{game.title}</SearchItem>
+            </>
+          </FilteredGame>
+        ))}
+      </StyledPageDiv>
     </>
   );
 }
