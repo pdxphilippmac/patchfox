@@ -28,14 +28,14 @@ const SearchItem = styled.article`
 `;
 
 export default function Add({ handleInputChange }) {
-  const [textInput, setTextInput] = useState("-");
+  const [search, setSearch] = useState("-");
 
   const filteredGames = games.filter(searchitem =>
-    searchitem.title.toLowerCase().includes(textInput.toLowerCase())
+    searchitem.title.toLowerCase().includes(search.toLowerCase())
   );
 
   function handleSearch(value) {
-    setTextInput(value);
+    setSearch(value);
   }
 
   return (
@@ -45,7 +45,7 @@ export default function Add({ handleInputChange }) {
       <>
         <StyledPageDiv>
           <Seachbar
-            handleInputChange={setTextInput}
+            handleInputChange={setSearch}
             onSearch={handleSearch}
             onChange={event => handleInputChange(event.target.value)}
           />
