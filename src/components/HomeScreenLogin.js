@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import styled from "styled-components";
-import { buildUp } from "../utils/animations";
+// import { buildUp } from "../utils/animations";
 
 export default function HomescreenPasswordInput(props) {
   const [email, setEmail] = useState("");

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { buildUp } from "../utils/animations";
+// import { buildUp } from "../utils/animations";
 
 const SearchInput = styled.input`
   font-family: futura;
