@@ -1,6 +1,7 @@
 import React from "react";
-import GlobalStyles from "../GlobalStyles";
+// import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
+import DataFetch from "../components/DataFetch";
 
 const StyledDiv = styled.div`
   height: 100vh;
@@ -16,7 +17,7 @@ export default function Fetch() {
     <>
       <>
         <StyledDiv>
-          <div>This is Fetch</div>
+          <DataFetch />
         </StyledDiv>
       </>
       {/* <Footer /> */}
