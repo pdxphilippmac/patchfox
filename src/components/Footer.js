@@ -4,6 +4,7 @@ import styled from "styled-components";
 import List from "../icons/footerList";
 import Plus from "../icons/footerPlus";
 import HomeActive from "../icons/footerHomeActive";
+import Fetch from "../icons/footerFetch";
 
 import { buildUp } from "../utils/animations";
 
@@ -87,6 +88,9 @@ export default function Footer(children) {
             </StyledHomeButton>
             <a href="/Library/">
               <List />
+            </a>
+            <a href="/Fetch/">
+              <Fetch />
             </a>
           </FooterBarAnimated>
         </FooterBar>
