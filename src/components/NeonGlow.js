@@ -29,10 +29,10 @@ const StyledDiv = styled.div`
   padding: 20px;
 `;
 
-export default function NeonGlow() {
+export default function NeonGlow({ name1, name2 }) {
   return (
     <StyledDiv>
-      <StyledH1>Patch</StyledH1> <StyledH2>Fox</StyledH2>
+      <StyledH1>{name1}</StyledH1> <StyledH2>{name2}</StyledH2>
     </StyledDiv>
   );
 }

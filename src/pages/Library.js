@@ -16,6 +16,10 @@ const StyledPageDiv = styled.div`
   overflow: auto;
 `;
 
+const HeaderDiv = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`;
 // const TestDiv = styled.div`
 //   height: 100px;
 //   overflow: auto;
@@ -27,7 +31,9 @@ export default function Library() {
       {/* <GlobalStyles /> */}
 
       <StyledPageDiv>
-        <NeonGlow />
+        <HeaderDiv>
+          <NeonGlow name1="Lib" name2="rary" />
+        </HeaderDiv>
         {/* <LibraryContainer /> */}
         <FadeList />
       </StyledPageDiv>
