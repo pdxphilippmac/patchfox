@@ -4,7 +4,7 @@ import styled from "styled-components";
 import List from "../icons/footerList";
 import Plus from "../icons/footerPlus";
 import HomeActive from "../icons/footerHomeActive";
-import Fetch from "../icons/footerFetch";
+import FetchIcon from "../icons/footerFetch";
 
 import { buildUp } from "../utils/animations";
 
@@ -90,7 +90,7 @@ export default function Footer(children) {
               <List />
             </a>
             <a href="/Fetch/">
-              <Fetch />
+              <FetchIcon />
             </a>
           </FooterBarAnimated>
         </FooterBar>

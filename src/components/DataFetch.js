@@ -15,6 +15,11 @@ const SearchItem = styled.article`
   border: #707070e6 solid 0.5px;
 `;
 
+const CoverImage = styled.img`
+  height: 200px;
+  width: 200px;
+`;
+
 export default function DataFetch() {
   const [posts, setPosts] = useState([]);
   // const options = {
@@ -23,31 +28,33 @@ export default function DataFetch() {
 
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const targetUrl =
-      "https://api-v3.igdb.com/games/1026?fields=id,name,url,summary,storyline,websites";
-    axios
-      .get(proxyUrl + targetUrl, {
-        headers: {
-          "user-key": "e2715f17601c1d968b592f747c6aa839",
-          Accept: "application/json"
-        },
-        data: "fields category,description,position,title,values;"
-      })
-      .then(res => {
-        console.log(res);
-        setPosts(res.data);
+    const targetUrl = "https://api-v3.igdb.com/covers";
+    axios({
+      url: proxyUrl + targetUrl,
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "user-key": "e2715f17601c1d968b592f747c6aa839"
+      },
+      data: "fields alpha_channel,animated,game,height,image_id,url,width;"
+    })
+      .then(response => {
+        console.log(response.data);
+        setPosts(response.data);
       })
       .catch(err => {
-        console.log(err);
+        console.error(err);
       });
   }, []);
   return (
     <div>
       {posts.map(post => (
         <SearchItem key={post.id}>
-          <p>{post.name}</p>
-          <p>{post.storyline}</p>
-          <p>{post.summary} </p>
+          <p>{post.id}</p>
+          <p>{post.url}</p>
+          <p>{post.description}</p>
+          <p>{post.values} </p>
+          <CoverImage alt="fotoHere" src={post.url}></CoverImage>
         </SearchItem>
       ))}
     </div>
