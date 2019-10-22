@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { fadeIn } from "../utils/animations";
 
 const StyledH1 = styled.span`
-  font-size: 80px;
+  font-size: 30px;
   font-family: futura;
   color: #fff;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080,
@@ -13,7 +13,7 @@ const StyledH1 = styled.span`
   animation-iteration-count: 20;
 `;
 const StyledH2 = styled.span`
-  font-size: 80px;
+  font-size: 30px;
   font-family: futura;
   color: #fff;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080,
