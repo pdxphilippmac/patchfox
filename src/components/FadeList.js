@@ -17,8 +17,8 @@ const FadeContainerBorder = styled.div`
   border-radius: 4px;
   font-family: "futura";
   box-shadow: 0 4px 4px 0px red;
-  border: #707070e6 solid 0.5px;
-  animation: ${buildList} 5s ease-in 1 both;
+  /* border: #707070e6 solid 0.5px; */
+  animation: ${buildList} 3s ease-out 1 both;
 `;
 
 export default function FadeList() {
