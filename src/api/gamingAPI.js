@@ -11,6 +11,7 @@ export const games = [
     version: "1.1.2",
     changes: "-Lich can now Nova without manacost and DK can melt your face"
   },
+
   {
     imgSrc: "src",
     title: "Warcraft 1",
@@ -54,5 +55,101 @@ export const games = [
     title: "The Sims 4",
     version: "1.1.2",
     changes: "-fix bug -fix graphic etc"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
+  },
+  {
+    imgSrc: "src",
+    title: "Starcraft 2",
+    version: "1.1.2",
+    changes: "-Lich can now Nova without manacost and DK can melt your face"
   }
 ];
