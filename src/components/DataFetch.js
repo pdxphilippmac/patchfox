@@ -20,10 +20,12 @@ const SearchItem = styled.article`
 const FixedSearch = styled(Seachbar)`
   position: fixed;
 `;
-
+function handleSave() {
+  console.log();
+}
 // const CoverImage = styled.img`
 //   height: 150px;
-//   width: 150px;
+
 // `;
 
 export default function DataFetch({ handleInputChange }) {
@@ -50,7 +52,7 @@ export default function DataFetch({ handleInputChange }) {
         Accept: "application/json",
         "user-key": "e2715f17601c1d968b592f747c6aa839"
       },
-      data: `fields *; search "${search}"; limit 50;\n\n`
+      data: `fields *; search "${search}"; limit 35;\n\n`
     })
       .then(response => {
         console.log(response.data);
@@ -71,7 +73,7 @@ export default function DataFetch({ handleInputChange }) {
         {posts.map(post => (
           <div key={post.id}>
             <Fade left>
-              <SearchItem>
+              <SearchItem onClick={handleSave}>
                 {/* <CoverImage alt="fotoHere" src={post.url}></CoverImage> */}
                 <p>{post.name}</p>
               </SearchItem>

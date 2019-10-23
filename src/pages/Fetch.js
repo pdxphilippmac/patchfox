@@ -2,7 +2,6 @@ import React from "react";
 // import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
 import DataFetch from "../components/DataFetch";
-// import GlobalStyles from "../GlobalStyles";
 
 const StyledDiv = styled.div`
   display: flex;
