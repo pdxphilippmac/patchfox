@@ -1,7 +1,7 @@
 import React from "react";
-import GlobalStyles from "../GlobalStyles";
+
 import styled from "styled-components";
-import LibraryContainer from "../components/LibraryList";
+
 import FadeList from "../components/FadeList";
 import NeonGlow from "../components/NeonGlow";
 

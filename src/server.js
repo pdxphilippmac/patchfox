@@ -40,15 +40,16 @@ export default function JsonFetch() {
   }, []);
 
   return (
-    <SearchItem>
-      {posts.map(post => (
-        <div key={post.id}>
-          <div>
+    <>
+      <div>
+        {posts.map(post => (
+          <SearchItem>
             {/* <CoverImage alt="fotoHere" src={post.url}></CoverImage> */}
             <p>{post.title}</p>
-          </div>
-        </div>
-      ))}
-    </SearchItem>
+            <p>{post.changes}</p>
+          </SearchItem>
+        ))}
+      </div>
+    </>
   );
 }
