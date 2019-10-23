@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
 import { games } from "../api/gamingAPI";
