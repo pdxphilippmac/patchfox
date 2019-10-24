@@ -50,38 +50,43 @@ export default function HomescreenPasswordInput(props) {
   };
 
   return (
-    <StyledDiv>
-      <form onSubmit={handleSubmit}>
-        <FormGroup>
-          <FormControl
-            style={inputStyle}
-            autoFocus
-            placeholder="Please Email"
-            type="email"
-            value={email}
-            onChange={event => setEmail(event.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <FormControl
-            block
-            style={inputStyle}
-            placeholder="Please Password"
-            value={password}
-            onChange={event => setPassword(event.target.value)}
-            type="password"
-          />
-        </FormGroup>
-        <StyledDiv>
-          <Button
-            style={LoginButtonStyle}
-            disabled={!validateForm()}
-            type="submit"
-          >
-            Login
-          </Button>
-        </StyledDiv>
-      </form>
-    </StyledDiv>
+    <>
+      <StyledDiv>
+        <form onSubmit={handleSubmit}>
+          <FormGroup>
+            <FormControl
+              input
+              type="email"
+              style={inputStyle}
+              autoFocus
+              required
+              placeholder="Please Email"
+              value={email}
+              onChange={event => setEmail(event.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormControl
+              input
+              style={inputStyle}
+              placeholder="Please Password"
+              value={password}
+              onChange={event => setPassword(event.target.value)}
+              type="password"
+              required
+            />
+          </FormGroup>
+          <StyledDiv>
+            <Button
+              style={LoginButtonStyle}
+              disabled={!validateForm()}
+              type="submit"
+            >
+              Login
+            </Button>
+          </StyledDiv>
+        </form>
+      </StyledDiv>
+    </>
   );
 }

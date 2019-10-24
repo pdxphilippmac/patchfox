@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Fade from "react-reveal/Fade";
-import { games } from "../api/gamingAPI";
+// import { games } from "../api/gamingAPI";
 import styled from "styled-components";
 import { buildList } from "../utils/animations";
 
@@ -8,26 +9,53 @@ import { buildList } from "../utils/animations";
 
 const FadeContainerBorder = styled.div`
   display: flex;
-  justify-content: space-between;
-  background-color: #3b3434e6;
-  margin: 10px;
-  color: white;
 
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: #3b3434e6;
+  margin: 25px;
+  color: white;
   padding: 10px;
   border-radius: 4px;
   font-family: "futura";
-  box-shadow: 0 4px 4px 0px red;
+  align-items: center;
+
   /* border: #707070e6 solid 0.5px; */
   animation: ${buildList} 3s ease-out 1 both;
 `;
 
 export default function FadeList() {
+  const [library, setLibrary] = useState([]);
+  // const options = {
+  //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
+  // };
+
+  useEffect(() => {
+    const targetUrl = "http://localhost:3000/posts";
+    axios({
+      url: targetUrl,
+      method: "GET"
+    })
+      .then(response => {
+        console.log(response.data);
+
+        setLibrary(response.data);
+        console.log(library);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }, []);
+
   return (
     <article>
-      {games.map((item, key) => (
+      {library.map((lib, key) => (
         <div key={key}>
-          <Fade top>
-            <FadeContainerBorder>{`${item.title}`} </FadeContainerBorder>
+          <Fade left>
+            <FadeContainerBorder>
+              <p>{`${lib.title}`} </p>
+              <p>{`${lib.changes}`}</p>
+            </FadeContainerBorder>
           </Fade>
         </div>
       ))}

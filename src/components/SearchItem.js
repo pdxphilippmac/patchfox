@@ -12,11 +12,5 @@ const SearchItem = styled.article`
 `;
 
 export default function SearchGame(props) {
-  return (
-    <SearchItem>
-      {props.game.title}
-
-      {/* {props.game.version} */}
-    </SearchItem>
-  );
+  return <SearchItem></SearchItem>;
 }
