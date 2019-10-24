@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { games } from "../api/gamingAPI";
 import Seachbar from "../components/Search";
 import { searchItem } from "../utils/animations";
+// import JsonFetch from "../server";
 
 const StyledPageDiv = styled.div`
   height: 100vh;

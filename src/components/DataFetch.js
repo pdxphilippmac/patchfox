@@ -4,6 +4,10 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
 
+const TestButton = styled.button`
+  background: red;
+`;
+
 const SearchItem = styled.article`
   display: flex;
   flex-direction: column;
@@ -20,16 +24,29 @@ const SearchItem = styled.article`
 const FixedSearch = styled(Seachbar)`
   position: fixed;
 `;
-function handleSave() {
-  console.log();
-}
+
 // const CoverImage = styled.img`
 //   height: 150px;
 
 // `;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("age of empires");
+  const [search, setSearch] = useState("anno");
+
+  function addToJsonDb() {
+    axios
+      .post("http://localhost:3000/posts", {
+        title: "Hello"
+
+        // changes: "-Lich can now Nova without manacost and DK can melt your face"
+      })
+      .then(resp => {
+        console.log(resp.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   function handleSearch(value) {
     setSearch(value);
@@ -52,7 +69,7 @@ export default function DataFetch({ handleInputChange }) {
         Accept: "application/json",
         "user-key": "e2715f17601c1d968b592f747c6aa839"
       },
-      data: `fields *; search "${search}"; limit 35;\n\n`
+      data: `fields *; search "${search}"; limit 15;\n\n`
     })
       .then(response => {
         console.log(response.data);
@@ -65,15 +82,17 @@ export default function DataFetch({ handleInputChange }) {
   return (
     <>
       <FixedSearch
+        // onClick={addToJsonDb}
         handleInputChange={setSearch}
         onSearch={handleSearch}
         onChange={event => handleInputChange(event.target.value)}
       />
+      <TestButton onClick={addToJsonDb}>O</TestButton>
       <div>
         {posts.map(post => (
           <div key={post.id}>
             <Fade left>
-              <SearchItem onClick={handleSave}>
+              <SearchItem onClick={addToJsonDb}>
                 {/* <CoverImage alt="fotoHere" src={post.url}></CoverImage> */}
                 <p>{post.name}</p>
               </SearchItem>
@@ -84,3 +103,4 @@ export default function DataFetch({ handleInputChange }) {
     </>
   );
 }
+// onADd
