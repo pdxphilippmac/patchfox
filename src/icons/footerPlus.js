@@ -1,10 +1,9 @@
 import React from "react";
 
-export default function Plus(className, onClick) {
+export default function Plus(className) {
   return (
     <svg
       className={className}
-      onClick={onClick}
       width="92.332"
       height="92.332"
       viewBox="0 0 92.332 92.332"

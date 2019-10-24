@@ -3,6 +3,8 @@ import axios from "axios";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
+import ApiWrapperItem from "./ApiWrapperItem";
+// import Plus from "../icons/footerPlus";
 
 const TestButton = styled.button`
   background: red;
@@ -10,7 +12,8 @@ const TestButton = styled.button`
 
 const SearchItem = styled.article`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
   background-color: #3b3434e6;
   margin: 15px;
   color: white;
@@ -33,10 +36,15 @@ const FixedSearch = styled(Seachbar)`
 export default function DataFetch({ handleInputChange }) {
   const [search, setSearch] = useState("anno");
 
-  function addToJsonDb() {
+  function handleClick(name) {
+    addToJsonDb(name);
+    console.log(name);
+  }
+
+  function addToJsonDb(name) {
     axios
       .post("http://localhost:3000/posts", {
-        title: "Hello"
+        title: `This ${name}`
 
         // changes: "-Lich can now Nova without manacost and DK can melt your face"
       })
@@ -92,9 +100,12 @@ export default function DataFetch({ handleInputChange }) {
         {posts.map(post => (
           <div key={post.id}>
             <Fade left>
-              <SearchItem onClick={addToJsonDb}>
+              <SearchItem onAdd={addToJsonDb}>
                 {/* <CoverImage alt="fotoHere" src={post.url}></CoverImage> */}
                 <p>{post.name}</p>
+                <button name={post.name} onClick={() => handleClick(post.name)}>
+                  O
+                </button>
               </SearchItem>
             </Fade>
           </div>
