@@ -3,7 +3,8 @@ import axios from "axios";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
-import ApiWrapperItem from "./ApiWrapperItem";
+import Plus from "../icons/footerPlus";
+
 // import Plus from "../icons/footerPlus";
 
 const TestButton = styled.button`
@@ -41,12 +42,13 @@ export default function DataFetch({ handleInputChange }) {
     console.log(name);
   }
 
-  function addToJsonDb(name) {
+  function addToJsonDb(name, id) {
     axios
       .post("http://localhost:3000/posts", {
-        title: `This ${name}`
+        title: name,
+        id: id,
 
-        // changes: "-Lich can now Nova without manacost and DK can melt your face"
+        changes: "-Lich can now Nova without manacost and DK can melt your face"
       })
       .then(resp => {
         console.log(resp.data);
@@ -90,7 +92,6 @@ export default function DataFetch({ handleInputChange }) {
   return (
     <>
       <FixedSearch
-        // onClick={addToJsonDb}
         handleInputChange={setSearch}
         onSearch={handleSearch}
         onChange={event => handleInputChange(event.target.value)}
@@ -100,11 +101,14 @@ export default function DataFetch({ handleInputChange }) {
         {posts.map(post => (
           <div key={post.id}>
             <Fade left>
-              <SearchItem onAdd={addToJsonDb}>
-                {/* <CoverImage alt="fotoHere" src={post.url}></CoverImage> */}
+              <SearchItem>
                 <p>{post.name}</p>
-                <button name={post.name} onClick={() => handleClick(post.name)}>
-                  O
+                <button
+                  name={post.name}
+                  id={post.id}
+                  onClick={() => handleClick(post.name, post.id)}
+                >
+                  <Plus />
                 </button>
               </SearchItem>
             </Fade>
