@@ -8,16 +8,13 @@ import Loading from "./LoadingIndicator";
 
 // import Plus from "../icons/footerPlus";
 
-const Test = styled.div`
-  background: red;
-  height: 500px;
-`;
+const AddButton = styled.button``;
 
 const SearchItem = styled.article`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  background-color: #3b3434e6;
+  background-color: #1d1f2ee6;
   margin: 15px;
   color: white;
   padding: 10px;
@@ -29,7 +26,6 @@ const SearchItem = styled.article`
 
 const FixedSearch = styled(Seachbar)`
   position: fixed;
-  border-radius: 0px 0px 0px 30px;
 `;
 
 // const CoverImage = styled.img`
@@ -86,7 +82,7 @@ export default function DataFetch({ handleInputChange }) {
     })
       .then(response => {
         console.log(response.data);
-        setTimeout(setPosts(response.data), 1000000);
+        setTimeout(setPosts(response.data), 50000);
 
         setLoading(false);
       })
@@ -110,14 +106,14 @@ export default function DataFetch({ handleInputChange }) {
             <div key={post.id}>
               <Fade left>
                 <SearchItem>
-                  <p>{post.name}</p>
-                  <button
+                  <AddButton
                     name={post.name}
                     id={post.id}
                     onClick={() => handleClick(post.name, post.id)}
                   >
                     <Plus />
-                  </button>
+                  </AddButton>
+                  <p>{post.name}</p>
                 </SearchItem>
               </Fade>
             </div>

@@ -6,6 +6,8 @@ import Add from "./pages/Add";
 import Fetch from "./pages/Fetch";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import styled from "styled-components";
+
 export default function App() {
   return (
     <Router>
@@ -14,7 +16,11 @@ export default function App() {
         <Route exact path="/Home" component={Home} />
         <Route path="/Add" component={Add} />
         <Route path="/Library" component={Library} />
-        <Route path="/Fetch" component={Fetch} />
+        <Route
+          path="/Fetch"
+          component={Fetch}
+          activeClassName="navbar__link--active"
+        />
         {/* <Route path="/contact" component={Contact} />
         <Route component={Notfound} /> */}
       </Switch>
