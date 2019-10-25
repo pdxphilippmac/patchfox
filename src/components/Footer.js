@@ -22,7 +22,7 @@ const FooterBar = styled.nav`
   z-index: 100;
   /* box-shadow: 0 -8px 8px -2px #00ceff; */
   list-style: none;
-
+  border-radius: 20px 20px 0 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -41,7 +41,7 @@ const FooterBarAnimated = styled.nav`
   z-index: 100;
   box-shadow: 0 -8px 8px -2px #00ceff;
   list-style: none;
-
+  border-radius: 20px 20px 0 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -72,7 +72,7 @@ const StyledHomeButton = styled.div`
 // //   animation: `${blendInHome} 5s ease-in 1 both`
 // // };
 
-export default function Footer(children) {
+export default function Footer(children, active, stroke) {
   return (
     <>
       <StyledContainer>
@@ -83,7 +83,7 @@ export default function Footer(children) {
             </a>
             <StyledHomeButton>
               <a href="/Home/">
-                <HomeActive />
+                <HomeActive stroke={active} />
               </a>
             </StyledHomeButton>
             <a href="/Library/">
