@@ -3,6 +3,9 @@ import axios from "axios";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
+import Plus from "../icons/footerPlus";
+
+// import Plus from "../icons/footerPlus";
 
 const TestButton = styled.button`
   background: red;
@@ -10,7 +13,8 @@ const TestButton = styled.button`
 
 const SearchItem = styled.article`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
   background-color: #3b3434e6;
   margin: 15px;
   color: white;
@@ -33,12 +37,18 @@ const FixedSearch = styled(Seachbar)`
 export default function DataFetch({ handleInputChange }) {
   const [search, setSearch] = useState("anno");
 
-  function addToJsonDb() {
+  function handleClick(name) {
+    addToJsonDb(name);
+    console.log(name);
+  }
+
+  function addToJsonDb(name, id) {
     axios
       .post("http://localhost:3000/posts", {
-        title: "Hello"
+        title: name,
+        id: id,
 
-        // changes: "-Lich can now Nova without manacost and DK can melt your face"
+        changes: "-Lich can now Nova without manacost and DK can melt your face"
       })
       .then(resp => {
         console.log(resp.data);
@@ -82,7 +92,6 @@ export default function DataFetch({ handleInputChange }) {
   return (
     <>
       <FixedSearch
-        // onClick={addToJsonDb}
         handleInputChange={setSearch}
         onSearch={handleSearch}
         onChange={event => handleInputChange(event.target.value)}
@@ -92,9 +101,15 @@ export default function DataFetch({ handleInputChange }) {
         {posts.map(post => (
           <div key={post.id}>
             <Fade left>
-              <SearchItem onClick={addToJsonDb}>
-                {/* <CoverImage alt="fotoHere" src={post.url}></CoverImage> */}
+              <SearchItem>
                 <p>{post.name}</p>
+                <button
+                  name={post.name}
+                  id={post.id}
+                  onClick={() => handleClick(post.name, post.id)}
+                >
+                  <Plus />
+                </button>
               </SearchItem>
             </Fade>
           </div>
