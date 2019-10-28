@@ -14,14 +14,14 @@ const SearchItem = styled.article`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  background-color: #1d1f2ee6;
+  background-color: #262122e6;
   margin: 15px;
   color: white;
   padding: 10px;
   border-radius: 0px 0px 0px 30px;
   font-family: "futura";
   align-items: center;
-  border: #707070e6 solid 0.5px;
+  border: #4f5359e6 solid 0.5px;
 `;
 
 const FixedSearch = styled(Seachbar)`
@@ -33,7 +33,7 @@ const FixedSearch = styled(Seachbar)`
 
 // `;
 
-export default function DataFetch({ handleInputChange }) {
+export default function DataFetch({ handleInputChange, fillColor }) {
   const [search, setSearch] = useState("anno");
 
   function handleClick(name) {
@@ -123,4 +123,3 @@ export default function DataFetch({ handleInputChange }) {
     </>
   );
 }
-// onADd

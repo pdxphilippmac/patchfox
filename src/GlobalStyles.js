@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import img from "../src/resources/secondHomescreen.jpg";
+import img from "../src/resources/darkhomescreen.JPG";
 
 export default createGlobalStyle`
 *,
