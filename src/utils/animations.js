@@ -69,3 +69,10 @@ export const searchItem = keyframes`
   100% { opacity:1; background:black;box-shadow: 0  8px 8px -2px red}
 
 `;
+
+export const dodgeArea = keyframes`
+  to {
+    transform: translate(50%, 50%);
+  }
+
+  `;
