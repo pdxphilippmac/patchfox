@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 import List from "../icons/footerList";
-import Plus from "../icons/footerPlus";
+import PlusIcon from "../icons/footerPlus";
 import HomeActive from "../icons/footerHomeActive";
-import FetchIcon from "../icons/footerFetch";
+import AddApiIcon from "../icons/footerApiAddIcon";
 import { NavLink } from "react-router-dom";
+import HomeIcon from "../icons/footerHome";
 
-import { buildUp } from "../utils/animations";
+import { buildUpFooter } from "../utils/animations";
 import Home from "../pages/Home";
 
 const StyledContainer = styled.div`
@@ -34,14 +35,14 @@ const FooterBar = styled.nav`
 `;
 
 const FooterBarAnimated = styled.nav`
-  color: #1d1f2e;
+  color: #4f5359;
   position: absolute;
-  background: #1d1f2ee6;
+  background: #110b09;
   height: 55px;
   width: 100vw;
   position: fixed;
   z-index: 100;
-  box-shadow: 0 -8px 8px -2px #00ceff;
+  box-shadow: 0 -8px 8px -2px #d2590b;
   list-style: none;
   border-radius: 10px 10px 0 0;
   bottom: 0;
@@ -52,7 +53,7 @@ const FooterBarAnimated = styled.nav`
 
   justify-content: space-between;
 
-  animation: ${buildUp} 3s ease-out 1 both;
+  animation: ${buildUpFooter} 3s ease-out 1 both;
 `;
 // const StyledHomeButton = styled.div`
 //   /* position: fixed; */
@@ -77,10 +78,14 @@ const StyledNavLink = styled(NavLink).attrs({
   activeClassName: activeClassName
 })`
   &.${activeClassName} {
-    background: #1d1f2e;
+    background: #110b09;
+
     border-radius: 50%;
-    box-shadow: 0 -8px 8px 0px #00ceff;
-    animation: ${buildUp} 3s ease-in 1 both;
+
+    animation: ${buildUpFooter} 1s ease-in 1 both;
+    stroke: yellow;
+    fill: orange;
+    stop-color: "#800040";
   }
 `;
 
@@ -88,41 +93,26 @@ const StyledNavLink = styled(NavLink).attrs({
 // //   animation: `${blendInHome} 5s ease-in 1 both`
 // // };
 
-export default function Footer(children, active, stroke) {
+export default function Footer(children, active, stroke, bG, close) {
   return (
     <>
       <StyledContainer>
         <FooterBar className="navbar-list">
           <FooterBarAnimated>
-            {/* <a href="/Add/">
-              <Plus />
-            </a>
-            <StyledHomeButton>
-              <a href="/Home/">
-                <HomeActive stroke={active} />
-              </a>
-            </StyledHomeButton>
-            <a href="/Library/">
-              <List />
-            </a>
-            <NavLink to="/" className="navbar-logo">dA</NavLink>
-            <a href="/Fetch/">
-              <FetchIcon />
-            </a> */}
             <StyledNavLink to="/Home" activeClassName="chosen">
-              <HomeActive />
+              <HomeIcon activeClassName="chosen" />
             </StyledNavLink>
             <StyledNavLink to="/Add" activeClassName="chosen">
               <div className="navbar-item">
-                <Plus />
+                <PlusIcon activeClassName="chosen" />
               </div>
             </StyledNavLink>
 
             <StyledNavLink to="/Library" activeClassName="chosen">
-              <List />
+              <List activeClassName="chosen" />
             </StyledNavLink>
             <StyledNavLink to="/Fetch" activeClassName="chosen">
-              <FetchIcon />
+              <AddApiIcon activeClassName="chosen" />
             </StyledNavLink>
           </FooterBarAnimated>
         </FooterBar>

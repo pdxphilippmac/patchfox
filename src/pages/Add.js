@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { games } from "../api/gamingAPI";
 import Seachbar from "../components/Search";
 import { searchItem } from "../utils/animations";
+import HomeIcon from "../icons/footerHome";
 // import JsonFetch from "../server";
 
 const StyledPageDiv = styled.div`
@@ -57,6 +58,7 @@ export default function Add({ handleInputChange }) {
           <FilteredGame key={game.title} game={game}>
             <>
               <SearchItem>{game.title}</SearchItem>
+              <HomeIcon />
             </>
           </FilteredGame>
         ))}
