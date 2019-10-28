@@ -6,8 +6,6 @@ import Add from "./pages/Add";
 import Fetch from "./pages/Fetch";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import styled from "styled-components";
-
 export default function App() {
   return (
     <Router>
