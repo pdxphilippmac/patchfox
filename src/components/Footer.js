@@ -10,6 +10,7 @@ import HomeIcon from "../icons/footerHome";
 
 import { buildUpFooter } from "../utils/animations";
 import Home from "../pages/Home";
+import NewsIcon from "../icons/footerNews";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -101,11 +102,15 @@ export default function Footer(children, active, stroke, bG, close) {
             <StyledNavLink to="/Home" activeClassName="chosen">
               <HomeIcon activeClassName="chosen" />
             </StyledNavLink>
-            <StyledNavLink to="/Add" activeClassName="chosen">
+            <StyledNavLink to="/News" activeClassName="chosen">
+              <HomeIcon activeClassName="chosen" />
+            </StyledNavLink>
+
+            {/* <StyledNavLink to="/Add" activeClassName="chosen">
               <div className="navbar-item">
                 <PlusIcon activeClassName="chosen" />
               </div>
-            </StyledNavLink>
+            </StyledNavLink> */}
 
             <StyledNavLink to="/Library" activeClassName="chosen">
               <List activeClassName="chosen" />

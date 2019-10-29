@@ -16,7 +16,7 @@ const FadeContainerBorder = styled.div`
   margin: 25px;
   color: white;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   font-family: "futura";
   align-items: center;
 
