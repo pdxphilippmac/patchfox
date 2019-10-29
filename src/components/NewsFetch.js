@@ -2,19 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
-import Seachbar from "../components/Search";
+
 // import Plus from "../icons/footerPlus";
 import Loading from "./LoadingIndicator";
-import AddArrow from "../icons/addArrow";
 
 // import Plus from "../icons/footerPlus";
 
-const AddButton = styled.button``;
-
-const SearchItem = styled.article`
+const NewsItem = styled.article`
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #262122e6;
   margin: 25px;
   color: white;
@@ -41,7 +38,7 @@ export default function NewsFetch({ handleInputChange }) {
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl =
-      "https://api-v3.igdb.com/games/?fields=name,genres.name,cover,popularity&order=popularity:desc&expand=genres";
+      "https://api-v3.igdb.com/games/?fields=name,genres.name,cover.url,popularity&order=popularity:desc&expand=genres";
     axios({
       url: proxyUrl + targetUrl,
       method: "POST",
@@ -68,10 +65,13 @@ export default function NewsFetch({ handleInputChange }) {
           {news.map(game => (
             <div key={game.id}>
               <Fade right>
-                <SearchItem>
+                <NewsItem>
+                  <img src={game.cover.url} alt="cover" />
                   <p>{game.name}</p>
-                  <p>{game.popularity}</p>
-                </SearchItem>
+                  <p>Rating:{game.popularity}</p>
+
+                  <p>{game.genres[0].name} </p>
+                </NewsItem>
               </Fade>
             </div>
           ))}
