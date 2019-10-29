@@ -70,7 +70,7 @@ export default function DataFetch({ handleInputChange, fillColor }) {
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
   // };
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl = "https://api-v3.igdb.com/search";

@@ -6,6 +6,7 @@ import Add from "./pages/Add";
 import Fetch from "./pages/Fetch";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import News from "./pages/News";
+import GetGame from "./game/GetGame";
 
 export default function App() {
   return (
@@ -13,10 +14,12 @@ export default function App() {
       <Footer />
       <Switch>
         <Route exact path="/Home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/Add" component={Add} />
         <Route path="/Library" component={Library} />
         <Route path="/Fetch" component={Fetch} />
-        <Route path="/News" component={News} />
+        <Route path="/News" exact component={News} />
+        <Route path="/News/115278" component={GetGame} />
         {/* <Route path="/contact" component={Contact} />
         <Route component={Notfound} /> */}
       </Switch>

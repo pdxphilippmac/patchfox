@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade";
 
 // import Plus from "../icons/footerPlus";
 import Loading from "./LoadingIndicator";
+import { Link } from "@reach/router";
 
 // import Plus from "../icons/footerPlus";
 
@@ -22,6 +23,9 @@ const NewsItem = styled.article`
   border: #4f5359e6 solid 0.5px;
   color: lightslategray;
   padding: 25px;
+`;
+const StyLink = styled(Link)`
+  text-decoration: none;
 `;
 
 // const CoverImage = styled.img`
@@ -49,7 +53,7 @@ export default function NewsFetch() {
     })
       .then(response => {
         console.log(response.data);
-        setTimeout(setNews(response.data), 500);
+        setNews(response.data);
 
         setLoading(false);
       })
@@ -67,7 +71,9 @@ export default function NewsFetch() {
               <Fade right>
                 <NewsItem>
                   <img src={game.cover.url} alt="cover" />
-                  <p>{game.name}</p>
+                  <p>
+                    <StyLink to={`/News/${game.id}`}>{game.name} </StyLink>
+                  </p>
                   {/* <p>Rating:{game.popularity}</p> */}
                   <p>
                     {game.platforms.map(plat => (

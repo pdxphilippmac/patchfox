@@ -6,6 +6,7 @@ import { games } from "../api/gamingAPI";
 import Seachbar from "../components/Search";
 import { searchItem } from "../utils/animations";
 import HomeIcon from "../icons/footerHome";
+import GetGame from "../game/GetGame";
 // import JsonFetch from "../server";
 
 const StyledPageDiv = styled.div`
@@ -62,6 +63,7 @@ export default function Add({ handleInputChange }) {
             </>
           </FilteredGame>
         ))}
+        <GetGame />
       </StyledPageDiv>
     </>
   );
