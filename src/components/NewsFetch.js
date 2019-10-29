@@ -29,7 +29,7 @@ const NewsItem = styled.article`
 
 // `;
 
-export default function NewsFetch({ handleInputChange }) {
+export default function NewsFetch() {
   const [news, setNews] = useState([]);
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
@@ -38,7 +38,7 @@ export default function NewsFetch({ handleInputChange }) {
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl =
-      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,cover.width,popularity&order=popularity:desc&expand=genres,cover";
+      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,popularity&order=popularity:desc&expand=genres,cover";
     axios({
       url: proxyUrl + targetUrl,
       method: "POST",
@@ -49,7 +49,7 @@ export default function NewsFetch({ handleInputChange }) {
     })
       .then(response => {
         console.log(response.data);
-        setTimeout(setNews(response.data), 50000);
+        setTimeout(setNews(response.data), 500);
 
         setLoading(false);
       })
