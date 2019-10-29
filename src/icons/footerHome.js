@@ -6,7 +6,7 @@ export default function HomeIcon(className, onClick) {
     <svg
       className={className}
       onClick={onClick}
-      width="91.545"
+      width="93.545"
       height="93.535"
       viewBox="0 0 91.545 93.535"
     >

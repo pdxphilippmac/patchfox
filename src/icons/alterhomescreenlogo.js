@@ -10,7 +10,7 @@ const StyledLogodiv = styled.div`
 export default function AlterHomescreenLogo() {
   return (
     <StyledLogodiv>
-      <svg width="91.196" height="105.017" viewBox="0 0 91.196 105.017">
+      <svg width="71.196" height="85.017" viewBox="0 0 91.196 105.017">
         <defs>
           <linearGradient
             id="linear-gradient"

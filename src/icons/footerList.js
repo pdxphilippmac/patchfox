@@ -2,7 +2,7 @@ import React from "react";
 
 export default function List() {
   return (
-    <svg width="92.332" height="92.332" viewBox="0 0 92.332 92.332">
+    <svg width="90.332" height="90.332" viewBox="0 0 92.332 92.332">
       <defs>
         <filter
           id="Path_5311"

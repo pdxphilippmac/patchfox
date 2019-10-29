@@ -83,9 +83,8 @@ const StyledNavLink = styled(NavLink).attrs({
     border-radius: 50%;
 
     animation: ${buildUpFooter} 1s ease-in 1 both;
-    stroke: yellow;
-    fill: orange;
-    stop-color: "#800040";
+    stroke: #00ceff;
+    fill: #00ceff;
   }
 `;
 

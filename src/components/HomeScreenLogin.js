@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+
 // import { buildUp } from "../utils/animations";
 
 export default function HomescreenPasswordInput(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
+  }
+
+  function handleDirectToPath() {
+    history.push("/Fetch");
   }
 
   const StyledDiv = styled.div`
@@ -81,6 +88,9 @@ export default function HomescreenPasswordInput(props) {
               style={LoginButtonStyle}
               disabled={!validateForm()}
               type="submit"
+              onClick={() => {
+                handleDirectToPath();
+              }}
             >
               Login
             </Button>

@@ -2,14 +2,14 @@ import React from "react";
 
 export default function AddApiIcon() {
   return (
-    <svg width="103.14" height="103" viewBox="0 0 103.14 103">
+    <svg width="93.14" height="93" viewBox="0 0 103.14 103">
       <defs>
         <filter
           id="Icon_awesome-search-plus"
           x="0"
           y="0"
-          width="103.14"
-          height="103"
+          width="90.14"
+          height="93"
           filterUnits="userSpaceOnUse"
         >
           <feOffset dy="3" input="SourceAlpha" />

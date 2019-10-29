@@ -22,23 +22,81 @@ export const flicker = keyframes`
   0%   { opacity:1; }
   6%   { opacity:1; }
   7.5%   { opacity:0; }
-  16.5%   { opacity:1; }
-  30%   { opacity:0; }
+  10.5%   { opacity:1; }
+  11%   { opacity:0; }
+  12%   { opacity:1;}
+  45%   { opacity:1; }
+  50%   { opacity:1; }
+  55%   { opacity:1; }
+  60%   { opacity:1; }
+  65%   { opacity:1; }
+  70%   { opacity:1; }
+  80%   { opacity:1; }
+  85%   { opacity:1; }
+  90%   { opacity:1; }
+  91%   { opacity:0; }
+  92%   { opacity:1; }
+  93%   { opacity:0; }
+  94%   { opacity:1; }
   100%   { opacity:1; }
 
+
 `;
+
+export const flickerAlter = keyframes`
+  0%   { opacity:1; }
+  6%   { opacity:1; }
+  7.5%   { opacity:1; }
+  10.5%   { opacity:1; }
+  11%   { opacity:1; }
+  12%   { opacity:1;}
+  45%   { opacity:1; }
+  50%   { opacity:1; }
+  51%   { opacity:0; }
+  51.5%   { opacity:1; }
+  52%   { opacity:0; }
+  52.5%   { opacity:1; }
+  64%   { opacity:0; }
+  64.5%   { opacity:1; }
+  65%   { opacity:1; }
+  70%   { opacity:1; }
+  80%   { opacity:1; }
+  85%   { opacity:1; }
+  90%   { opacity:1; }
+  90.5%   { opacity:0; }
+  91%   { opacity:1; }
+  91.5%   { opacity:0; }
+  92%   { opacity:1; }
+  100%   { opacity:1; }
+
+
+`;
+
+// export const buildUpFooter = keyframes`
+//  0%   { opacity:0.1; box-shadow: none;}
+//  10%   { opacity:0.2;box-shadow: none}
+//  20%   { opacity:0.3; box-shadow: 0 -20px 20px -12px #F26513}
+//  30%   { opacity:0.4; box-shadow: 0 -20px 20px -12px #F26513}
+//   40%   { opacity:0.5; box-shadow:none}
+//   50%   { opacity:0.6; background:#4F5359;}
+//   60%   { opacity:0.7; background:#4F5359}
+//   70%   { opacity:0.8; background:##110B09}
+//   80%  { opacity:0.9; background:##110B09;box-shadow: 0 -28px 28px -22px #D2590B}
+//   100% { opacity:1; background:##110B09;box-shadow: 0 -4px 4px -2px #D2590B; }
+
+// `;
 
 export const buildUpFooter = keyframes`
  0%   { opacity:0.1; box-shadow: none;}
  10%   { opacity:0.2;box-shadow: none}
- 20%   { opacity:0.3; box-shadow: 0 -20px 20px -12px #F26513}
- 30%   { opacity:0.4; box-shadow: 0 -20px 20px -12px #F26513}
+ 20%   { opacity:0.3; box-shadow: 0 -20px 20px -12px darkblue}
+ 30%   { opacity:0.4; box-shadow: 0 -20px 20px -12px darkblue}
   40%   { opacity:0.5; box-shadow:none}
   50%   { opacity:0.6; background:#4F5359;}
   60%   { opacity:0.7; background:#4F5359}
   70%   { opacity:0.8; background:##110B09}
-  80%  { opacity:0.9; background:##110B09;box-shadow: 0 -28px 28px -22px #D2590B}
-  100% { opacity:1; background:##110B09;box-shadow: 0 -4px 4px -2px #D2590B; }
+  80%  { opacity:0.9; background:##110B09;box-shadow: 0 -48px 48px -42px #00ceff}
+  100% { opacity:1; background:##110B09;box-shadow: 0 -4px 4px -2px #00ceff; }
 
 `;
 

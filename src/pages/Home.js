@@ -3,12 +3,13 @@ import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
 import AlterHomescreenLogo from "../icons/alterhomescreenlogo";
 import AlterNeonGlow from "../components/AlterNeonGlow";
-import HomeScreenInput from "../components/HomeScreenLogin";
-import SortModal from "../components/LoginModal";
+
+import LoginModal from "../components/LoginModal";
 import LockSymbol from "../icons/lockSymbol";
+// import ModalToggleButton from "../components/LoginModalToggleButton";
 
 const StyledDiv = styled.div`
-  height: 100vh;
+  height: 70vh;
 
   display: flex;
   justify-content: space-evenly;
@@ -18,15 +19,15 @@ const StyledDiv = styled.div`
 `;
 
 export default function Home() {
-  const [displaySort, setDisplaySort] = useState(false);
+  const [toggleView, setToggleView] = useState(false);
   return (
     <>
       <GlobalStyles />
-      <button onClick={() => setDisplaySort(!displaySort)}>
+      <button onClick={() => setToggleView(!toggleView)}>
         <LockSymbol />
       </button>
+      <LoginModal show={toggleView} />
       <StyledDiv>
-        <SortModal show={displaySort} />
         <>
           <AlterHomescreenLogo />
 

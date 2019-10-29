@@ -7,9 +7,9 @@ const StyledHeader = styled.header`
   font-size: 14px;
   align-items: center;
   background-color: ${props => props.theme.main};
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 
-  text-shadow: 5px 5px 5px purple;
+  text-shadow: 1px 1px 1px #00ceff;
   height: 15px;
   justify-content: center;
   padding: 1px;
@@ -29,20 +29,20 @@ const NeonWrapper = styled.div`
 `;
 
 const Text = styled.span`
-  color: #ffffff;
+  color: lightslategray;
   background: #000000;
   font-size: 40px;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-family: Arial;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 `;
 
 const Gradient = styled.span`
   background-image: linear-gradient(
     225deg,
-    #ea00d9 0%,
-    #711c91 50%,
-    #2b86c5 100%
+    darkgrey 0%,
+    lightslategray 50%,
+    darkgrey 100%
   );
 
   position: absolute;
@@ -70,7 +70,8 @@ function BlinkingEdge() {
       <StyledHeader>
         <Wrapper>
           <NeonWrapper>
-            <Text>Loading</Text>
+            <Text>response...</Text>
+
             <Gradient></Gradient>
             <Dodge></Dodge>
           </NeonWrapper>
