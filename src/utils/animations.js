@@ -89,17 +89,30 @@ export const flickerAlter = keyframes`
 export const buildUpFooter = keyframes`
  0%   { opacity:0.1; box-shadow: none;}
  10%   { opacity:0.2;box-shadow: none}
- 20%   { opacity:0.3; box-shadow: 0 -20px 20px -12px darkblue}
- 30%   { opacity:0.4; box-shadow: 0 -20px 20px -12px darkblue}
+ 20%   { opacity:0.3; box-shadow: 0 -20px 20px -12px #00a1c7}
+ 30%   { opacity:0.4; box-shadow: 0 -20px 20px -12px #00a1c7}
   40%   { opacity:0.5; box-shadow:none}
   50%   { opacity:0.6; background:#4F5359;}
   60%   { opacity:0.7; background:#4F5359}
-  70%   { opacity:0.8; background:##110B09}
-  80%  { opacity:0.9; background:##110B09;box-shadow: 0 -48px 48px -42px #00ceff}
+  70%   { opacity:0.8; background:##110B09};
+  80%  { opacity:0.9; background:##110B09;box-shadow: 0 -48px 48px -42px #b9f1ff}
   100% { opacity:1; background:##110B09;box-shadow: 0 -4px 4px -2px #00ceff; }
 
 `;
+export const logoBuildUp = keyframes`
+0%   { opacity:0; }
+10%   { opacity:0.2;  }
+20%   { opacity:0.3 ; }
+30%   { opacity:0.4; }
+40%   { opacity:0.5; }
+50%   { opacity:0.6; }
+60%   { opacity:0.7; }
+70%   { opacity:0.8;  }
+80%   { opacity:0.9;  }
+90%   { opacity:0.95;  }
+100%   { opacity:1  }
 
+`;
 export const buildList = keyframes`
  0%   { opacity:0.1; box-shadow: none; }
  10%   { opacity:0.2;box-shadow: none; }

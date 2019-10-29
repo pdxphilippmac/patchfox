@@ -12,6 +12,7 @@ const ModalContainer = styled.div`
   left: 50%;
   top: 40%;
   margin-left: -150px;
+  margin-right: 150px;
   margin-top: -80px;
   font-size: 1.4em;
   z-index: 3;

@@ -19,7 +19,7 @@ const StyledH2 = styled.span`
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #00ceff,
     0 0 40px #00ceff, 0 0 55px #00ceff, 0 0 75px #ff0080;
   text-align: center;
-  animation: ${flicker} 1s ease-out infinite both;
+  animation: ${flicker} 5s ease-out infinite both;
   animation-iteration-count: 20;
   animation-delay: 2s;
 `;
@@ -30,7 +30,7 @@ const StyledH3 = styled.span`
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00ceff, 0 0 30px #00ceff,
     0 0 40px #00ceff, 0 0 55px #00ceff, 0 0 75px;
   text-align: center;
-  animation: ${flickerAlter} 1s ease-in infinite both;
+  animation: ${flickerAlter} 5s ease-in infinite both;
   animation-iteration-count: 20;
   animation-delay: 5s;
 `;

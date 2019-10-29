@@ -1,11 +1,18 @@
 import React from "react";
 
 import styled from "styled-components";
+import { logoBuildUp } from "../utils/animations";
 
 const StyledLogodiv = styled.div`
   justify-content: center;
   display: flex;
+  animation: ${logoBuildUp} 10s ease-out 1 both;
 `;
+// const BackgroundDiv = styled.div`
+//   background: red;
+//   border-radius: 50%;
+//   animation: ${buildUpFooter} 1s ease-in 1 both;
+// `;
 
 export default function AlterHomescreenLogo() {
   return (

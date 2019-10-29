@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl } from "react-bootstrap";
+
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
@@ -9,6 +9,7 @@ export default function HomescreenPasswordInput(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let history = useHistory();
+
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -21,11 +22,11 @@ export default function HomescreenPasswordInput(props) {
     history.push("/Fetch");
   }
 
-  const StyledDiv = styled.div`
+  const FlexDiv = styled.div`
     display: flex;
-    justify-items: center;
     justify-content: center;
-    padding: 8px;
+    justify-items: center;
+    flex-direction: column;
   `;
   const inputStyle = {
     fontFamily: "futura",
@@ -51,52 +52,44 @@ export default function HomescreenPasswordInput(props) {
     borderRadius: "10px",
     textAlign: "center",
 
+    maxWidth: "60px",
     boxShadow: "0 8px 8px -2px #00ceff",
 
     border: "2px solid #00CEFF"
   };
 
   return (
-    <>
-      <StyledDiv>
-        <form onSubmit={handleSubmit}>
-          <FormGroup>
-            <FormControl
-              input
-              type="email"
-              style={inputStyle}
-              autoFocus
-              required
-              placeholder="Please Email"
-              value={email}
-              onChange={event => setEmail(event.target.value)}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormControl
-              input
-              style={inputStyle}
-              placeholder="Please Password"
-              value={password}
-              onChange={event => setPassword(event.target.value)}
-              type="password"
-              required
-            />
-          </FormGroup>
-          <StyledDiv>
-            <Button
-              style={LoginButtonStyle}
-              disabled={!validateForm()}
-              type="submit"
-              onClick={() => {
-                handleDirectToPath();
-              }}
-            >
-              Login
-            </Button>
-          </StyledDiv>
-        </form>
-      </StyledDiv>
-    </>
+    <FlexDiv>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          style={inputStyle}
+          autoFocus
+          required
+          placeholder="Please Email"
+          value={email}
+          onChange={event => setEmail(event.target.value)}
+        />
+
+        <input
+          style={inputStyle}
+          placeholder="Please Password"
+          value={password}
+          onChange={event => setPassword(event.target.value)}
+          type="password"
+          required
+        />
+      </form>
+      <button
+        style={LoginButtonStyle}
+        disabled={!validateForm()}
+        type="submit"
+        onClick={() => {
+          handleDirectToPath();
+        }}
+      >
+        Login
+      </button>
+    </FlexDiv>
   );
 }
