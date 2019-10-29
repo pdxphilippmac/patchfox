@@ -38,7 +38,7 @@ export default function NewsFetch({ handleInputChange }) {
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl =
-      "https://api-v3.igdb.com/games/?fields=name,genres.name,cover.url,popularity&order=popularity:desc&expand=genres";
+      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,cover.width,popularity&order=popularity:desc&expand=genres,cover";
     axios({
       url: proxyUrl + targetUrl,
       method: "POST",
@@ -68,8 +68,12 @@ export default function NewsFetch({ handleInputChange }) {
                 <NewsItem>
                   <img src={game.cover.url} alt="cover" />
                   <p>{game.name}</p>
-                  <p>Rating:{game.popularity}</p>
-
+                  {/* <p>Rating:{game.popularity}</p> */}
+                  <p>
+                    {game.platforms.map(plat => (
+                      <p>{plat.name}</p>
+                    ))}
+                  </p>
                   <p>{game.genres[0].name} </p>
                 </NewsItem>
               </Fade>
