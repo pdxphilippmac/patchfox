@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/Library" component={Library} />
         <Route path="/Fetch" component={Fetch} />
         <Route path="/News" exact component={News} />
-        <Route path="/News/115278" component={GetGame} />
+        <Route path="/News/game" component={GetGame} />
         {/* <Route path="/contact" component={Contact} />
         <Route component={Notfound} /> */}
       </Switch>

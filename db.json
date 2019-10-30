@@ -312,6 +312,11 @@
       "title": "Anno Mutantionem",
       "changes": "-Lich can now Nova without manacost and DK can melt your face",
       "id": 60
+    },
+    {
+      "title": "Anno 1503 AD",
+      "changes": "-Lich can now Nova without manacost and DK can melt your face",
+      "id": 61
     }
   ]
 }

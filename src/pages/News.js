@@ -1,9 +1,12 @@
 import React from "react";
 // import GlobalStyles from "../GlobalStyles";
-import styled from "styled-components";
+
+import { Switch, Route } from "react-router-dom";
 
 import NewsFetch from "../components/NewsFetch";
 import GetGame from "../game/GetGame";
+import getGamefromApi from "../api/getGameFromApi";
+import GlobalStyles from "../GlobalStyles";
 
 // const StyledDiv = styled.div`
 //   display: flex;
@@ -14,11 +17,29 @@ import GetGame from "../game/GetGame";
 //   background: black;
 // `;
 
-export default function News(game) {
+export default function News(id) {
+  // const [data, setGameData] = React.useState("");
+
+  // React.useEffect(() => {
+  //   getGamefromApi().then(fetchedgame => {
+  //     setGameData(fetchedgame);
+  //   });
+  //   console.log(`This is data from the outsourced function ${data}`);
+  // });
+
+  console.log(`This is game from the top ${id}`);
   return (
     <>
-      <NewsFetch />
-      <GetGame params={game} />
+      <GlobalStyles />
+      <Switch>
+        <Route exact path="/News">
+          <NewsFetch />
+        </Route>
+        <Route exact path="/News/`this is +${id}`">
+          <GetGame params={id} />
+          <h1>Hello Sub Page</h1>
+        </Route>
+      </Switch>
     </>
   );
 }
