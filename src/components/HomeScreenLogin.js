@@ -19,7 +19,7 @@ export default function HomescreenPasswordInput(props) {
   }
 
   function handleDirectToPath() {
-    history.push("/Fetch");
+    history.push("/News");
   }
 
   const FlexDiv = styled.div`

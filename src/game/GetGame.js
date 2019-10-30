@@ -20,11 +20,11 @@ const TestDiv = styled.div`
   box-shadow: black 0px 6px 6px 6px;
 `;
 
-export default function GetGame(params) {
-  console.log(`this is ${params}`);
+export default function GetGame() {
   const [game, setGame] = useState([]);
   // const [params, setParams] = useState([]);
   const [loading, setLoading] = useState(true);
+  // console.log(`This is stringiD ${stringID}`);
 
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
@@ -45,7 +45,6 @@ export default function GetGame(params) {
         // setParams(game.id);
         console.log(game);
         setLoading(false);
-        console.log(`this is ${params.name}`);
       })
       .catch(err => {
         console.error(err);
@@ -54,7 +53,7 @@ export default function GetGame(params) {
   return (
     <>
       <GlobalStyles />
-      <h1>News Sub-Page</h1>
+
       {loading && (
         <div>
           <NeonGlow />
@@ -67,6 +66,7 @@ export default function GetGame(params) {
             {game.map(item => (
               <div>
                 <img
+                  height="250px"
                   alt="CoverImage "
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
                 />

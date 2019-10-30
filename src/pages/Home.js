@@ -26,6 +26,7 @@ export default function Home() {
       <button onClick={() => setToggleView(!toggleView)}>
         <LockSymbol />
       </button>
+
       <LoginModal show={toggleView} />
       <StyledDiv>
         <>

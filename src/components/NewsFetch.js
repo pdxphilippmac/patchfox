@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import Loading from "./LoadingIndicator";
 import { Link } from "@reach/router";
 import GetGame from "../game/GetGame";
+import { games } from "../api/gamingAPI";
 
 // import Plus from "../icons/footerPlus";
 
@@ -35,14 +36,13 @@ const StyLink = styled(Link)`
 
 // `;
 
-export default function NewsFetch() {
+export default function NewsFetch(handleSetGameID, { pushedDownGameID }) {
   const [news, setNews] = useState([]);
+
   const history = useHistory();
 
   function handleNav() {
-    console.log("Clicked");
-
-    history.push("/News/game");
+    history.push(`/News/game`);
   }
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
@@ -81,7 +81,10 @@ export default function NewsFetch() {
                 <NewsItem>
                   <img src={game.cover.url} alt="cover" />
                   <p>
-                    <StyLink onClick={handleNav} to={`/News/${game.id}`}>
+                    <StyLink
+                      onClick={() => handleNav(game.id)}
+                      to={`/News/${game.id}`}
+                    >
                       {game.name}{" "}
                     </StyLink>
                   </p>

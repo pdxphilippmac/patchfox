@@ -5,7 +5,7 @@ export default function AddButton() {
   let history = useHistory();
 
   function handleClick() {
-    history.push("/Library");
+    history.push("/News");
   }
 
   return (

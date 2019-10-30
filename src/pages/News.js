@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import GlobalStyles from "../GlobalStyles";
 
 import { Switch, Route } from "react-router-dom";
@@ -18,6 +18,7 @@ import GlobalStyles from "../GlobalStyles";
 // `;
 
 export default function News(id) {
+  const [gameID, setGameID] = useState("133");
   // const [data, setGameData] = React.useState("");
 
   // React.useEffect(() => {
@@ -33,11 +34,10 @@ export default function News(id) {
       <GlobalStyles />
       <Switch>
         <Route exact path="/News">
-          <NewsFetch />
+          <NewsFetch pushedDownGameID={gameID} handleSetGameID={setGameID} />
         </Route>
-        <Route exact path="/News/`this is +${id}`">
-          <GetGame params={id} />
-          <h1>Hello Sub Page</h1>
+        <Route exact path="/News/game">
+          <GetGame stringID={gameID} />
         </Route>
       </Switch>
     </>
