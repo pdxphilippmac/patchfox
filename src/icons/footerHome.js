@@ -1,15 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
-export default function HomeIcon(className, onClick) {
+export default function HomeIcon() {
   return (
-    <svg
-      className={className}
-      onClick={onClick}
-      width="91.545"
-      height="93.535"
-      viewBox="0 0 91.545 93.535"
-    >
+    <svg width="93.545" height="93.535" viewBox="0 0 91.545 93.535">
       <defs>
         <filter
           id="Path_4"

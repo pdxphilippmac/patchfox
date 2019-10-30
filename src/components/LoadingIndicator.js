@@ -9,6 +9,7 @@ const LoadingIndicator = styled.div`
   justify-content: center;
   background: black;
   height: 100vh;
+  margin: 80px;
 `;
 
 export default function Loading() {

@@ -3,8 +3,9 @@ import axios from "axios";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
-import Plus from "../icons/footerPlus";
+// import Plus from "../icons/footerPlus";
 import Loading from "./LoadingIndicator";
+import AddArrow from "../icons/addArrow";
 
 // import Plus from "../icons/footerPlus";
 
@@ -15,13 +16,15 @@ const SearchItem = styled.article`
   justify-content: space-between;
   flex-direction: row;
   background-color: #262122e6;
-  margin: 15px;
+  margin: 25px;
   color: white;
-  padding: 10px;
+
   border-radius: 0px 0px 0px 30px;
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
+  color: lightslategray;
+  padding: 25px;
 `;
 
 const FixedSearch = styled(Seachbar)`
@@ -67,7 +70,7 @@ export default function DataFetch({ handleInputChange, fillColor }) {
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
   // };
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl = "https://api-v3.igdb.com/search";
@@ -104,14 +107,14 @@ export default function DataFetch({ handleInputChange, fillColor }) {
         <div>
           {posts.map(post => (
             <div key={post.id}>
-              <Fade left>
+              <Fade right>
                 <SearchItem>
                   <AddButton
                     name={post.name}
                     id={post.id}
                     onClick={() => handleClick(post.name, post.id)}
                   >
-                    <Plus />
+                    <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
                 </SearchItem>

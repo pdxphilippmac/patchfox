@@ -5,8 +5,8 @@ import Library from "./pages/Library";
 import Add from "./pages/Add";
 import Fetch from "./pages/Fetch";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import styled from "styled-components";
+import News from "./pages/News";
+import GetGame from "./game/GetGame";
 
 export default function App() {
   return (
@@ -14,13 +14,12 @@ export default function App() {
       <Footer />
       <Switch>
         <Route exact path="/Home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/Add" component={Add} />
         <Route path="/Library" component={Library} />
-        <Route
-          path="/Fetch"
-          component={Fetch}
-          activeClassName="navbar__link--active"
-        />
+        <Route path="/Fetch" component={Fetch} />
+        <Route path="/News" exact component={News} />
+        <Route path="/News/game" component={GetGame} />
         {/* <Route path="/contact" component={Contact} />
         <Route component={Notfound} /> */}
       </Switch>
