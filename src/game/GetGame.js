@@ -3,7 +3,7 @@ import axios from "axios";
 import Fade from "react-reveal/Fade";
 
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import GlobalStyles from "../GlobalStyles";
 import NeonGlow from "../components/AlterNeonGlow";
 import NeonGlowLoading from "../components/NeonGlowLoading";
@@ -20,15 +20,26 @@ const TestDiv = styled.div`
   box-shadow: black 0px 6px 6px 6px;
 `;
 
-export default function GetGame() {
+export default function GetGame({ info, match }) {
   const [game, setGame] = useState([]);
+
   // const [params, setParams] = useState([]);
   const [loading, setLoading] = useState(true);
-  // console.log(`This is stringiD ${stringID}`);
+  console.log(`Info log ${info}`, match.params.gameId);
+  // return arrToObj(info);
+  // function arrayToObject(array) {
+  //   const gameObject = {};
+  //   for (let i = 0; i < array.length; i++) {
+  //     gameObject[array[i].id] = array[i];
+  //   }
+  //   return gameObject;
+
+  // }
 
   useEffect(() => {
+    console.log(`Info log ${info}`);
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const targetUrl = `https://api-v3.igdb.com/games/133/?fields=name,involved_companies.company.name,cover.url,summary,game_modes.name,version_title,platforms.name,first_release_date,release_dates.human,websites,total_rating&expand=involved_companies,cover,platforms,platform.versions,version_parent,version_title`;
+    const targetUrl = `https://api-v3.igdb.com/games/${match.params.gameId}/?fields=name,involved_companies.company.name,cover.url,summary,game_modes.name,version_title,platforms.name,first_release_date,release_dates.human,websites,total_rating&expand=involved_companies,cover,platforms,platform.versions,version_parent,version_title`;
     axios({
       url: proxyUrl + targetUrl,
       method: "GET",
@@ -42,7 +53,6 @@ export default function GetGame() {
         console.log(response.data);
 
         setGame(response.data);
-        // setParams(game.id);
         console.log(game);
         setLoading(false);
       })
@@ -50,6 +60,9 @@ export default function GetGame() {
         console.error(err);
       });
   }, []);
+
+  const hallo = useParams();
+  console.log(hallo);
   return (
     <>
       <GlobalStyles />
@@ -78,10 +91,11 @@ export default function GetGame() {
                   ))}
                 </p>
                 <p>Summary: {item.summary}</p>
+                {/* 
                 <p>
                   Companies: {item.involved_companies[0].company.name},
                   {item.involved_companies[1].company.name}
-                </p>
+                </p> */}
                 <p>Release Date:{item.release_dates[0].human}</p>
                 {/* <p>
               {game.involved_companies.map(plat => (

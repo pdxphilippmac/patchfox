@@ -38,6 +38,39 @@ const FixedSearch = styled(Seachbar)`
 
 export default function DataFetch({ handleInputChange, fillColor }) {
   const [search, setSearch] = useState("anno");
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeoutHandler = setTimeout(() => {
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      const targetUrl = "https://api-v3.igdb.com/search";
+
+      axios({
+        url: proxyUrl + targetUrl,
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "user-key": "e2715f17601c1d968b592f747c6aa839"
+        },
+        data: `fields *; search "${search}"; limit 50;\n\n`
+      })
+        .then(response => {
+          console.log(response.data);
+          setTimeout(() => {
+            setPosts(response.data);
+            setLoading(false);
+          }, 5000);
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutHandler);
+    };
+  }, [search]);
 
   function handleClick(name) {
     addToJsonDb(name);
@@ -63,36 +96,12 @@ export default function DataFetch({ handleInputChange, fillColor }) {
   function handleSearch(value) {
     setSearch(value);
 
-    console.log(value);
-    console.log(search);
+    console.log(value, search);
   }
-  const [posts, setPosts] = useState([]);
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
   // };
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const targetUrl = "https://api-v3.igdb.com/search";
-    axios({
-      url: proxyUrl + targetUrl,
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "user-key": "e2715f17601c1d968b592f747c6aa839"
-      },
-      data: `fields *; search "${search}"; limit 50;\n\n`
-    })
-      .then(response => {
-        console.log(response.data);
-        setTimeout(setPosts(response.data), 50000);
 
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  }, [search]);
   return (
     <>
       <FixedSearch

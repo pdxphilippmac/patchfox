@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 import Loading from "./LoadingIndicator";
 import { Link } from "@reach/router";
 import GetGame from "../game/GetGame";
-import { games } from "../api/gamingAPI";
 
 // import Plus from "../icons/footerPlus";
 
@@ -36,71 +35,42 @@ const StyLink = styled(Link)`
 
 // `;
 
-export default function NewsFetch(handleSetGameID, { pushedDownGameID }) {
-  const [news, setNews] = useState([]);
-
+export default function NewsFetch({ news }) {
   const history = useHistory();
 
-  function handleNav() {
-    history.push(`/News/game`);
+  function handleNav(value) {
+    history.push(`/News/${value}`);
   }
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
   // };
-  const [loading, setLoading] = React.useState(true);
-  useEffect(() => {
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const targetUrl =
-      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,popularity&order=popularity:desc&expand=genres,cover";
-    axios({
-      url: proxyUrl + targetUrl,
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "user-key": "e2715f17601c1d968b592f747c6aa839"
-      }
-    })
-      .then(response => {
-        console.log(response.data);
-        setNews(response.data);
 
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  }, []);
   return (
     <>
-      {loading && <Loading />}
-      {!loading && (
-        <div>
-          {news.map(game => (
-            <div key={game.id}>
-              <Fade right>
-                <NewsItem>
-                  <img src={game.cover.url} alt="cover" />
-                  <p>
-                    <StyLink
-                      onClick={() => handleNav(game.id)}
-                      to={`/News/${game.id}`}
-                    >
-                      {game.name}{" "}
-                    </StyLink>
-                  </p>
-                  {/* <p>Rating:{game.popularity}</p> */}
-                  <p>
-                    {game.platforms.map(plat => (
-                      <p>{plat.name}</p>
-                    ))}
-                  </p>
-                  <p>{game.genres[0].name} </p>
-                </NewsItem>
-              </Fade>
-            </div>
-          ))}
+      {news.map(game => (
+        <div key={game.id}>
+          <Fade right>
+            <NewsItem>
+              <img src={game.cover.url} alt="cover" />
+              <p>
+                <StyLink
+                  onClick={() => handleNav(game.id)}
+                  to={`/News/${game.id}`}
+                >
+                  {game.name}{" "}
+                </StyLink>
+              </p>
+              {/* <p>Rating:{game.popularity}</p> */}
+              <p>
+                {game.platforms.map(plat => (
+                  <p>{plat.name}</p>
+                ))}
+              </p>
+              <p>{game.genres[0].name} </p>
+            </NewsItem>
+          </Fade>
         </div>
-      )}
+      ))}
     </>
   );
 }

@@ -7,23 +7,26 @@ import Fetch from "./pages/Fetch";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import News from "./pages/News";
 import GetGame from "./game/GetGame";
+import GlobalStyles from "./GlobalStyles";
 
 export default function App() {
   return (
-    <Router>
-      <Footer />
-      <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/" component={Home} />
-        <Route path="/Add" component={Add} />
-        <Route path="/Library" component={Library} />
-        <Route path="/Fetch" component={Fetch} />
-        <Route path="/News" exact component={News} />
-        <Route path="/News/game" component={GetGame} />
-        {/* <Route path="/contact" component={Contact} />
+    <>
+      <GlobalStyles />
+      <Router>
+        <Switch>
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route path="/Add" component={Add} />
+          <Route path="/Library" component={Library} />
+          <Route path="/Fetch" component={Fetch} />
+          <Route path="/News" exact component={News} />
+          <Route path="/News/:gameId" component={GetGame} />
+          {/* <Route path="/contact" component={Contact} />
         <Route component={Notfound} /> */}
-      </Switch>
-      <Footer />
-    </Router>
+        </Switch>
+        <Footer />
+      </Router>
+    </>
   );
 }
