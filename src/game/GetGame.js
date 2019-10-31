@@ -8,8 +8,8 @@ import GlobalStyles from "../GlobalStyles";
 import NeonGlow from "../components/AlterNeonGlow";
 import NeonGlowLoading from "../components/NeonGlowLoading";
 
-const TestDiv = styled.div`
-  background: lightgrey;
+const TestDiv = styled.article`
+  background: #262122e6;
   display: flex;
   flex-grow: 1;
   align-items: center;
@@ -18,6 +18,19 @@ const TestDiv = styled.div`
   border: black solid 1px;
   border-radius: 0 0px 0px 40px;
   box-shadow: black 0px 6px 6px 6px;
+  color: lightslategray;
+  margin-bottom: 100px;
+`;
+const FlexDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+`;
+const CoverImg = styled.img`
+  /* border: lightgray 2px solid; */
+  border-radius: 0 0px 0px 40px;
+  box-shadow: #00ceff 0px 6px 6px 1px;
 `;
 
 export default function GetGame({ info, match }) {
@@ -69,7 +82,7 @@ export default function GetGame({ info, match }) {
 
       {loading && (
         <div>
-          <NeonGlow />
+          {/* <NeonGlow /> */}
           <NeonGlowLoading />
         </div>
       )}
@@ -77,9 +90,8 @@ export default function GetGame({ info, match }) {
         <Fade up>
           <TestDiv>
             {game.map(item => (
-              <div>
-                <img
-                  height="250px"
+              <FlexDiv>
+                <CoverImg
                   alt="CoverImage "
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
                 />
@@ -96,7 +108,7 @@ export default function GetGame({ info, match }) {
                   Companies: {item.involved_companies[0].company.name},
                   {item.involved_companies[1].company.name}
                 </p> */}
-                <p>Release Date:{item.release_dates[0].human}</p>
+                <p>Release Date: {item.release_dates[0].human}</p>
                 {/* <p>
               {game.involved_companies.map(plat => (
                 <p>{plat.company.name}</p>
@@ -104,7 +116,7 @@ export default function GetGame({ info, match }) {
             </p> */}
 
                 <p>This is {item.name}</p>
-              </div>
+              </FlexDiv>
             ))}
           </TestDiv>
         </Fade>

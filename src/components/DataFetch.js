@@ -37,23 +37,24 @@ const FixedSearch = styled(Seachbar)`
 // `;
 
 export default function DataFetch({ handleInputChange, fillColor }) {
-  const [search, setSearch] = useState("anno");
+  const [search, setSearch] = useState("");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {
       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-      const targetUrl = "https://api-v3.igdb.com/search";
+      const targetUrl = "https://api-v3.igdb.com/games";
 
       axios({
         url: proxyUrl + targetUrl,
         method: "POST",
         headers: {
           Accept: "application/json",
-          "user-key": "e2715f17601c1d968b592f747c6aa839"
+          "user-key": "e2715f17601c1d968b592f747c6aa839",
+          "Access-Control-Allow-Origin": "*"
         },
-        data: `fields *; search "${search}"; limit 50;\n\n`
+        data: `search "${search}"; fields name,id\n;  limit 5;`
       })
         .then(response => {
           console.log(response.data);
@@ -65,7 +66,7 @@ export default function DataFetch({ handleInputChange, fillColor }) {
         .catch(err => {
           console.error(err);
         });
-    }, 100);
+    }, 2000);
 
     return () => {
       clearTimeout(timeoutHandler);
@@ -126,6 +127,8 @@ export default function DataFetch({ handleInputChange, fillColor }) {
                     <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
+
+                  <p>{post.id}</p>
                 </SearchItem>
               </Fade>
             </div>
