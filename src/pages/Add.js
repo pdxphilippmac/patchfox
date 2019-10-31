@@ -6,7 +6,6 @@ import { games } from "../api/gamingAPI";
 import Seachbar from "../components/Search";
 import { searchItem } from "../utils/animations";
 import HomeIcon from "../icons/footerHome";
-import GetGame from "../game/GetGame";
 // import JsonFetch from "../server";
 
 const StyledPageDiv = styled.div`
@@ -33,27 +32,19 @@ const SearchItem = styled.article`
   animation: ${searchItem} 3s ease-out 1 both;
 `;
 
-export default function Add({ handleInputChange }) {
+export default function Add() {
   const [search, setSearch] = useState("-");
 
-  const filteredGames = games.filter(searchitem =>
-    searchitem.title.toLowerCase().includes(search.toLowerCase())
+  const filteredGames = games.filter(game =>
+    game.title.toLowerCase().includes(search.toLowerCase())
   );
-
-  function handleSearch(value) {
-    setSearch(value);
-  }
 
   return (
     <>
       <GlobalStyles />
 
       <StyledPageDiv>
-        <Seachbar
-          handleInputChange={setSearch}
-          onSearch={handleSearch}
-          onChange={event => handleInputChange(event.target.value)}
-        />
+        <Seachbar onSearch={setSearch} />
 
         {filteredGames.map(game => (
           <FilteredGame key={game.title} game={game}>
@@ -63,7 +54,6 @@ export default function Add({ handleInputChange }) {
             </>
           </FilteredGame>
         ))}
-        <GetGame />
       </StyledPageDiv>
     </>
   );
