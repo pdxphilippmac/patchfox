@@ -36,55 +36,53 @@ const FixedSearch = styled(Seachbar)`
 
 // `;
 
-export default function DataFetch({ handleInputChange, fillColor }) {
-  const [search, setSearch] = useState("");
+export default function DataFetch({ handleInputChange }) {
+  const [search, setSearch] = useState("diablo 2");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {
       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-      const targetUrl = "https://api-v3.igdb.com/games";
+      const targetUrl = "https://api-v3.igdb.com/search";
 
       axios({
         url: proxyUrl + targetUrl,
         method: "POST",
         headers: {
           Accept: "application/json",
-          "user-key": "e2715f17601c1d968b592f747c6aa839",
-          "Access-Control-Allow-Origin": "*"
+          "user-key": "e2715f17601c1d968b592f747c6aa839"
         },
-        data: `search "${search}"; fields name,id\n;  limit 5;`
+        data: `fields *; search "${search}"; limit 50;\n\n`
       })
         .then(response => {
           console.log(response.data);
           setTimeout(() => {
             setPosts(response.data);
             setLoading(false);
-          }, 5000);
+          }, 1000);
         })
         .catch(err => {
           console.error(err);
         });
-    }, 2000);
+    }, 1000);
 
     return () => {
       clearTimeout(timeoutHandler);
     };
   }, [search]);
 
-  function handleClick(name) {
-    addToJsonDb(name);
+  function handleClick(name, id, cover) {
+    addToJsonDb(name, id, cover);
     console.log(name);
   }
 
-  function addToJsonDb(name, id) {
+  function addToJsonDb(name, id, cover) {
     axios
       .post("http://localhost:3000/posts", {
         title: name,
         id: id,
-
-        changes: "-Lich can now Nova without manacost and DK can melt your face"
+        cover: cover
       })
       .then(resp => {
         console.log(resp.data);
@@ -122,7 +120,7 @@ export default function DataFetch({ handleInputChange, fillColor }) {
                   <AddButton
                     name={post.name}
                     id={post.id}
-                    onClick={() => handleClick(post.name, post.id)}
+                    onClick={() => handleClick(post.name, post.id, post.cover)}
                   >
                     <AddArrow />
                   </AddButton>

@@ -377,6 +377,28 @@
       "title": "Anno 2070",
       "changes": "-Lich can now Nova without manacost and DK can melt your face",
       "id": 73
+    },
+    {
+      "title": "UNDEFINED",
+      "id": 111026,
+      "changes": "-Lich can now Nova without manacost and DK can melt your face"
+    },
+    {
+      "title": "Touhou 12 Undefined Fantastic Object",
+      "id": 27163,
+      "changes": "-Lich can now Nova without manacost and DK can melt your face",
+      "cover": "url blaa"
+    },
+    {
+      "title": "Artifact",
+      "id": 54572
+    },
+    {
+      "id": 82645
+    },
+    {
+      "title": "Diablo 3 Rise of the Necromancer",
+      "id": 210075
     }
   ]
 }
