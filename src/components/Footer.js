@@ -11,6 +11,7 @@ import HomeIcon from "../icons/footerHome";
 import { buildUpFooter } from "../utils/animations";
 import Home from "../pages/Home";
 import NewsIcon from "../icons/footerNews";
+import LockSymbolFooter from "../icons/LockSymbolFooter";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -103,7 +104,7 @@ export default function Footer(children, active, stroke, bG, close) {
               <HomeIcon activeClassName="chosen" />
             </StyledNavLink>
             <StyledNavLink to="/News" activeClassName="chosen">
-              <HomeIcon activeClassName="chosen" />
+              <LockSymbolFooter activeClassName="chosen" />
             </StyledNavLink>
 
             {/* <StyledNavLink to="/Add" activeClassName="chosen">

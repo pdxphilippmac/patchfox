@@ -80,17 +80,17 @@ export default function HomescreenPasswordInput(props) {
           type="password"
           required
         />
+        <button
+          style={LoginButtonStyle}
+          disabled={!validateForm()}
+          type="submit"
+          onClick={() => {
+            handleDirectToPath();
+          }}
+        >
+          Login
+        </button>
       </form>
-      <button
-        style={LoginButtonStyle}
-        disabled={!validateForm()}
-        type="submit"
-        onClick={() => {
-          handleDirectToPath();
-        }}
-      >
-        Login
-      </button>
     </FlexDiv>
   );
 }

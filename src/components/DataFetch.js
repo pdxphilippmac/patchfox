@@ -36,8 +36,8 @@ const FixedSearch = styled(Seachbar)`
 
 // `;
 
-export default function DataFetch({ handleInputChange, fillColor }) {
-  const [search, setSearch] = useState("anno");
+export default function DataFetch({ handleInputChange }) {
+  const [search, setSearch] = useState("diablo 2");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -60,30 +60,29 @@ export default function DataFetch({ handleInputChange, fillColor }) {
           setTimeout(() => {
             setPosts(response.data);
             setLoading(false);
-          }, 5000);
+          }, 1000);
         })
         .catch(err => {
           console.error(err);
         });
-    }, 100);
+    }, 1000);
 
     return () => {
       clearTimeout(timeoutHandler);
     };
   }, [search]);
 
-  function handleClick(name) {
-    addToJsonDb(name);
+  function handleClick(name, id, cover) {
+    addToJsonDb(name, id, cover);
     console.log(name);
   }
 
-  function addToJsonDb(name, id) {
+  function addToJsonDb(name, id, cover) {
     axios
       .post("http://localhost:3000/posts", {
         title: name,
         id: id,
-
-        changes: "-Lich can now Nova without manacost and DK can melt your face"
+        cover: cover
       })
       .then(resp => {
         console.log(resp.data);
@@ -121,11 +120,13 @@ export default function DataFetch({ handleInputChange, fillColor }) {
                   <AddButton
                     name={post.name}
                     id={post.id}
-                    onClick={() => handleClick(post.name, post.id)}
+                    onClick={() => handleClick(post.name, post.id, post.cover)}
                   >
                     <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
+
+                  <p>{post.id}</p>
                 </SearchItem>
               </Fade>
             </div>
