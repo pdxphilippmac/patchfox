@@ -4,6 +4,7 @@ import AlterHomescreenLogo from "../icons/alterhomescreenlogo";
 import AlterNeonGlow from "../components/AlterNeonGlow";
 import LoginModal from "../components/LoginModal";
 import LockSymbol from "../icons/lockSymbol";
+import { loadingMotion, buildUpFooter } from "../utils/animations";
 // import ModalToggleButton from "../components/LoginModalToggleButton";
 
 const StyledDiv = styled.div`
@@ -27,6 +28,7 @@ export default function Home() {
       </button>
 
       {toggleView && <LoginModal show={toggleView} />}
+
       <StyledDiv>
         <AlterHomescreenLogo />
         <AlterNeonGlow />

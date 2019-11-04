@@ -147,3 +147,12 @@ export const dodgeArea = keyframes`
   }
 
   `;
+
+export const loadingMotion = keyframes`
+ 0%   {opacity: 0.9; right: 0px; top: 0px;}
+  25%  {opacity: 0.7; right: 50px; top: 50px;}
+  50%  {opacity: 0.5; right: 0px; top: 50px;}
+  75%  {opacity: 0.3; right: 50px; top: 0px;}
+  100% {opacity: 0.1; right: 0px; top: 0px;}
+
+`;
