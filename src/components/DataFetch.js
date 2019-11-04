@@ -41,7 +41,7 @@ const BackgroundDiv = styled.article`
 `;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("warcraft 3");
+  const [search, setSearch] = useState("anno");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -129,8 +129,9 @@ export default function DataFetch({ handleInputChange }) {
                     <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
-
-                  <p>{post.id}</p>
+                  {/* <p>{post.published_at}</p> */}
+                  {/* 
+                  <p>{post.id}</p> */}
                 </SearchItem>
               </Fade>
             </div>
