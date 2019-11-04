@@ -9,6 +9,8 @@ import GetGame from "../game/GetGame";
 import getGamefromApi from "../api/getGameFromApi";
 import GlobalStyles from "../GlobalStyles";
 
+import AlterNeonGlow from "../components/NeonGlow";
+
 // const StyledDiv = styled.div`
 //   display: flex;
 //   flex-direction: column;
@@ -53,6 +55,7 @@ export default function News() {
   return (
     <>
       <GlobalStyles />
+      <AlterNeonGlow name1="News and Releases" />
       <Switch>
         <Route exact path="/News">
           <NewsFetch news={news} />
