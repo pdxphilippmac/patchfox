@@ -6,6 +6,7 @@ import Seachbar from "../components/Search";
 // import Plus from "../icons/footerPlus";
 import Loading from "./LoadingIndicator";
 import AddArrow from "../icons/addArrow";
+import GlobalStyles from "../GlobalStyles";
 
 // import Plus from "../icons/footerPlus";
 
@@ -35,9 +36,12 @@ const FixedSearch = styled(Seachbar)`
 //   height: 150px;
 
 // `;
+const BackgroundDiv = styled.article`
+  background: #1e2222;
+`;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("diablo 2");
+  const [search, setSearch] = useState("warcraft 3");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -112,7 +116,7 @@ export default function DataFetch({ handleInputChange }) {
 
       {loading && <Loading />}
       {!loading && (
-        <div>
+        <BackgroundDiv>
           {posts.map(post => (
             <div key={post.id}>
               <Fade right>
@@ -131,7 +135,7 @@ export default function DataFetch({ handleInputChange }) {
               </Fade>
             </div>
           ))}
-        </div>
+        </BackgroundDiv>
       )}
     </>
   );
