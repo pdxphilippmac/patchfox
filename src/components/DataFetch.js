@@ -6,7 +6,6 @@ import Seachbar from "../components/Search";
 // import Plus from "../icons/footerPlus";
 import Loading from "./LoadingIndicator";
 import AddArrow from "../icons/addArrow";
-import GlobalStyles from "../GlobalStyles";
 
 // import Plus from "../icons/footerPlus";
 
