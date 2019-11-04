@@ -24,8 +24,9 @@ const FadeContainerBorder = styled.div`
   animation: ${buildList} 3s ease-out 1 both;
 `;
 
-export default function FadeList() {
+export default function FadeList(filteredGames) {
   const [library, setLibrary] = useState([]);
+
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
   // };
@@ -49,7 +50,7 @@ export default function FadeList() {
 
   return (
     <article>
-      {library.map((lib, key) => (
+      {filteredGames.map((lib, key) => (
         <div key={key}>
           <Fade left>
             <FadeContainerBorder>

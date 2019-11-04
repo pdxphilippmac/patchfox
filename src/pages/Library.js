@@ -1,51 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
+import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
-
-import FadeList from "../components/FadeList";
-import NeonGlow from "../components/NeonGlow";
+import { games } from "../api/gamingAPI";
 import Seachbar from "../components/Search";
+import { searchItem } from "../utils/animations";
+import HomeIcon from "../icons/footerHome";
+import axios from "axios";
+// import JsonFetch from "../server";
 
 const StyledPageDiv = styled.div`
-  /* height: 50vh; */
+  height: 100vh;
   background: #1d1f2ee6;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
-  overflow: auto;
 `;
+const FilteredGame = styled.div``;
 
-const HeaderDiv = styled.div`
-  /* display: flex;
-  justify-content: flex-start; */
-`;
-
-const FlexDiv = styled.div`
+const SearchItem = styled.article`
   display: flex;
-  background: #1d1f2e;
-  flex-direction: row;
-  position: fixed;
-  z-index: 500;
-`;
-// const TestDiv = styled.div`
-//   height: 100px;
-//   overflow: auto;
-// `;
+  justify-content: space-between;
+  background-color: #3b3434e6;
+  margin: 5px;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: "futura";
 
-export default function Library(handleInputChange) {
+  border: #707070e6 solid 0.5px;
+  animation: ${searchItem} 3s ease-out 1 both;
+`;
+
+export default function Add() {
+  const [search, setSearch] = useState("war");
+  const [library, setLibrary] = useState([]);
+
+  // const filterLibrary = library.filter(game =>
+  //   game.title.toLowerCase().includes(search.toLowerCase())
+  // );
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/posts").then(res => {
+      console.log(`this is ${res.data}`);
+
+      setLibrary(res.data);
+    });
+  }, [search]);
+
   return (
     <>
-      {/* <GlobalStyles /> */}
-      <FlexDiv>
-        <HeaderDiv>
-          <NeonGlow name1="Lib" name2="rary" />
-        </HeaderDiv>
-        <Seachbar />
-      </FlexDiv>
+      <GlobalStyles />
+
       <StyledPageDiv>
-        {/* <LibraryContainer /> */}
-        <FadeList />
+        <Seachbar onSearch={setSearch} />
+
+        {library.map(game => (
+          <FilteredGame key={game.name} game={game}>
+            <>
+              <SearchItem>{game.title}</SearchItem>
+              {/* <HomeIcon /> */}
+            </>
+          </FilteredGame>
+        ))}
       </StyledPageDiv>
     </>
   );

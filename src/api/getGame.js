@@ -101,8 +101,6 @@ export default function GetGame({ info, match }) {
                 <p>{plat.company.name}</p>
               ))}
             </p> */}
-
-                <p>This is {item.name}</p>
               </FlexDiv>
             ))}
           </TestDiv>

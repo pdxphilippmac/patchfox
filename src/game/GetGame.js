@@ -7,6 +7,7 @@ import { useHistory, useParams } from "react-router-dom";
 import GlobalStyles from "../GlobalStyles";
 import NeonGlow from "../components/AlterNeonGlow";
 import NeonGlowLoading from "../components/NeonGlowLoading";
+import HomeIcon from "../icons/footerHome";
 
 const TestDiv = styled.article`
   background: #262122e6;
@@ -75,6 +76,7 @@ export default function GetGame({ info, match }) {
   }, []);
 
   const hallo = useParams();
+
   console.log(hallo);
   return (
     <>
@@ -96,6 +98,7 @@ export default function GetGame({ info, match }) {
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
                 />
                 <p>Game-ID:{item.id}</p>
+
                 <h1>{item.name}</h1>
                 <p>
                   {item.platforms.map(plat => (
@@ -103,6 +106,7 @@ export default function GetGame({ info, match }) {
                   ))}
                 </p>
                 <p>Summary: {item.summary}</p>
+
                 {/* 
                 <p>
                   Companies: {item.involved_companies[0].company.name},
