@@ -55,7 +55,7 @@ export default function News() {
   return (
     <>
       <GlobalStyles />
-      <AlterNeonGlow name1="News and Releases" />
+      <AlterNeonGlow name1="Most popular games" />
       <Switch>
         <Route exact path="/News">
           <NewsFetch news={news} />
