@@ -82,8 +82,9 @@ export default function GetGame({ info, match }) {
                   alt="CoverImage "
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
                 />
-                <p>Game-ID:{item.id}</p>
+                {/* <p>Game-ID:{item.id}</p> */}
                 <h1>{item.name}</h1>
+                <p>Release Date: {item.release_dates[0].human}</p>
                 <p>
                   {item.platforms.map(plat => (
                     <p>{plat.name}</p>
@@ -95,7 +96,7 @@ export default function GetGame({ info, match }) {
                   Companies: {item.involved_companies[0].company.name},
                   {item.involved_companies[1].company.name}
                 </p> */}
-                <p>Release Date: {item.release_dates[0].human}</p>
+
                 {/* <p>
               {game.involved_companies.map(plat => (
                 <p>{plat.company.name}</p>

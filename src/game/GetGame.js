@@ -32,7 +32,8 @@ const CoverImg = styled.img`
   /* border: lightgray 2px solid; */
   border-radius: 0 0px 0px 40px;
   box-shadow: #00ceff 0px 6px 6px 1px;
-  max-width: 360px;
+  max-width: 300px;
+  margin: 35px;
 `;
 
 export default function GetGame({ info, match }) {
@@ -98,7 +99,9 @@ export default function GetGame({ info, match }) {
                   alt="CoverImage "
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
                 />
-                <p>Game-ID:{item.id}</p>
+
+                <p>Release Date: {item.release_dates[0].human}</p>
+                {/* <p>Game-ID:{item.id}</p> */}
 
                 <h1>{item.name}</h1>
                 <p>
@@ -106,21 +109,21 @@ export default function GetGame({ info, match }) {
                     <p>{plat.name}</p>
                   ))}
                 </p>
-                <p>Summary: {item.summary}</p>
-
+                <p>{item.summary}</p>
+                <p>Game Version 3.2.5</p>
                 {/* 
                 <p>
                   Companies: {item.involved_companies[0].company.name},
                   {item.involved_companies[1].company.name}
                 </p> */}
-                <p>Release Date: {item.release_dates[0].human}</p>
+
                 {/* <p>
               {game.involved_companies.map(plat => (
                 <p>{plat.company.name}</p>
               ))}
             </p> */}
 
-                <p>This is {item.name}</p>
+                {/* <p>This is {item.name}</p> */}
               </FlexDiv>
             ))}
           </TestDiv>

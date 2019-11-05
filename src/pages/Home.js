@@ -8,7 +8,7 @@ import { loadingMotion, buildUpFooter } from "../utils/animations";
 // import ModalToggleButton from "../components/LoginModalToggleButton";
 
 const StyledDiv = styled.div`
-  height: 70vh;
+  height: 55vh;
 
   display: flex;
   justify-content: space-evenly;
