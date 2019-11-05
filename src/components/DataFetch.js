@@ -35,9 +35,12 @@ const FixedSearch = styled(Seachbar)`
 //   height: 150px;
 
 // `;
+const BackgroundDiv = styled.article`
+  background: #1e2222;
+`;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("diablo 2");
+  const [search, setSearch] = useState("anno");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -112,7 +115,7 @@ export default function DataFetch({ handleInputChange }) {
 
       {loading && <Loading />}
       {!loading && (
-        <div>
+        <BackgroundDiv>
           {posts.map(post => (
             <div key={post.id}>
               <Fade right>
@@ -125,13 +128,14 @@ export default function DataFetch({ handleInputChange }) {
                     <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
-
-                  <p>{post.id}</p>
+                  {/* <p>{post.published_at}</p> */}
+                  {/* 
+                  <p>{post.id}</p> */}
                 </SearchItem>
               </Fade>
             </div>
           ))}
-        </div>
+        </BackgroundDiv>
       )}
     </>
   );

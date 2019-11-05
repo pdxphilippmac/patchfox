@@ -2,16 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 import List from "../icons/footerList";
-import PlusIcon from "../icons/footerPlus";
-import HomeActive from "../icons/footerHomeActive";
+
 import AddApiIcon from "../icons/footerApiAddIcon";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "../icons/footerHome";
 
 import { buildUpFooter } from "../utils/animations";
-import Home from "../pages/Home";
-import NewsIcon from "../icons/footerNews";
-import LockSymbolFooter from "../icons/LockSymbolFooter";
+
+import NewsIcon from "../icons/footerNewsIcon";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -104,7 +102,7 @@ export default function Footer(children, active, stroke, bG, close) {
               <HomeIcon activeClassName="chosen" />
             </StyledNavLink>
             <StyledNavLink to="/News" activeClassName="chosen">
-              <LockSymbolFooter activeClassName="chosen" />
+              <NewsIcon activeClassName="chosen" />
             </StyledNavLink>
 
             {/* <StyledNavLink to="/Add" activeClassName="chosen">

@@ -3,11 +3,10 @@ import axios from "axios";
 import Fade from "react-reveal/Fade";
 
 import styled from "styled-components";
-import { useHistory, useParams } from "react-router-dom";
+
 import GlobalStyles from "../GlobalStyles";
-import NeonGlow from "../components/AlterNeonGlow";
+
 import NeonGlowLoading from "../components/NeonGlowLoading";
-import HomeIcon from "../icons/footerHome";
 
 const TestDiv = styled.article`
   background: #262122e6;
@@ -32,25 +31,13 @@ const CoverImg = styled.img`
   /* border: lightgray 2px solid; */
   border-radius: 0 0px 0px 40px;
   box-shadow: #00ceff 0px 6px 6px 1px;
-  max-width: 300px;
-  margin: 35px;
 `;
 
 export default function GetGame({ info, match }) {
   const [game, setGame] = useState([]);
 
-  // const [params, setParams] = useState([]);
   const [loading, setLoading] = useState(true);
   console.log(`Info log ${info}`, match.params.gameId);
-  // return arrToObj(info);
-  // function arrayToObject(array) {
-  //   const gameObject = {};
-  //   for (let i = 0; i < array.length; i++) {
-  //     gameObject[array[i].id] = array[i];
-  //   }
-  //   return gameObject;
-
-  // }
 
   useEffect(() => {
     console.log(`Info log ${info}`);
@@ -77,16 +64,12 @@ export default function GetGame({ info, match }) {
       });
   }, []);
 
-  const hallo = useParams();
-
-  console.log(hallo);
   return (
     <>
       <GlobalStyles />
 
       {loading && (
         <div>
-          {/* <NeonGlow /> */}
           <NeonGlowLoading />
         </div>
       )}
@@ -99,18 +82,15 @@ export default function GetGame({ info, match }) {
                   alt="CoverImage "
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
                 />
-
-                <p>Release Date: {item.release_dates[0].human}</p>
                 {/* <p>Game-ID:{item.id}</p> */}
-
                 <h1>{item.name}</h1>
+                <p>Release Date: {item.release_dates[0].human}</p>
                 <p>
                   {item.platforms.map(plat => (
                     <p>{plat.name}</p>
                   ))}
                 </p>
-                <p>{item.summary}</p>
-                <p>Game Version 3.2.5</p>
+                <p>Summary: {item.summary}</p>
                 {/* 
                 <p>
                   Companies: {item.involved_companies[0].company.name},
@@ -122,8 +102,6 @@ export default function GetGame({ info, match }) {
                 <p>{plat.company.name}</p>
               ))}
             </p> */}
-
-                {/* <p>This is {item.name}</p> */}
               </FlexDiv>
             ))}
           </TestDiv>

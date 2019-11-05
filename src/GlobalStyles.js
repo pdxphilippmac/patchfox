@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import img from "../src/resources/homescreen.jpg";
+import img from "../src/resources/camo.jpg";
 
 export default createGlobalStyle`
 *,
@@ -10,6 +10,7 @@ export default createGlobalStyle`
 body {
 /* background-image: url(${img}); */
 background:#1E2222;
+/* background-image: linear-gradient(#1E2222, black); */
 
 background-repeat: no-repeat;
   background-size: 100% 100%;
