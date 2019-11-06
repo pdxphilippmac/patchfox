@@ -123,6 +123,8 @@ export default function DataFetch({ handleInputChange }) {
                   </AddButton>
                   <p>{post.name}</p>
 
+                  {post.popularity ? <p>{post.popularity.toFixed(2)}</p> : null}
+
                   {/* <p>{post.published_at}</p> */}
                   {/* 
                   <p>{post.id}</p> */}
