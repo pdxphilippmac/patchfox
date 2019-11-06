@@ -26,8 +26,9 @@ const FixedSearch = styled(Searchbar)`
 
 const SearchItem = styled.article`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  flex-direction: row;
+
   background-color: #262122e6;
   margin: 25px;
   color: white;
@@ -39,6 +40,9 @@ const SearchItem = styled.article`
   color: lightslategray;
   padding: 25px;
   animation: ${searchItem} 3s ease-out 1 both;
+`;
+const Ascii = styled.p`
+  font-size: 30px;
 `;
 
 export default function Add() {
@@ -65,7 +69,21 @@ export default function Add() {
       <StyledPageDiv>
         {filterLibrary.map(game => (
           <Fade bottom key={game.name} game={game}>
-            <SearchItem>{game.title}</SearchItem>
+            <SearchItem>
+              <p>
+                {game.cover ? (
+                  <img alt="lol nothing to display" src={game.cover.url} />
+                ) : (
+                  <Ascii>ಥ_ಥ</Ascii>
+                )}
+              </p>
+              <p>{game.title}</p>
+              <p>{game.id}</p>
+
+              {/* 
+              {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}
+              {/* <img alt="CoverImage" src={game.cover.id} /> */}
+            </SearchItem>
             {/* <HomeIcon /> */}
           </Fade>
         ))}
