@@ -1,7 +1,7 @@
 import axios from "axios";
 export default function addToJsonDb(name, id, cover) {
   axios
-    .post("http://localhost:3000/posts", {
+    .post("/posts", {
       title: name,
       id: id,
       cover: cover

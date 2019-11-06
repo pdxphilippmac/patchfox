@@ -49,5 +49,6 @@
     "react-router": "^5.1.2",
     "styled-components": "^4.4.0",
     "use-react-modal": "0.0.6"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }

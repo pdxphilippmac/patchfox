@@ -53,7 +53,7 @@ export default function Add() {
   );
 
   useEffect(() => {
-    axios.get("http://localhost:3000/posts").then(res => {
+    axios.get("/posts").then(res => {
       setLibrary(res.data);
       console.log(`this is ${library}`);
     });

@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-import AddArrow from "../icons/addArrow";
+
 import addToJsonDb from "../api/addToJsonDb";
 import styled from "styled-components";
-import { useHistory, useParams } from "react-router-dom";
-import GlobalStyles from "../GlobalStyles";
-import NeonGlow from "../components/AlterNeonGlow";
-import NeonGlowLoading from "../components/NeonGlowLoading";
-import HomeIcon from "../icons/footerHome";
-import PlusIcon from "../icons/footerPlus";
 
+import GlobalStyles from "../GlobalStyles";
+
+import NeonGlowLoading from "../components/NeonGlowLoading";
+
+import PlusIcon from "../icons/footerPlus";
+const StyledPlusIcon = styled.div`
+  border: 5px solid #00ceff;
+  border-radius: 50%;
+`;
 const TestDiv = styled.article`
   background: #262122e6;
   display: flex;
@@ -73,9 +76,6 @@ export default function GetGame({ info, match }) {
       });
   }, []);
 
-  const hallo = useParams();
-
-  console.log(hallo);
   return (
     <>
       <GlobalStyles />
@@ -96,7 +96,9 @@ export default function GetGame({ info, match }) {
                   id={item.id}
                   onClick={() => handleClick(item.name, item.id, item.cover)}
                 >
-                  <PlusIcon />
+                  <StyledPlusIcon>
+                    <PlusIcon />
+                  </StyledPlusIcon>
                 </button>
                 <CoverImg
                   alt="CoverImage "

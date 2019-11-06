@@ -215,6 +215,22 @@
     {
       "title": "Anno Mutantionem",
       "id": 8905283
+    },
+    {
+      "title": "Remnant: From the Ashes",
+      "id": 105049,
+      "cover": {
+        "id": 75344,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1m4w.jpg"
+      }
+    },
+    {
+      "title": "Cyberpunk 2077",
+      "id": 1877,
+      "cover": {
+        "id": 82217,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rft.jpg"
+      }
     }
   ]
 }
