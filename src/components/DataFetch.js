@@ -41,7 +41,7 @@ const BackgroundDiv = styled.article`
 `;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("anno");
+  const [search, setSearch] = useState("warcraft");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -57,7 +57,15 @@ export default function DataFetch({ handleInputChange }) {
           Accept: "application/json",
           "user-key": "e2715f17601c1d968b592f747c6aa839"
         },
-        data: `fields *; search "${search}"; limit 50;\n\n`
+        data: `fields alternative_name,character,collection,company,description,game,name,person,platform,popularity,published_at,test_dummy,theme;
+
+
+
+        ; search "${search}"; limit 10;\n\n
+
+
+
+        `
       })
         .then(response => {
           console.log(response.data);
@@ -114,6 +122,7 @@ export default function DataFetch({ handleInputChange }) {
                     <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
+
                   {/* <p>{post.published_at}</p> */}
                   {/* 
                   <p>{post.id}</p> */}

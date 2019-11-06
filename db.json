@@ -231,6 +231,25 @@
         "id": 82217,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rft.jpg"
       }
+    },
+    {
+      "title": "Children of Morta",
+      "id": 36198,
+      "cover": {
+        "id": 80516,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1q4k.jpg"
+      }
+    },
+    {
+      "title": "Borderlands 3",
+      "id": 19164,
+      "cover": {
+        "id": 82158,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1re6.jpg"
+      }
+    },
+    {
+      "id": 8966511
     }
   ]
 }

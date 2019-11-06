@@ -6,6 +6,15 @@ export const fadeIn = keyframes`
   100% { opacity:1; }
 
 `;
+export const turner = keyframes`
+  from {
+    transform: rotateY(0deg)
+    translate:rotateY(20deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+`;
 
 export const blendInHome = keyframes`
   0%    { opacity:0; }

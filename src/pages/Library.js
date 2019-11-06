@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Searchbar from "../components/Search";
-import { logoBuildUp } from "../utils/animations";
+// import { logoBuildUp } from "../utils/animations";
 // import HomeIcon from "../icons/footerHome";
 import axios from "axios";
 import Fade from "react-reveal/Fade";

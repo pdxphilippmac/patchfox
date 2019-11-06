@@ -8,6 +8,7 @@ import styled from "styled-components";
 import NeonGlowLoading from "../components/NeonGlowLoading";
 
 import PlusIcon from "../icons/footerPlus";
+
 const StyledPlusIcon = styled.div`
   border: 5px solid #00ceff;
   border-radius: 50%;
@@ -38,8 +39,11 @@ const CoverImg = styled.img`
   max-width: 300px;
   margin: 35px;
 `;
+
 function handleClick(name, id, cover) {
   addToJsonDb(name, id, cover);
+
+  alert(`${name} added to your library`);
   console.log(name);
 }
 
@@ -96,6 +100,7 @@ export default function GetGame({ info, match }) {
                     <PlusIcon />
                   </StyledPlusIcon>
                 </button>
+
                 <CoverImg
                   alt="CoverImage "
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
