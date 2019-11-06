@@ -33,6 +33,7 @@ const SearchItem = styled.article`
   background-color: #262122e6;
   margin: 25px;
   color: white;
+  text-align: center;
 
   border-radius: 0px 0px 0px 30px;
   font-family: "futura";
@@ -46,7 +47,7 @@ const Ascii = styled.p`
 `;
 
 export default function Add() {
-  const [search, setSearch] = useState("/");
+  const [search, setSearch] = useState("Remnant");
   const [library, setLibrary] = useState([]);
 
   const filterLibrary = library.filter(game =>
@@ -70,16 +71,20 @@ export default function Add() {
         {filterLibrary.map(game => (
           <Fade bottom key={game.name} game={game}>
             <SearchItem>
+              <h1>{game.title}</h1>
               <p>
                 {game.cover ? (
-                  <img alt="lol nothing to display" src={game.cover.url} />
+                  <img
+                    alt="lol nothing to display"
+                    src={game.cover.url.replace("t_thumb", "t_cover_big")}
+                  />
                 ) : (
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
-              <p>{game.title}</p>
-              <p>{game.id}</p>
-              <p>{game.changes}</p>
+
+              {/* <p>{game.id}</p>
+              <p>{game.changes}</p> */}
 
               {/* 
               {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}

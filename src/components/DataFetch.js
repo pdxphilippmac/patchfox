@@ -15,7 +15,7 @@ const AddButton = styled.button``;
 const SearchItem = styled.article`
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #262122e6;
   margin: 25px;
   color: white;
@@ -57,7 +57,7 @@ export default function DataFetch({ handleInputChange }) {
           Accept: "application/json",
           "user-key": "e2715f17601c1d968b592f747c6aa839"
         },
-        data: `fields alternative_name,character,collection,company,description,game,name,person,platform,popularity,published_at,test_dummy,theme;
+        data: `fields alternative_name,character,game.cover.url,collection,company,description,game,name,person,platform,popularity,published_at,test_dummy,theme;
 
 
 
@@ -117,13 +117,17 @@ export default function DataFetch({ handleInputChange }) {
                   <AddButton
                     name={post.name}
                     id={post.id}
-                    onClick={() => handleClick(post.name, post.id, post.cover)}
+                    onClick={() =>
+                      handleClick(post.name, post.id, post.game.cover)
+                    }
                   >
                     <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
 
-                  {post.popularity ? <p>{post.popularity.toFixed(2)}</p> : null}
+                  {post.popularity ? (
+                    <p>Rating: {post.popularity.toFixed(2)}</p>
+                  ) : null}
 
                   {/* <p>{post.published_at}</p> */}
                   {/* 
