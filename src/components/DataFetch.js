@@ -6,6 +6,7 @@ import Seachbar from "../components/Search";
 // import Plus from "../icons/footerPlus";
 import Loading from "./LoadingIndicator";
 import AddArrow from "../icons/addArrow";
+import addToJsonDb from "../api/addToJsonDb";
 
 // import Plus from "../icons/footerPlus";
 
@@ -78,21 +79,6 @@ export default function DataFetch({ handleInputChange }) {
   function handleClick(name, id, cover) {
     addToJsonDb(name, id, cover);
     console.log(name);
-  }
-
-  function addToJsonDb(name, id, cover) {
-    axios
-      .post("http://localhost:3000/posts", {
-        title: name,
-        id: id,
-        cover: cover
-      })
-      .then(resp => {
-        console.log(resp.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 
   function handleSearch(value) {
