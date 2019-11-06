@@ -171,6 +171,38 @@
     {
       "title": "Anno 1800 The Passage",
       "id": 8636856
+    },
+    {
+      "title": "Dawn of Discovery",
+      "id": 268693
+    },
+    {
+      "title": "League of Legends Wild Rift",
+      "id": 8941905
+    },
+    {
+      "title": "Rune Factory 4 Special",
+      "id": 115278,
+      "cover": {
+        "id": 73933,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1l1p.jpg"
+      }
+    },
+    {
+      "title": "Warcraft III: The Frozen Throne",
+      "id": 133,
+      "cover": {
+        "id": 63921,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/sn7qos6agmexdft6utwa.jpg"
+      }
+    },
+    {
+      "title": "Zombie Driver: Immortal Edition",
+      "id": 120268,
+      "cover": {
+        "id": 82665,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rs9.jpg"
+      }
     }
   ]
 }
