@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Searchbar from "../components/Search";
-import { searchItem } from "../utils/animations";
+import { logoBuildUp } from "../utils/animations";
 // import HomeIcon from "../icons/footerHome";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
@@ -39,7 +39,6 @@ const SearchItem = styled.article`
   border: #4f5359e6 solid 0.5px;
   color: lightslategray;
   padding: 25px;
-  animation: ${searchItem} 3s ease-out 1 both;
 `;
 const Ascii = styled.p`
   font-size: 30px;
@@ -79,6 +78,7 @@ export default function Add() {
               </p>
               <p>{game.title}</p>
               <p>{game.id}</p>
+              <p>{game.changes}</p>
 
               {/* 
               {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}
