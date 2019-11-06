@@ -5,7 +5,7 @@ import AlterNeonGlow from "../components/AlterNeonGlow";
 import LoginModal from "../components/LoginModal";
 import LockSymbol from "../icons/lockSymbol";
 import img from "../resources/camo.jpg";
-animations";
+
 // import ModalToggleButton from "../components/LoginModalToggleButton";
 const BackgroundDiv = styled.main`
   background-image: url(${img});
