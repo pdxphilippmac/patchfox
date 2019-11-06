@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import GlobalStyles from "../GlobalStyles";
 
 import { Switch, Route } from "react-router-dom";
 
 import NewsFetch from "../components/NewsFetch";
 import GetGame from "../game/GetGame";
-import getGamefromApi from "../api/getGameFromApi";
-import GlobalStyles from "../GlobalStyles";
 
 import AlterNeonGlow from "../components/NeonGlow";
 
@@ -54,7 +51,6 @@ export default function News() {
 
   return (
     <>
-      <GlobalStyles />
       <AlterNeonGlow name1="Most popular games" />
       <Switch>
         <Route exact path="/News">

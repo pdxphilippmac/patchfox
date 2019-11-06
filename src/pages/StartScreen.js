@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import img from "../resources/camo.jpg";
 
 import { Redirect } from "react-router-dom";
 
@@ -16,8 +17,8 @@ const Margin = styled.div`
 `;
 
 const BodyStartpage = styled.div`
-  background-color: black;
   height: 100vh;
+  background-image: url(${img});
 `;
 
 export default function StartScreen() {

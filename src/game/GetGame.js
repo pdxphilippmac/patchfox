@@ -5,8 +5,6 @@ import Fade from "react-reveal/Fade";
 import addToJsonDb from "../api/addToJsonDb";
 import styled from "styled-components";
 
-import GlobalStyles from "../GlobalStyles";
-
 import NeonGlowLoading from "../components/NeonGlowLoading";
 
 import PlusIcon from "../icons/footerPlus";
@@ -78,8 +76,6 @@ export default function GetGame({ info, match }) {
 
   return (
     <>
-      <GlobalStyles />
-
       {loading && (
         <div>
           {/* <NeonGlow /> */}

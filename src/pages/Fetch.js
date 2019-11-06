@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   flex-grow: 1;
   justify-content: center;
   overflow: auto;
-  background: black;
+  /* background: black; */
 `;
 
 export default function Fetch() {

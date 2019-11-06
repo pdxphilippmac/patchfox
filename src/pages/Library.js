@@ -8,6 +8,7 @@ import { logoBuildUp } from "../utils/animations";
 // import HomeIcon from "../icons/footerHome";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
+import GlobalStyles from "../GlobalStyles";
 // import JsonFetch from "../server";
 
 const StyledPageDiv = styled.div`
@@ -61,7 +62,7 @@ export default function Add() {
 
   return (
     <>
-      {/* <GlobalStyles /> */}
+      <GlobalStyles />
 
       <FixedSearch autoFocus onSearch={setSearch} />
 
