@@ -39,8 +39,8 @@ export default function StartScreen() {
         <BodyStartpage>
           <Margin>
             <AlterNeonGlow
-              name1="Welcome to"
-              name2="   the revolutionary Gaming News Feed..."
+              name1="Welcome to the "
+              name2="revolutionary Gaming News Feed..."
             />
           </Margin>
         </BodyStartpage>
