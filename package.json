@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "framework7": "^5.0.4",
+    "gsap": "^2.1.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",

@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { flicker } from "../utils/animations";
+import LoadingCircle from "./GSAPLoadingCircle";
+
+
 
 const StyledH1 = styled.span`
   font-size: 50px;
@@ -27,16 +30,21 @@ const StyledH2 = styled.span`
 const StyledDiv = styled.div`
   text-align: center;
   padding: 120px;
+ 
+ 
 `;
+const Margin = styled.div`
+padding:40px;
+`;
+
 
 export default function SearchLoading() {
   return (
     <StyledDiv>
       <StyledH1>Search is </StyledH1> 
       <StyledH2> loading</StyledH2>
-      <StyledH1>.</StyledH1>
-      <StyledH2>.</StyledH2>
-      <StyledH1>.</StyledH1>
+      <Margin> <LoadingCircle/></Margin>
+     
     </StyledDiv>
   );
 }
