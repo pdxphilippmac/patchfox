@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
 // import Plus from "../icons/footerPlus";
-import Loading from "./LoadingIndicator";
+import SearchLoading from "../components/SearchLoadingIndicator";
 import AddArrow from "../icons/addArrow";
 import addToJsonDbfromSearch from "../api/addToDbJsonFromSearch";
 
@@ -44,7 +44,7 @@ export default function DataFetch({ handleInputChange }) {
   const [search, setSearch] = useState("spyro the dragon");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const alternativeCover = "images.igdb.com/igdb/image/upload/t_thumb/co1n6r.jpg"
+  const alternativeCover = "//images.igdb.com/igdb/image/upload/t_thumb/co1m4w.jpg"
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {
@@ -108,7 +108,7 @@ export default function DataFetch({ handleInputChange }) {
         onChange={event => handleInputChange(event.target.value)}
       />
 
-      {loading && <Loading />}
+      {loading &&  <SearchLoading />}
       {!loading && (
         <BackgroundDiv>
           {posts.map(post => (
@@ -119,7 +119,7 @@ export default function DataFetch({ handleInputChange }) {
                     name={post.name}
                     id={post.id}
                     onClick={() =>
-                      handleClick(post.name, post.id, (post.game.cover && true ?post.game.cover : alternativeCover))
+                      handleClick(post.name, post.id, (post.game.cover && true ?post.game.cover :alternativeCover))
                     }
                   >
                     <AddArrow />

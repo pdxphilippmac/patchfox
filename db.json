@@ -173,14 +173,6 @@
       }
     },
     {
-      "title": "Destiny 2 Forsaken - Legendary Collection",
-      "id": 7788048
-    },
-    {
-      "title": "Destiny 2 Forsaken - Complete Collection",
-      "id": 7778247
-    },
-    {
       "title": "Apex Legends",
       "id": 6963584,
       "cover": {
@@ -224,6 +216,22 @@
       "title": "Spyro Year of the Dragon Collector's Edition",
       "id": 86051,
       "cover": "images.igdb.com/igdb/image/upload/t_thumb/co1n6r.jpg"
+    },
+    {
+      "title": "Diablo 4",
+      "id": 9147502,
+      "cover": {
+        "id": 83562,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1sh6.jpg"
+      }
+    },
+    {
+      "title": "Zombie Driver: Immortal Edition",
+      "id": 120268,
+      "cover": {
+        "id": 82665,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rs9.jpg"
+      }
     }
   ]
 }
