@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components"
 
 import { Switch, Route } from "react-router-dom";
 
@@ -7,25 +8,20 @@ import NewsFetch from "../components/NewsFetch";
 import GetGame from "../game/GetGame";
 
 import AlterNeonGlow from "../components/NeonGlow";
+import LoadingCircle from "../components/GSAPLoadingCircle";
 
-// const StyledDiv = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   flex-grow: 1;
-//   justify-content: center;
-//   overflow: auto;
-//   background: black;
-// `;
+const PositionLoad = styled.section`
+margin-top:200px;
+display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+
 
 export default function News() {
-  // const [data, setGameData] = React.useState("");
+  const [loading, setLoading] = useState(true);
 
-  // React.useEffect(() => {
-  //   getGamefromApi().then(fetchedgame => {
-  //     setGameData(fetchedgame);
-  //   });
-  //   console.log(`This is data from the outsourced function ${data}`);
-  // });
 
   const [news, setNews] = useState([]);
   console.log(news, "is news");
@@ -43,6 +39,7 @@ export default function News() {
     })
       .then(response => {
         setNews(response.data);
+        setLoading(false)
       })
       .catch(err => {
         console.error(err);
@@ -54,7 +51,10 @@ export default function News() {
       <AlterNeonGlow name1="Most popular games" />
       <Switch>
         <Route exact path="/News">
-          <NewsFetch news={news} />
+
+           {loading &&  <PositionLoad><LoadingCircle /></PositionLoad>}
+      {!loading && (          
+          <NewsFetch news={news}  />)}
         </Route>
         <Route exact path="/News/game">
           <GetGame info={news} />
