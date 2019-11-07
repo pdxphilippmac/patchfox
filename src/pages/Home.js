@@ -6,7 +6,7 @@ import LoginModal from "../components/LoginModal";
 import LockSymbol from "../icons/lockSymbol";
 import img from "../resources/camo.jpg";
 
-// import ModalToggleButton from "../components/LoginModalToggleButton";
+
 const BackgroundDiv = styled.main`
   background-image: url(${img});
 
@@ -27,17 +27,17 @@ const StyledDiv = styled.div`
 `;
 
 export default function Home() {
-  const [toggleView, setToggleView] = useState(false);
-  // showLogin
+  const [showLogin, setShowLogin] = useState(false);
+  
 
   return (
     <>
       <BackgroundDiv>
-        <button onClick={() => setToggleView(!toggleView)}>
+        <button onClick={() => setShowLogin(!showLogin)}>
           <LockSymbol />
         </button>
 
-        {toggleView && <LoginModal show={toggleView} />}
+        {showLogin && <LoginModal show={showLogin} />}
 
         <StyledDiv>
           <AlterHomescreenLogo />
