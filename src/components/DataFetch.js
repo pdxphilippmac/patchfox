@@ -6,7 +6,7 @@ import Seachbar from "../components/Search";
 // import Plus from "../icons/footerPlus";
 import Loading from "./LoadingIndicator";
 import AddArrow from "../icons/addArrow";
-import addToJsonDb from "../api/addToJsonDb";
+import addToJsonDbfromSearch from "../api/addToDbJsonFromSearch";
 
 // import Plus from "../icons/footerPlus";
 
@@ -41,9 +41,10 @@ const BackgroundDiv = styled.article`
 `;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("warcraft");
+  const [search, setSearch] = useState("spyro the dragon");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const alternativeCover = "images.igdb.com/igdb/image/upload/t_thumb/co1n6r.jpg"
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {
@@ -85,7 +86,7 @@ export default function DataFetch({ handleInputChange }) {
   }, [search]);
 
   function handleClick(name, id, cover) {
-    addToJsonDb(name, id, cover);
+    addToJsonDbfromSearch(name, id, cover);
     console.log(name);
   }
 
@@ -118,7 +119,7 @@ export default function DataFetch({ handleInputChange }) {
                     name={post.name}
                     id={post.id}
                     onClick={() =>
-                      handleClick(post.name, post.id, post.game.cover)
+                      handleClick(post.name, post.id, (post.game.cover && true ?post.game.cover : alternativeCover))
                     }
                   >
                     <AddArrow />

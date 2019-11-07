@@ -47,7 +47,7 @@ const Ascii = styled.p`
 `;
 
 export default function Add() {
-  const [search, setSearch] = useState("Remnant");
+  const [search, setSearch] = useState("des");
   const [library, setLibrary] = useState([]);
 
   const filterLibrary = library.filter(game =>
@@ -73,10 +73,10 @@ export default function Add() {
             <SearchItem>
               <h1>{game.title}</h1>
               <p>
-                {game.cover ? (
+                {game.cover? (
                   <img
-                    alt="lol nothing to display"
-                    src={game.cover.url.replace("t_thumb", "t_cover_big")}
+                    alt="ಥ_ಥ"
+                    src={game.cover.url ? game.cover.url.replace("t_thumb", "t_cover_big") : "//"+`${game.cover}`}
                   />
                 ) : (
                   <Ascii>ಥ_ಥ</Ascii>
