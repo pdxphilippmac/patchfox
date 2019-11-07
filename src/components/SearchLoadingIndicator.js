@@ -41,6 +41,7 @@ export default function SearchLoading() {
     <StyledDiv>
       <StyledH1>Search is </StyledH1> 
       <StyledH2> loading</StyledH2>
+      <StyledH1>...</StyledH1> 
 
     </StyledDiv>
   );
