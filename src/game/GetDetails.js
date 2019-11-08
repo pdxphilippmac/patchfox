@@ -68,7 +68,6 @@ export default function GetDetails({ info, match }) {
     <>
       {loading && (
         <div>
-          {/* <NeonGlow /> */}
           <NeonGlowLoading />
         </div>
       )}
@@ -98,11 +97,11 @@ export default function GetDetails({ info, match }) {
 
                 <p>
                   Release Date:
-                  {item.release_date
+                  {item.release_dates
                     ? item.release_dates[0].human
                     : "01.01.2020"}
                 </p>
-                <p>Game-ID:{item.id}</p>
+                {/* <p>Game-ID:{item.id}</p> */}
 
                 {item.summary ? (
                   <p>
