@@ -60,6 +60,24 @@
         "id": 72310,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1jsm.jpg"
       }
+    },
+    {
+      "title": "The Elder Scrolls Online Dragonhold",
+      "id": 119327,
+      "cover": false
+    },
+    {
+      "title": "League of Legends Wild Rift",
+      "id": 124700,
+      "cover": {
+        "id": 82952,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1s08.jpg"
+      }
+    },
+    {
+      "title": "The Elder Scrolls Online Thieves Guild",
+      "id": 121725,
+      "cover": false
     }
   ]
 }

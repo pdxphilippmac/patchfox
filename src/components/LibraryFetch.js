@@ -50,6 +50,13 @@ const SearchItem = styled.article`
 const Ascii = styled.p`
   font-size: 30px;
 `;
+const StyledButton = styled.button`
+  /* :hover {
+    transform: scale(5.5);
+    border: red solid 10px;
+    border-radius: 0 0 0 20px;
+  } */
+`;
 
 export default function LibraryFetch() {
   const history = useHistory();
@@ -103,9 +110,9 @@ export default function LibraryFetch() {
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
-              <button onClick={() => handleNav(game.id)}>
+              <StyledButton onClick={() => handleNav(game.id)}>
                 <h1>Get more info</h1>
-              </button>
+              </StyledButton>
               {/* <p>{game.id}</p>
               <p>{game.changes}</p> */}
               {/* 
