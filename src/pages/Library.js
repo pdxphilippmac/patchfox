@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 import styled from "styled-components";
 
 import Searchbar from "../components/Search";
@@ -8,7 +7,6 @@ import Searchbar from "../components/Search";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 import GlobalStyles from "../GlobalStyles";
-
 
 const StyledPageDiv = styled.div`
   display: flex;
@@ -18,6 +16,7 @@ const StyledPageDiv = styled.div`
   overflow: auto;
   background: #1e2222;
   overflow: scroll;
+  margin-bottom: 80px;
 `;
 
 const FixedSearch = styled(Searchbar)`
@@ -72,10 +71,14 @@ export default function Add() {
             <SearchItem>
               <h1>{game.title}</h1>
               <p>
-                {game.cover? (
+                {game.cover ? (
                   <img
                     alt="ಥ_ಥ"
-                    src={game.cover.url ? game.cover.url.replace("t_thumb", "t_cover_big") : "//"+`${game.cover}`}
+                    src={
+                      game.cover.url
+                        ? game.cover.url.replace("t_thumb", "t_cover_big")
+                        : "//" + `${game.cover}`
+                    }
                   />
                 ) : (
                   <Ascii>ಥ_ಥ</Ascii>
