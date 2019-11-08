@@ -124,9 +124,7 @@ export default function DataFetch({ handleInputChange }) {
                       handleClick(
                         post.name,
                         post.id,
-                        post.game.cover && true
-                          ? post.game.cover
-                          : alternativeCover
+                        post.game && true ? post.game.cover : alternativeCover
                       )
                     }
                   >
