@@ -47,7 +47,6 @@ export default function DataFetch({ handleInputChange }) {
   const [loading, setLoading] = useState(true);
   const alternativeCover =
     "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg";
-  const alternativeRating = 0.0;
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {
@@ -61,7 +60,7 @@ export default function DataFetch({ handleInputChange }) {
           Accept: "application/json",
           "user-key": "e2715f17601c1d968b592f747c6aa839"
         },
-        data: `fields alternative_name,character,game.cover.url,collection,company,description,game,name,person,platform,popularity,published_at,test_dummy,theme;
+        data: `fields alternative_name,character,game.cover.url,collection,company,description,game,name,person,game.id,platform,popularity,published_at,test_dummy,theme;
 
 
 
@@ -88,8 +87,8 @@ export default function DataFetch({ handleInputChange }) {
     };
   }, [search]);
 
-  function handleClick(name, id, cover) {
-    addToJsonDbfromSearch(name, id, cover);
+  function handleClick(name, game, cover) {
+    addToJsonDbfromSearch(name, game, cover);
     console.log(name);
   }
 
@@ -124,7 +123,7 @@ export default function DataFetch({ handleInputChange }) {
                     onClick={() =>
                       handleClick(
                         post.name,
-                        post.id,
+                        post.id ? post.id : post.game.id,
                         post.game && true ? post.game.cover : alternativeCover
                       )
                     }
