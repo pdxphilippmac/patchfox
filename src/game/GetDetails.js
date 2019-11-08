@@ -95,11 +95,13 @@ export default function GetDetails({ info, match }) {
                   votes
                 </span>
 
+                {/* <p> 
+                  
+                  IGDB Rating: {item.rating.toFixed(1)}</p> */}
+
                 <p>
-                  Release Date:
-                  {item.release_dates
-                    ? item.release_dates[0].human
-                    : "01.01.2020"}
+                  <h3>Release Date:</h3>
+                  {item.release_dates ? item.release_dates[0].human : "tba"}
                 </p>
                 {/* <p>Game-ID:{item.id}</p> */}
 
@@ -120,6 +122,7 @@ export default function GetDetails({ info, match }) {
 
                 <p>
                   <h3>Companies:</h3>
+
                   {item.involved_companies
                     ? item.involved_companies.map(plat => (
                         <p>{plat.company.name}</p>

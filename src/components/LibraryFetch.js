@@ -82,7 +82,7 @@ export default function LibraryFetch() {
           <Fade bottom key={game.name} game={game}>
             <SearchItem>
               <h1>{game.title}</h1>
-              <h2>{game.id ? game.id : game.game.id}</h2>
+              {/* <h2>{game.id ? game.id : game.game.id}</h2> */}
 
               <p>
                 {game.cover ? (
