@@ -4,8 +4,9 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
 // import Plus from "../icons/footerPlus";
-import Loading from "./LoadingIndicator";
+import SearchLoading from "../components/SearchLoadingIndicator";
 import AddArrow from "../icons/addArrow";
+import addToJsonDbfromSearch from "../api/addToDbJsonFromSearch";
 
 // import Plus from "../icons/footerPlus";
 
@@ -14,7 +15,7 @@ const AddButton = styled.button``;
 const SearchItem = styled.article`
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #262122e6;
   margin: 25px;
   color: white;
@@ -40,9 +41,10 @@ const BackgroundDiv = styled.article`
 `;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("anno");
+  const [search, setSearch] = useState("spyro the dragon");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const alternativeCover = "//images.igdb.com/igdb/image/upload/t_thumb/co1m4w.jpg"
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {
@@ -56,7 +58,15 @@ export default function DataFetch({ handleInputChange }) {
           Accept: "application/json",
           "user-key": "e2715f17601c1d968b592f747c6aa839"
         },
-        data: `fields *; search "${search}"; limit 50;\n\n`
+        data: `fields alternative_name,character,game.cover.url,collection,company,description,game,name,person,platform,popularity,published_at,test_dummy,theme;
+
+
+
+        ; search "${search}"; limit 10;\n\n
+
+
+
+        `
       })
         .then(response => {
           console.log(response.data);
@@ -76,23 +86,8 @@ export default function DataFetch({ handleInputChange }) {
   }, [search]);
 
   function handleClick(name, id, cover) {
-    addToJsonDb(name, id, cover);
+    addToJsonDbfromSearch(name, id, cover);
     console.log(name);
-  }
-
-  function addToJsonDb(name, id, cover) {
-    axios
-      .post("http://localhost:3000/posts", {
-        title: name,
-        id: id,
-        cover: cover
-      })
-      .then(resp => {
-        console.log(resp.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 
   function handleSearch(value) {
@@ -113,7 +108,7 @@ export default function DataFetch({ handleInputChange }) {
         onChange={event => handleInputChange(event.target.value)}
       />
 
-      {loading && <Loading />}
+      {loading &&  <SearchLoading />}
       {!loading && (
         <BackgroundDiv>
           {posts.map(post => (
@@ -123,11 +118,18 @@ export default function DataFetch({ handleInputChange }) {
                   <AddButton
                     name={post.name}
                     id={post.id}
-                    onClick={() => handleClick(post.name, post.id, post.cover)}
+                    onClick={() =>
+                      handleClick(post.name, post.id, (post.game.cover && true ?post.game.cover :alternativeCover))
+                    }
                   >
                     <AddArrow />
                   </AddButton>
                   <p>{post.name}</p>
+
+                  {post.popularity ? (
+                    <p>Rating: {post.popularity.toFixed(2)}</p>
+                  ) : null}
+
                   {/* <p>{post.published_at}</p> */}
                   {/* 
                   <p>{post.id}</p> */}

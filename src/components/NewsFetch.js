@@ -57,6 +57,9 @@ export default function NewsFetch({ news }) {
   // };
 
   return (
+
+
+    
     <FlexDiv>
       {news.map(game => (
         <div key={game.id}>

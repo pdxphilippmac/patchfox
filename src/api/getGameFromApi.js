@@ -1,30 +1,39 @@
-import axios from "axios";
+// import React, { useState } from "react";
+// import axios from "axios";
 
-export default function getGamefromAPi() {
-  // const [params, setParams] = useState([]);
+// export default function getGamefromAPi() {
+//   const [search, setSearch] = useState("anno");
+//   const [posts, setPosts] = useState([]);
+//   const [loading, setLoading] = useState(true);
 
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const targetUrl = `https://api-v3.igdb.com/games/103204/?fields=name,involved_companies.company.name,cover.url,summary,game_modes.name,version_title,platforms.name,first_release_date,release_dates.human,websites,total_rating&expand=involved_companies,cover,platforms,platform.versions,version_parent,version_title`;
-  axios({
-    url: proxyUrl + targetUrl,
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "user-key": "e2715f17601c1d968b592f747c6aa839",
-      "Access-Control-Allow-Origin": "*"
-    }
-  })
-    .then(response => {
-      console.log(
-        `This is responseData from getGameFromAPi-function ${response.data}`
-      );
-      let game = response.data;
+//   useEffect(() => {
+//     const timeoutHandler = setTimeout(() => {
+//       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+//       const targetUrl = "https://api-v3.igdb.com/search";
 
-      console.log(`This is game from getGameFromApi-function ${game}`);
+//       axios({
+//         url: proxyUrl + targetUrl,
+//         method: "POST",
+//         headers: {
+//           Accept: "application/json",
+//           "user-key": "e2715f17601c1d968b592f747c6aa839"
+//         },
+//         data: `fields *; search "${search}"; limit 50;\n\n`
+//       })
+//         .then(response => {
+//           console.log(response.data);
+//           setTimeout(() => {
+//             setPosts(response.data);
+//             setLoading(false);
+//           }, 1000);
+//         })
+//         .catch(err => {
+//           console.error(err);
+//         });
+//     }, 1000);
 
-      return game;
-    })
-    .catch(err => {
-      console.error(err);
-    });
-}
+//     return () => {
+//       clearTimeout(timeoutHandler);
+//     };
+//   }, [search]);
+// }

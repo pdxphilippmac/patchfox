@@ -23,7 +23,7 @@ export default function JsonFetch() {
   // };
 
   useEffect(() => {
-    const targetUrl = "http://localhost:3000/posts";
+    const targetUrl = "/posts";
     axios({
       url: targetUrl,
       method: "GET"

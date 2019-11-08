@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 
+import addToJsonDb from "../api/addToJsonDb";
 import styled from "styled-components";
-import { useHistory, useParams } from "react-router-dom";
-import GlobalStyles from "../GlobalStyles";
-import NeonGlow from "../components/AlterNeonGlow";
-import NeonGlowLoading from "../components/NeonGlowLoading";
-import HomeIcon from "../icons/footerHome";
 
+import NeonGlowLoading from "../components/NeonGlowLoading";
+
+import PlusIcon from "../icons/footerPlus";
+
+const StyledPlusIcon = styled.div`
+  border: 5px solid #00ceff;
+  border-radius: 50%;
+`;
 const TestDiv = styled.article`
   background: #262122e6;
   display: flex;
@@ -36,21 +40,18 @@ const CoverImg = styled.img`
   margin: 35px;
 `;
 
+function handleClick(name, id, cover) {
+  addToJsonDb(name, id, cover);
+
+  alert(`${name} added to your library`);
+  console.log(name);
+}
+
 export default function GetGame({ info, match }) {
   const [game, setGame] = useState([]);
 
-  // const [params, setParams] = useState([]);
   const [loading, setLoading] = useState(true);
   console.log(`Info log ${info}`, match.params.gameId);
-  // return arrToObj(info);
-  // function arrayToObject(array) {
-  //   const gameObject = {};
-  //   for (let i = 0; i < array.length; i++) {
-  //     gameObject[array[i].id] = array[i];
-  //   }
-  //   return gameObject;
-
-  // }
 
   useEffect(() => {
     console.log(`Info log ${info}`);
@@ -77,13 +78,8 @@ export default function GetGame({ info, match }) {
       });
   }, []);
 
-  const hallo = useParams();
-
-  console.log(hallo);
   return (
     <>
-      <GlobalStyles />
-
       {loading && (
         <div>
           {/* <NeonGlow /> */}
@@ -95,13 +91,23 @@ export default function GetGame({ info, match }) {
           <TestDiv>
             {game.map(item => (
               <FlexDiv>
+                <button
+                  name={item.name}
+                  id={item.id}
+                  onClick={() => handleClick(item.name, item.id, item.cover)}
+                >
+                  <StyledPlusIcon>
+                    <PlusIcon />
+                  </StyledPlusIcon>
+                </button>
+
                 <CoverImg
                   alt="CoverImage "
                   src={item.cover.url.replace("t_thumb", "t_cover_big")}
                 />
 
                 <p>Release Date: {item.release_dates[0].human}</p>
-                {/* <p>Game-ID:{item.id}</p> */}
+                <p>Game-ID:{item.id}</p>
 
                 <h1>{item.name}</h1>
                 <p>
@@ -111,19 +117,11 @@ export default function GetGame({ info, match }) {
                 </p>
                 <p>{item.summary}</p>
                 <p>Game Version 3.2.5</p>
-                {/* 
-                <p>
+
+                {/* <p>
                   Companies: {item.involved_companies[0].company.name},
                   {item.involved_companies[1].company.name}
                 </p> */}
-
-                {/* <p>
-              {game.involved_companies.map(plat => (
-                <p>{plat.company.name}</p>
-              ))}
-            </p> */}
-
-                {/* <p>This is {item.name}</p> */}
               </FlexDiv>
             ))}
           </TestDiv>

@@ -7,7 +7,7 @@ const LoadingIndicator = styled.div`
   padding: 80px;
   display: flex;
   justify-content: center;
-  background: black;
+  background-color: #262122e6;
   height: 100vh;
   margin: 80px;
 `;

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import News from "./pages/News";
 import GetGame from "./game/GetGame";
 import GlobalStyles from "./GlobalStyles";
+import StartScreen from "./pages/StartScreen";
 
 export default function App() {
   return (
@@ -15,13 +16,14 @@ export default function App() {
       <GlobalStyles />
       <Router>
         <Switch>
-          <Route exact path="/Home" component={Home} />
-          <Route exact path="/" component={Home} />
-          <Route path="/Add" component={Add} />
-          <Route path="/Library" component={Library} />
-          <Route path="/Fetch" component={Fetch} />
-          <Route path="/News" exact component={News} />
-          <Route path="/News/:gameId" component={GetGame} />
+          <Route exact path="/" component={StartScreen} />
+          <Route exact path="/home" component={Home} />
+
+          <Route path="/add" component={Add} />
+          <Route path="/library" component={Library} />
+          <Route path="/fetch" component={Fetch} />
+          <Route path="/news" exact component={News} />
+          <Route path="/news/:gameId" component={GetGame} />
           {/* <Route path="/contact" component={Contact} />
         <Route component={Notfound} /> */}
         </Switch>

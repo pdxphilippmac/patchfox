@@ -1,5 +1,5 @@
 import React from "react";
-// import GlobalStyles from "../GlobalStyles";
+
 import styled from "styled-components";
 import DataFetch from "../components/DataFetch";
 
@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   flex-grow: 1;
   justify-content: center;
   overflow: auto;
-  background: black;
+  /* background: black; */
 `;
 
 export default function Fetch() {

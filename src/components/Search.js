@@ -11,7 +11,7 @@ const SearchInput = styled.input`
   margin: 8px;
   border-radius: 10px;
   text-align: center;
-  min-width: 200px;
+  min-width: 95vw;
   box-shadow: 0 4px 4px -2px #00ceff;
   border: 2px solid #00ceff;
 `;

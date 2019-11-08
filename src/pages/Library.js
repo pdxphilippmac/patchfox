@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-// import GlobalStyles from "../GlobalStyles";
+
 import styled from "styled-components";
 
 import Searchbar from "../components/Search";
-import { searchItem } from "../utils/animations";
-// import HomeIcon from "../icons/footerHome";
+
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-// import JsonFetch from "../server";
+import GlobalStyles from "../GlobalStyles";
+
 
 const StyledPageDiv = styled.div`
   display: flex;
@@ -26,11 +26,13 @@ const FixedSearch = styled(Searchbar)`
 
 const SearchItem = styled.article`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  flex-direction: row;
+
   background-color: #262122e6;
   margin: 25px;
   color: white;
+  text-align: center;
 
   border-radius: 0px 0px 0px 30px;
   font-family: "futura";
@@ -38,11 +40,13 @@ const SearchItem = styled.article`
   border: #4f5359e6 solid 0.5px;
   color: lightslategray;
   padding: 25px;
-  animation: ${searchItem} 3s ease-out 1 both;
+`;
+const Ascii = styled.p`
+  font-size: 30px;
 `;
 
 export default function Add() {
-  const [search, setSearch] = useState("/");
+  const [search, setSearch] = useState("des");
   const [library, setLibrary] = useState([]);
 
   const filterLibrary = library.filter(game =>
@@ -50,7 +54,7 @@ export default function Add() {
   );
 
   useEffect(() => {
-    axios.get("http://localhost:3000/posts").then(res => {
+    axios.get("/posts").then(res => {
       setLibrary(res.data);
       console.log(`this is ${library}`);
     });
@@ -58,14 +62,33 @@ export default function Add() {
 
   return (
     <>
-      {/* <GlobalStyles /> */}
+      <GlobalStyles />
 
       <FixedSearch autoFocus onSearch={setSearch} />
 
       <StyledPageDiv>
         {filterLibrary.map(game => (
           <Fade bottom key={game.name} game={game}>
-            <SearchItem>{game.title}</SearchItem>
+            <SearchItem>
+              <h1>{game.title}</h1>
+              <p>
+                {game.cover? (
+                  <img
+                    alt="ಥ_ಥ"
+                    src={game.cover.url ? game.cover.url.replace("t_thumb", "t_cover_big") : "//"+`${game.cover}`}
+                  />
+                ) : (
+                  <Ascii>ಥ_ಥ</Ascii>
+                )}
+              </p>
+
+              {/* <p>{game.id}</p>
+              <p>{game.changes}</p> */}
+
+              {/* 
+              {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}
+              {/* <img alt="CoverImage" src={game.cover.id} /> */}
+            </SearchItem>
             {/* <HomeIcon /> */}
           </Fade>
         ))}

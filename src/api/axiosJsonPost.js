@@ -4,7 +4,7 @@
 // function handleAdd(){
 
 // axios
-//   .post("http://localhost:3000/posts", {
+//
 //     id: 6,
 //     title: value
 //   })

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "framework7": "^5.0.4",
+    "gsap": "^2.1.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
@@ -15,7 +16,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "json": "json-server --watch db.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,5 +51,6 @@
     "react-router": "^5.1.2",
     "styled-components": "^4.4.0",
     "use-react-modal": "0.0.6"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
