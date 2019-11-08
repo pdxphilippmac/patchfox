@@ -42,7 +42,7 @@ export default function GetDetails({ info, match }) {
   useEffect(() => {
     console.log(`Info log ${info}`);
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const targetUrl = `https://api-v3.igdb.com/games/${match.params.gameId}/?fields=name,involved_companies.company.name,cover.url,summary,game_modes.name,version_title,platforms.name,first_release_date,release_dates.human,websites,total_rating&expand=involved_companies,cover,platforms,platform.versions,version_parent,version_title`;
+    const targetUrl = `https://api-v3.igdb.com/games/${match.params.gameId}/?fields=name,version_title,rating,involved_companies.company.name,total_rating_count,storyline,game_engines.name,cover.url,summary,game_modes.name,version_title,platforms.name,first_release_date,release_dates.human,websites,total_rating&expand=involved_companies,cover,platforms,platform.versions,game_engines,version_parent,version_title,total_rating_count`;
     axios({
       url: proxyUrl + targetUrl,
       method: "GET",
@@ -86,6 +86,16 @@ export default function GetDetails({ info, match }) {
                   }
                 />
 
+                <h1>{item.name}</h1>
+                <span>
+                  {item.total_rating
+                    ? item.total_rating.toFixed(1)
+                    : " not yet rated"}{" "}
+                  ⭐️ from{" "}
+                  {item.total_rating_count ? item.total_rating_count : "-"}{" "}
+                  votes
+                </span>
+
                 <p>
                   Release Date:
                   {item.release_date
@@ -94,13 +104,48 @@ export default function GetDetails({ info, match }) {
                 </p>
                 <p>Game-ID:{item.id}</p>
 
-                <h1>{item.name}</h1>
+                {item.summary ? (
+                  <p>
+                    {" "}
+                    <h2>Summary:</h2>
+                    {item.summary}{" "}
+                  </p>
+                ) : null}
+                {item.storyline ? (
+                  <p>
+                    {" "}
+                    <h2>Storyline:</h2>
+                    {item.storyline}{" "}
+                  </p>
+                ) : null}
+
                 <p>
+                  <h3>Companies:</h3>
+                  {item.involved_companies
+                    ? item.involved_companies.map(plat => (
+                        <p>{plat.company.name}</p>
+                      ))
+                    : " No Companies tracked"}
+                </p>
+                <p>
+                  <h3>Game Modes:</h3>
+                  {item.game_modes
+                    ? item.game_modes.map(plat => <p>{plat.name}</p>)
+                    : " No modes tracked"}
+                </p>
+                <p>
+                  <h3>Game Engines:</h3>
+                  {item.game_engines
+                    ? item.game_engines.map(plat => <p>{plat.name}</p>)
+                    : " No game engines tracked"}
+                </p>
+
+                <p>
+                  <h3>Platforms:</h3>
                   {item.platforms
                     ? item.platforms.map(plat => <p>{plat.name}</p>)
                     : "PlayStation 4, Xbox One, Pc, Nintendo Switch"}
                 </p>
-                <p>{item.summary}</p>
                 <p>Game Version 3.2.5</p>
 
                 {/* <p>

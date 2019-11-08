@@ -82,7 +82,7 @@ export default function LibraryFetch() {
           <Fade bottom key={game.name} game={game}>
             <SearchItem>
               <h1>{game.title}</h1>
-              Get More Info
+
               <p>
                 {game.cover ? (
                   <Link
@@ -97,12 +97,14 @@ export default function LibraryFetch() {
                           : "//" + `${game.cover}`
                       }
                     />
-                    <button onClick={() => handleNav(game.id)}>Test</button>
                   </Link>
                 ) : (
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
+              <button onClick={() => handleNav(game.id)}>
+                <h1>Get more info</h1>
+              </button>
               {/* <p>{game.id}</p>
               <p>{game.changes}</p> */}
               {/* 

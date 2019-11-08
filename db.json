@@ -204,9 +204,33 @@
       "cover": "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg"
     },
     {
-      "title": "The Elder Scrolls Online Scalebreaker",
-      "id": 7983629,
+      "title": "The Elder Scrolls Online Dragonhold",
+      "id": 7983630,
       "cover": false
+    },
+    {
+      "title": "Warcraft 3 The Frozen Throne",
+      "id": 99381,
+      "cover": {
+        "id": 63921,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/sn7qos6agmexdft6utwa.jpg"
+      }
+    },
+    {
+      "title": "The Witcher 3 Wild Hunt - Complete Edition",
+      "id": 7999729,
+      "cover": {
+        "id": 79333,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
+      }
+    },
+    {
+      "title": "Life is Strange 2",
+      "id": 101691,
+      "cover": {
+        "id": 81925,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1r7p.jpg"
+      }
     }
   ]
 }
