@@ -54,7 +54,7 @@ const Ascii = styled.p`
 export default function LibraryFetch() {
   const history = useHistory();
   function handleNav(value) {
-    history.push(`/Library/${value}`);
+    history.push(`/library/${value}`);
   }
 
   const [search, setSearch] = useState("");
@@ -97,6 +97,7 @@ export default function LibraryFetch() {
                           : "//" + `${game.cover}`
                       }
                     />
+                    <button onClick={() => handleNav(game.id)}>Test</button>
                   </Link>
                 ) : (
                   <Ascii>ಥ_ಥ</Ascii>

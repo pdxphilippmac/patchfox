@@ -98,10 +98,10 @@ export default function Footer(children, active, stroke, bG, close) {
       <StyledContainer>
         <FooterBar className="navbar-list">
           <FooterBarAnimated>
-            <StyledNavLink to="/Home" activeClassName="chosen">
+            <StyledNavLink to="/home" activeClassName="chosen">
               <HomeIcon activeClassName="chosen" />
             </StyledNavLink>
-            <StyledNavLink to="/News" activeClassName="chosen">
+            <StyledNavLink to="/news" activeClassName="chosen">
               <NewsIcon activeClassName="chosen" />
             </StyledNavLink>
 
@@ -111,10 +111,10 @@ export default function Footer(children, active, stroke, bG, close) {
               </div>
             </StyledNavLink> */}
 
-            <StyledNavLink to="/Library" activeClassName="chosen">
+            <StyledNavLink to="/library" activeClassName="chosen">
               <List activeClassName="chosen" />
             </StyledNavLink>
-            <StyledNavLink to="/Fetch" activeClassName="chosen">
+            <StyledNavLink to="/fetch" activeClassName="chosen">
               <AddApiIcon activeClassName="chosen" />
             </StyledNavLink>
           </FooterBarAnimated>

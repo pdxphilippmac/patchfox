@@ -10,6 +10,7 @@ import GetGame from "./game/GetGame";
 import GetDetails from "./game/GetDetails";
 import GlobalStyles from "./GlobalStyles";
 import StartScreen from "./pages/StartScreen";
+import GetDetailsEmpty from "./game/GetDetailsEmpty";
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
           <Route exact path="/home" component={Home} />
 
           <Route path="/add" component={Add} />
-          <Route path="/library" component={Library} />
+          <Route path="/library" exact component={Library} />
           <Route path="/library/:gameId" component={GetDetails} />
           <Route path="/fetch" component={Fetch} />
           <Route path="/news" exact component={News} />
