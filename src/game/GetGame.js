@@ -102,18 +102,27 @@ export default function GetGame({ info, match }) {
                 </button>
 
                 <CoverImg
-                  alt="CoverImage "
-                  src={item.cover.url.replace("t_thumb", "t_cover_big")}
+                  alt="ಥ_ಥ"
+                  src={
+                    item.cover
+                      ? item.cover.url.replace("t_thumb", "t_cover_big")
+                      : "lolol"
+                  }
                 />
 
-                <p>Release Date: {item.release_dates[0].human}</p>
+                <p>
+                  Release Date:
+                  {item.release_date
+                    ? item.release_dates[0].human
+                    : "01.01.2020"}
+                </p>
                 <p>Game-ID:{item.id}</p>
 
                 <h1>{item.name}</h1>
                 <p>
-                  {item.platforms.map(plat => (
-                    <p>{plat.name}</p>
-                  ))}
+                  {item.platforms
+                    ? item.platforms.map(plat => <p>{plat.name}</p>)
+                    : "PlayStation 4, Xbox One, Pc, Nintendo Switch"}
                 </p>
                 <p>{item.summary}</p>
                 <p>Game Version 3.2.5</p>

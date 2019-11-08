@@ -21,6 +21,7 @@ export default function App() {
 
           <Route path="/add" component={Add} />
           <Route path="/library" component={Library} />
+          <Route path="/library/:gameId" component={GetGame} />
           <Route path="/fetch" component={Fetch} />
           <Route path="/news" exact component={News} />
           <Route path="/news/:gameId" component={GetGame} />

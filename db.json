@@ -33,60 +33,12 @@
       }
     },
     {
-      "title": "Warcraft",
-      "id": 1299636
-    },
-    {
-      "title": "World of Warcraft Shadowlands",
-      "id": 9156131
-    },
-    {
-      "title": "Warcraft 3 Reforged Spoils of War Edition",
-      "id": 914450
-    },
-    {
-      "title": "Warcraft 3 Reforged",
-      "id": 913609
-    },
-    {
-      "title": "Monster Hunter: World - Iceborne",
-      "id": 113344,
-      "cover": {
-        "id": 79552,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1pds.jpg"
-      }
-    },
-    {
-      "title": "World of Warcraft Wrath of the Lich King Collector's Edition",
-      "id": 240720
-    },
-    {
-      "title": "World of Warcraft Warlords of Draenor - Collector's Edition",
-      "id": 154149
-    },
-    {
-      "title": "Diablo 3",
-      "id": 96411
-    },
-    {
-      "title": "World of Warcraft Warlords of Draenor",
-      "id": 102007
-    },
-    {
       "title": "Eternity: The Last Unicorn",
       "id": 96217,
       "cover": {
         "id": 72919,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1k9j.jpg"
       }
-    },
-    {
-      "title": "Diablo 2",
-      "id": 105923
-    },
-    {
-      "title": "Sonic Racing",
-      "id": 8846060
     },
     {
       "title": "The Sims 4 My First Pet Stuff",
@@ -173,14 +125,6 @@
       }
     },
     {
-      "title": "Apex Legends",
-      "id": 6963584,
-      "cover": {
-        "id": 76707,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1n6r.jpg"
-      }
-    },
-    {
       "title": "Overwatch Legendary Edition",
       "id": 7818965,
       "cover": {
@@ -226,27 +170,43 @@
       }
     },
     {
-      "title": "Zombie Driver: Immortal Edition",
-      "id": 120268,
+      "title": "The Elder Scrolls 4 Oblivion - The Wizard's Tower",
+      "id": 8355164,
+      "cover": false
+    },
+    {
+      "title": "The Elder Scrolls Online Elsweyr",
+      "id": 4184402,
       "cover": {
-        "id": 82665,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rs9.jpg"
+        "id": 70897,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ipd.jpg"
       }
     },
     {
-      "title": "Destiny 2 Forsaken - Complete Collection",
-      "id": 7778247,
-      "cover": false
+      "title": "Blasphemous",
+      "id": 106359,
+      "cover": {
+        "id": 55089,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/esby831i9tkzlbr9lth6.jpg"
+      }
     },
     {
-      "title": "Destiny 2 Forsaken - Legendary Collection",
-      "id": 7788048,
-      "cover": false
+      "title": "Noita",
+      "id": 44560,
+      "cover": {
+        "id": 81253,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1qp1.jpg"
+      }
     },
     {
       "title": "Spyro the Dragon",
       "id": 1302209,
-      "cover": "//images.igdb.com/igdb/image/upload/t_thumb/co1m4w.jpg"
+      "cover": "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg"
+    },
+    {
+      "title": "The Elder Scrolls Online Scalebreaker",
+      "id": 7983629,
+      "cover": false
     }
   ]
 }

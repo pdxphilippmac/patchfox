@@ -42,11 +42,12 @@ const BackgroundDiv = styled.article`
 `;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("spyro the dragon");
+  const [search, setSearch] = useState("Elder scrolls online");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const alternativeCover =
-    "//images.igdb.com/igdb/image/upload/t_thumb/co1m4w.jpg";
+    "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg";
+  const alternativeRating = 0.0;
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 import Searchbar from "../components/Search";
 
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 import GlobalStyles from "../GlobalStyles";
+import { Link } from "@reach/router";
 
 const StyledPageDiv = styled.div`
   display: flex;
@@ -17,6 +19,11 @@ const StyledPageDiv = styled.div`
   background: #1e2222;
   overflow: scroll;
   margin-bottom: 80px;
+`;
+const Cover = styled.img`
+  width: 264px;
+  height: 374px;
+  border-radius: 0px 0px 0px 30px;
 `;
 
 const FixedSearch = styled(Searchbar)`
@@ -45,7 +52,12 @@ const Ascii = styled.p`
 `;
 
 export default function Add() {
-  const [search, setSearch] = useState("des");
+  const history = useHistory();
+  function handleNav(value) {
+    history.push(`/News/${value}`);
+  }
+
+  const [search, setSearch] = useState("");
   const [library, setLibrary] = useState([]);
 
   const filterLibrary = library.filter(game =>
@@ -70,9 +82,16 @@ export default function Add() {
           <Fade bottom key={game.name} game={game}>
             <SearchItem>
               <h1>{game.title}</h1>
+              <Link
+                onClick={() => handleNav(game.id)}
+                to={`/Library/${game.id}`}
+              >
+                Get More Info
+              </Link>
+
               <p>
                 {game.cover ? (
-                  <img
+                  <Cover
                     alt="ಥ_ಥ"
                     src={
                       game.cover.url
