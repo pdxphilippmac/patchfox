@@ -14,6 +14,7 @@ const StyledAdd = styled.img`
   box-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #00ceff,
     0 0 40px #00ceff, 0 0 55px #00ceff, 0 0 75px #00ceff;
   animation: ${turner} 3.2s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin: 120px;
 `;
 const Margin = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export default function StartScreen() {
   const [toMain, setToMain] = React.useState(false);
 
   useEffect(() => {
-    const handle = setTimeout(() => setToMain(true), 5200);
+    const handle = setTimeout(() => setToMain(true), 8200);
 
     return () => {
       clearTimeout(handle);
@@ -50,10 +51,7 @@ export default function StartScreen() {
       ) : (
         <BodyStartpage>
           <Margin>
-            <AlterNeonGlow
-              name1="Welcome to the revolutionary Gaming News Feed... "
-              name2="Powered by Team Burrito App"
-            />
+            <AlterNeonGlow name2="Powered by Team Burrito App" />
             <div>
               <StyledAdd
                 src="http://getdrawings.com/free-icon/burrito-icon-58.png"
