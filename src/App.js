@@ -7,6 +7,7 @@ import Fetch from "./pages/Fetch";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import News from "./pages/News";
 import GetGame from "./game/GetGame";
+import GetDetails from "./game/GetDetails";
 import GlobalStyles from "./GlobalStyles";
 import StartScreen from "./pages/StartScreen";
 
@@ -21,7 +22,7 @@ export default function App() {
 
           <Route path="/add" component={Add} />
           <Route path="/library" component={Library} />
-          <Route path="/library/:gameId" component={GetGame} />
+          <Route path="/library/:gameId" component={GetDetails} />
           <Route path="/fetch" component={Fetch} />
           <Route path="/news" exact component={News} />
           <Route path="/news/:gameId" component={GetGame} />

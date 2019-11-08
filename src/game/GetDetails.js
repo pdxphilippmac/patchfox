@@ -2,17 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 
-import addToJsonDb from "../api/addToJsonDb";
 import styled from "styled-components";
 
 import NeonGlowLoading from "../components/NeonGlowLoading";
 
-import PlusIcon from "../icons/footerPlus";
-
-const StyledPlusIcon = styled.div`
-  border: 5px solid #00ceff;
-  border-radius: 50%;
-`;
 const TestDiv = styled.article`
   background: #262122e6;
   display: flex;
@@ -40,14 +33,7 @@ const CoverImg = styled.img`
   margin: 35px;
 `;
 
-function handleClick(name, id, cover) {
-  addToJsonDb(name, id, cover);
-
-  alert(`${name} added to your library`);
-  console.log(name);
-}
-
-export default function GetGame({ info, match }) {
+export default function GetDetails({ info, match }) {
   const [game, setGame] = useState([]);
 
   const [loading, setLoading] = useState(true);
@@ -91,16 +77,6 @@ export default function GetGame({ info, match }) {
           <TestDiv>
             {game.map(item => (
               <FlexDiv>
-                <button
-                  name={item.name}
-                  id={item.id}
-                  onClick={() => handleClick(item.name, item.id, item.cover)}
-                >
-                  <StyledPlusIcon>
-                    <PlusIcon />
-                  </StyledPlusIcon>
-                </button>
-
                 <CoverImg
                   alt="ಥ_ಥ"
                   src={

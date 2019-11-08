@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components"
+import styled from "styled-components";
 
 import { Switch, Route } from "react-router-dom";
 
@@ -11,17 +11,14 @@ import AlterNeonGlow from "../components/NeonGlow";
 import LoadingCircle from "../components/GSAPLoadingCircle";
 
 const PositionLoad = styled.section`
-margin-top:200px;
-display: flex;
+  margin-top: 200px;
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-
-
 export default function News() {
   const [loading, setLoading] = useState(true);
-
 
   const [news, setNews] = useState([]);
   console.log(news, "is news");
@@ -39,7 +36,7 @@ export default function News() {
     })
       .then(response => {
         setNews(response.data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch(err => {
         console.error(err);
@@ -51,13 +48,15 @@ export default function News() {
       <AlterNeonGlow name1="Most popular games" />
       <Switch>
         <Route exact path="/News">
-
-           {loading &&  <PositionLoad><LoadingCircle /></PositionLoad>}
-      {!loading && (          
-          <NewsFetch news={news}  />)}
+          {loading && (
+            <PositionLoad>
+              <LoadingCircle />
+            </PositionLoad>
+          )}
+          {!loading && <NewsFetch news={news} />}
         </Route>
         <Route exact path="/News/game">
-          <GetGame info={news} />
+          <GetGame />
         </Route>
       </Switch>
     </>
