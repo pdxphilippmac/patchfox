@@ -60,11 +60,8 @@ export default function DataFetch({ handleInputChange }) {
           Accept: "application/json",
           "user-key": "e2715f17601c1d968b592f747c6aa839"
         },
-        data: `fields alternative_name,character,game.cover.url,collection,company,description,game,name,person,game.id,platform,popularity,published_at,test_dummy,theme;
-
-
-
-        ; search "${search}"; limit 10;\n\n
+        data: `fields alternative_name,character
+        ,collection,company,description,name,game.cover.url,person,platform,popularity,published_at,test_dummy,theme;search "${search}"; limit 10;\n\n
 
 
 
@@ -89,6 +86,7 @@ export default function DataFetch({ handleInputChange }) {
 
   function handleClick(name, game, cover) {
     addToJsonDbfromSearch(name, game, cover);
+    alert(`Saved ${name} to Library`);
     console.log(name);
   }
 
@@ -123,7 +121,7 @@ export default function DataFetch({ handleInputChange }) {
                     onClick={() =>
                       handleClick(
                         post.name,
-                        post.id ? post.id : post.game.id,
+                        post.game ? post.game.id : post.id,
                         post.game && true ? post.game.cover : alternativeCover
                       )
                     }

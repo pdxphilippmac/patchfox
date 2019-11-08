@@ -103,7 +103,7 @@ export default function LibraryFetch() {
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
-              <button onClick={() => handleNav(game.game.id)}>
+              <button onClick={() => handleNav(game.id)}>
                 <h1>Get more info</h1>
               </button>
               {/* <p>{game.id}</p>

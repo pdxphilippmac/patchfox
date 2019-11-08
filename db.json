@@ -9,193 +9,19 @@
       }
     },
     {
-      "title": "Cyberpunk 2077",
-      "id": 1877,
-      "cover": {
-        "id": 82217,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rft.jpg"
-      }
-    },
-    {
-      "title": "Children of Morta",
-      "id": 36198,
-      "cover": {
-        "id": 80516,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1q4k.jpg"
-      }
-    },
-    {
-      "title": "Borderlands 3",
-      "id": 19164,
-      "cover": {
-        "id": 82158,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1re6.jpg"
-      }
-    },
-    {
-      "title": "Eternity: The Last Unicorn",
-      "id": 96217,
-      "cover": {
-        "id": 72919,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1k9j.jpg"
-      }
-    },
-    {
-      "title": "The Sims 4 My First Pet Stuff",
-      "id": 8430637,
-      "cover": {
-        "id": 76657,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1n5d.jpg"
-      }
-    },
-    {
-      "title": "Uncharted The Nathan Drake Collection Special Edition",
-      "id": 292575,
-      "cover": {
-        "id": 72310,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1jsm.jpg"
-      }
-    },
-    {
-      "title": "Pokémon Shield",
-      "id": 115653,
-      "cover": {
-        "id": 78636,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ooc.jpg"
-      }
-    },
-    {
-      "title": "Red Dead Redemption",
-      "id": 102692,
-      "cover": {
-        "id": 80402,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1q1e.jpg"
-      }
-    },
-    {
-      "title": "Red Dead Redemption 2",
-      "id": 91994,
-      "cover": {
-        "id": 80403,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1q1f.jpg"
-      }
-    },
-    {
-      "title": "Spyro Reignited Trilogy",
-      "id": 522254,
-      "cover": {
-        "id": 74927,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ltb.jpg"
-      }
-    },
-    {
-      "title": "Spyro the Dragon",
-      "id": 98026,
-      "cover": {
-        "id": 84061,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1sv1.jpg"
-      }
-    },
-    {
-      "title": "Crash Bandicoot 3 Warped - 15th Anniversary Edition",
-      "id": 56824
-    },
-    {
       "title": "Destiny 2 The Collection",
-      "id": 8643015,
+      "id": 121825,
       "cover": {
         "id": 79363,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p8j.jpg"
       }
     },
     {
-      "title": "Destiny 2 Shadowkeep",
-      "id": 8077450,
+      "title": "The Witcher 3 Wild Hunt - Complete Edition",
+      "id": 119402,
       "cover": {
-        "id": 79325,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7h.jpg"
-      }
-    },
-    {
-      "title": "Destiny 2 Shadowkeep - Digital Deluxe Edition",
-      "id": 8883962,
-      "cover": {
-        "id": 82201,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rfd.jpg"
-      }
-    },
-    {
-      "title": "Overwatch Legendary Edition",
-      "id": 7818965,
-      "cover": {
-        "id": 80688,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1q9c.jpg"
-      }
-    },
-    {
-      "title": "Spyro Year of the Dragon",
-      "id": 94613,
-      "cover": {
-        "id": 84059,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1suz.jpg"
-      }
-    },
-    {
-      "title": "Spyro the Dragon Wings of Fury",
-      "id": 68375,
-      "cover": {
-        "id": 41492,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/uvkwcak0ibbcnozhav2b.jpg"
-      }
-    },
-    {
-      "title": "The Legend of Spyro Dawn of the Dragon",
-      "id": 94616,
-      "cover": {
-        "id": 1580,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/nsx4vw8kzw5grve9ehlk.jpg"
-      }
-    },
-    {
-      "title": "Spyro Year of the Dragon Collector's Edition",
-      "id": 86051,
-      "cover": "images.igdb.com/igdb/image/upload/t_thumb/co1n6r.jpg"
-    },
-    {
-      "title": "Diablo 4",
-      "id": 9147502,
-      "cover": {
-        "id": 83562,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1sh6.jpg"
-      }
-    },
-    {
-      "title": "The Elder Scrolls 4 Oblivion - The Wizard's Tower",
-      "id": 8355164,
-      "cover": false
-    },
-    {
-      "title": "The Elder Scrolls Online Elsweyr",
-      "id": 4184402,
-      "cover": {
-        "id": 70897,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ipd.jpg"
-      }
-    },
-    {
-      "title": "Blasphemous",
-      "id": 106359,
-      "cover": {
-        "id": 55089,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/esby831i9tkzlbr9lth6.jpg"
-      }
-    },
-    {
-      "title": "Noita",
-      "id": 44560,
-      "cover": {
-        "id": 81253,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1qp1.jpg"
+        "id": 79333,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
       }
     },
     {
@@ -204,32 +30,27 @@
       "cover": "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg"
     },
     {
-      "title": "The Elder Scrolls Online Dragonhold",
-      "id": 7983630,
-      "cover": false
-    },
-    {
-      "title": "Warcraft 3 The Frozen Throne",
-      "id": 99381,
+      "title": "Spyro + Crash Remastered Game Bundle",
+      "id": 111449,
       "cover": {
-        "id": 63921,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/sn7qos6agmexdft6utwa.jpg"
+        "id": 69347,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1hib.jpg"
       }
     },
     {
-      "title": "The Witcher 3 Wild Hunt - Complete Edition",
-      "id": 7999729,
+      "title": "Spyro Reignited Trilogy",
+      "id": 87683,
       "cover": {
-        "id": 79333,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
+        "id": 74927,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ltb.jpg"
       }
     },
     {
-      "title": "Life is Strange 2",
-      "id": 101691,
+      "title": "The Witcher 2 Assassins of Kings Enhanced Edition",
+      "id": 20740,
       "cover": {
-        "id": 81925,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1r7p.jpg"
+        "id": 66158,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/ugtpscu5ezak7i9t5r0x.jpg"
       }
     }
   ]

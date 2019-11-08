@@ -147,11 +147,6 @@ export default function GetDetails({ info, match }) {
                     : "PlayStation 4, Xbox One, Pc, Nintendo Switch"}
                 </p>
                 <p>Game Version 3.2.5</p>
-
-                {/* <p>
-                  Companies: {item.involved_companies[0].company.name},
-                  {item.involved_companies[1].company.name}
-                </p> */}
               </FlexDiv>
             ))}
           </TestDiv>
