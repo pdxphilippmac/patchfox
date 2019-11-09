@@ -50,16 +50,13 @@ export default function NewsFetch({ news }) {
   const history = useHistory();
 
   function handleNav(value) {
-    history.push(`/News/${value}`);
+    history.push(`/news/${value}`);
   }
   // const options = {
   //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
   // };
 
   return (
-
-
-    
     <FlexDiv>
       {news.map(game => (
         <div key={game.id}>
@@ -67,7 +64,7 @@ export default function NewsFetch({ news }) {
             <NewsItem>
               <StyLink
                 onClick={() => handleNav(game.id)}
-                to={`/News/${game.id}`}
+                to={`/news/${game.id}`}
               >
                 <CoverImg
                   src={game.cover.url.replace("t_thumb", "t_cover_small")}

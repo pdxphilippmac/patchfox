@@ -2,17 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 
-import addToJsonDb from "../api/addToJsonDb";
 import styled from "styled-components";
 
 import NeonGlowLoading from "../components/NeonGlowLoading";
 
-import PlusIcon from "../icons/footerPlus";
-
-const StyledPlusIcon = styled.div`
-  border: 5px solid #00ceff;
-  border-radius: 50%;
-`;
 const TestDiv = styled.article`
   background: #262122e6;
   display: flex;
@@ -40,14 +33,7 @@ const CoverImg = styled.img`
   margin: 35px;
 `;
 
-function handleClick(name, id, cover) {
-  addToJsonDb(name, id, cover);
-
-  alert(`${name} added to your library`);
-  console.log(name);
-}
-
-export default function GetGame({ info, match }) {
+export default function GetDetails({ info, match }) {
   const [game, setGame] = useState([]);
 
   const [loading, setLoading] = useState(true);
@@ -56,7 +42,7 @@ export default function GetGame({ info, match }) {
   useEffect(() => {
     console.log(`Info log ${info}`);
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const targetUrl = `https://api-v3.igdb.com/games/${match.params.gameId}/?fields=name,involved_companies.company.name,cover.url,summary,game_modes.name,version_title,platforms.name,first_release_date,release_dates.human,websites,total_rating&expand=involved_companies,cover,platforms,platform.versions,version_parent,version_title`;
+    const targetUrl = `https://api-v3.igdb.com/games/${match.params.gameId}/?fields=name,version_title,rating,involved_companies.company.name,total_rating_count,storyline,game_engines.name,cover.url,summary,game_modes.name,version_title,platforms.name,first_release_date,release_dates.human,websites,total_rating&expand=involved_companies,cover,platforms,platform.versions,game_engines,version_parent,version_title,total_rating_count`;
     axios({
       url: proxyUrl + targetUrl,
       method: "GET",
@@ -82,7 +68,6 @@ export default function GetGame({ info, match }) {
     <>
       {loading && (
         <div>
-          {/* <NeonGlow /> */}
           <NeonGlowLoading />
         </div>
       )}
@@ -91,16 +76,6 @@ export default function GetGame({ info, match }) {
           <TestDiv>
             {game.map(item => (
               <FlexDiv>
-                <button
-                  name={item.name}
-                  id={item.id}
-                  onClick={() => handleClick(item.name, item.id, item.cover)}
-                >
-                  <StyledPlusIcon>
-                    <PlusIcon />
-                  </StyledPlusIcon>
-                </button>
-
                 <CoverImg
                   alt="ಥ_ಥ"
                   src={
@@ -110,27 +85,70 @@ export default function GetGame({ info, match }) {
                   }
                 />
 
-                <p>
-                  Release Date:
-                  {item.release_date
-                    ? item.release_dates[0].human
-                    : "01.01.2020"}
-                </p>
-                <p>Game-ID:{item.id}</p>
-
                 <h1>{item.name}</h1>
+                <span>
+                  {item.total_rating
+                    ? item.total_rating.toFixed(1)
+                    : " not yet rated"}{" "}
+                  ⭐️ from{" "}
+                  {item.total_rating_count ? item.total_rating_count : "-"}{" "}
+                  votes
+                </span>
+
+                {/* <p> 
+                  
+                  IGDB Rating: {item.rating.toFixed(1)}</p> */}
+
                 <p>
+                  <h3>Release Date:</h3>
+                  {item.release_dates ? item.release_dates[0].human : "tba"}
+                </p>
+                {/* <p>Game-ID:{item.id}</p> */}
+
+                {item.summary ? (
+                  <p>
+                    {" "}
+                    <h2>Summary:</h2>
+                    {item.summary}{" "}
+                  </p>
+                ) : null}
+                {item.storyline ? (
+                  <p>
+                    {" "}
+                    <h2>Storyline:</h2>
+                    {item.storyline}{" "}
+                  </p>
+                ) : null}
+
+                <p>
+                  <h3>Companies:</h3>
+
+                  {item.involved_companies
+                    ? item.involved_companies.map(plat => (
+                        <p>{plat.company.name}</p>
+                      ))
+                    : " No Companies tracked"}
+                </p>
+                <p>
+                  <h3>Game Modes:</h3>
+                  {item.game_modes
+                    ? item.game_modes.map(plat => <p>{plat.name}</p>)
+                    : " No modes tracked"}
+                </p>
+                <p>
+                  <h3>Game Engines:</h3>
+                  {item.game_engines
+                    ? item.game_engines.map(plat => <p>{plat.name}</p>)
+                    : " No game engines tracked"}
+                </p>
+
+                <p>
+                  <h3>Platforms:</h3>
                   {item.platforms
                     ? item.platforms.map(plat => <p>{plat.name}</p>)
                     : "PlayStation 4, Xbox One, Pc, Nintendo Switch"}
                 </p>
-                <p>{item.summary}</p>
                 <p>Game Version 3.2.5</p>
-
-                {/* <p>
-                  Companies: {item.involved_companies[0].company.name},
-                  {item.involved_companies[1].company.name}
-                </p> */}
               </FlexDiv>
             ))}
           </TestDiv>

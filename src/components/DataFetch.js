@@ -38,13 +38,15 @@ const FixedSearch = styled(Seachbar)`
 // `;
 const BackgroundDiv = styled.article`
   background: #1e2222;
+  margin-bottom: 80px;
 `;
 
 export default function DataFetch({ handleInputChange }) {
-  const [search, setSearch] = useState("spyro the dragon");
+  const [search, setSearch] = useState("Elder scrolls online");
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const alternativeCover = "//images.igdb.com/igdb/image/upload/t_thumb/co1m4w.jpg"
+  const alternativeCover =
+    "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg";
 
   useEffect(() => {
     const timeoutHandler = setTimeout(() => {
@@ -58,11 +60,8 @@ export default function DataFetch({ handleInputChange }) {
           Accept: "application/json",
           "user-key": "e2715f17601c1d968b592f747c6aa839"
         },
-        data: `fields alternative_name,character,game.cover.url,collection,company,description,game,name,person,platform,popularity,published_at,test_dummy,theme;
-
-
-
-        ; search "${search}"; limit 10;\n\n
+        data: `fields alternative_name,character
+        ,collection,company,description,name,game.cover.url,person,platform,popularity,published_at,test_dummy,theme;search "${search}"; limit 10;\n\n
 
 
 
@@ -85,8 +84,9 @@ export default function DataFetch({ handleInputChange }) {
     };
   }, [search]);
 
-  function handleClick(name, id, cover) {
-    addToJsonDbfromSearch(name, id, cover);
+  function handleClick(name, game, cover) {
+    addToJsonDbfromSearch(name, game, cover);
+    alert(`Saved ${name} to Library`);
     console.log(name);
   }
 
@@ -108,7 +108,7 @@ export default function DataFetch({ handleInputChange }) {
         onChange={event => handleInputChange(event.target.value)}
       />
 
-      {loading &&  <SearchLoading />}
+      {loading && <SearchLoading />}
       {!loading && (
         <BackgroundDiv>
           {posts.map(post => (
@@ -119,7 +119,11 @@ export default function DataFetch({ handleInputChange }) {
                     name={post.name}
                     id={post.id}
                     onClick={() =>
-                      handleClick(post.name, post.id, (post.game.cover && true ?post.game.cover :alternativeCover))
+                      handleClick(
+                        post.name,
+                        post.game ? post.game.id : post.id,
+                        post.game && true ? post.game.cover : alternativeCover
+                      )
                     }
                   >
                     <AddArrow />
