@@ -1,13 +1,21 @@
+const { MongoClient } = require("mongodb");
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://patchfox:<1910Bella89>@patchfox-wmgqp.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {  useNewUrlParser: true,
-    useUnifiedTopology: true});
-client.connect(err => {
-  const collection = client.db("patchfox").collection("library");
-  // perform actions on the collection object
-  console.log(collection)
-  client.close();
-});
+let db = null;
+async function initDatabase(url, dbName) {
+  const client = new MongoClient(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  await client.connect();
+  db = client.db(dbName);
+}
 
+async function getCollection(collectionName) {
+  if (!db) {
+    throw new Error("You have to initialize the database first");
+  }
+  return db.collection(collectionName);
+}
 
+exports.initDatabase = initDatabase;
+exports.getCollection = getCollection;
