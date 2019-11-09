@@ -5,6 +5,8 @@
   "dependencies": {
     "framework7": "^5.0.4",
     "gsap": "^2.1.3",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.9",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
