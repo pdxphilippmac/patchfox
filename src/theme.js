@@ -1,10 +1,12 @@
-import { solarizedDark } from "react-syntax-highlighter/dist/styles/hljs"
+
+import { buildUpFooter } from "./utils/animations";
 
 export const lightTheme = {
-    body: '#E2E2E2',
+    body: 'lightgrey',
     text: '#363537',
     toggleBorder: '#FFF',
     gradient: 'linear-gradient(#39598A, #79D7ED)',
+    footer: "#110b09",
   }
   
   export const darkTheme = {
@@ -12,6 +14,7 @@ export const lightTheme = {
     text: '#FAFAFA',
     toggleBorder: '#6B8096',
     gradient: 'linear-gradient(#091236, #1E215D)',
-    border:"red solid 2px;"
+    footer: "#110b09",
+  
   
   }
