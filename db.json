@@ -25,11 +25,6 @@
       }
     },
     {
-      "title": "Spyro the Dragon",
-      "id": 1302209,
-      "cover": "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg"
-    },
-    {
       "title": "Spyro + Crash Remastered Game Bundle",
       "id": 111449,
       "cover": {
@@ -78,6 +73,19 @@
       "title": "The Elder Scrolls Online Thieves Guild",
       "id": 121725,
       "cover": false
+    },
+    {
+      "title": "Spyro the Dragon",
+      "id": 1302209,
+      "cover": "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg"
+    },
+    {
+      "title": "Bloodborne",
+      "id": 7334,
+      "cover": {
+        "id": 82054,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rba.jpg"
+      }
     }
   ]
 }
