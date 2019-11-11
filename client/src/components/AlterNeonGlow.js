@@ -20,7 +20,7 @@ const StyledH2 = styled.span`
     0 0 40px #00ceff, 0 0 55px #00ceff, 0 0 75px #ff0080;
   text-align: center;
   animation: ${flicker} 3s ease-out infinite both;
-  animation-iteration-count: 20;
+  animation-iteration-count: 12500;
   animation-delay: 1s;
 `;
 const StyledH3 = styled.span`
@@ -31,7 +31,7 @@ const StyledH3 = styled.span`
     0 0 40px #00ceff, 0 0 55px #00ceff, 0 0 75px;
   text-align: center;
   animation: ${flickerAlter} 3s ease-in infinite both;
-  animation-iteration-count: 20;
+  animation-iteration-count: 12500;
   animation-delay: 3s;
 `;
 

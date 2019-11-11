@@ -16,11 +16,11 @@ const SearchItem = styled.article`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: #262122e6;
+  background-color: ${({ theme }) => theme.listItemBackground};
   margin: 25px;
-  color: white;
+  color: ${({ theme }) => theme.text};
 
-  border-radius: 0px 0px 0px 30px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
