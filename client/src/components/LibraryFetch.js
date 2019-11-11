@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
-
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-
 import Searchbar from "../components/Search";
-
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 import GlobalStyles from "../GlobalStyles";
 import { Link } from "@reach/router";
 
-//IMPORT SERVICE
-import gameService from "../services/gameService";
+//IMPORT games from mongodb?
+import getGames from "../api/getGames";
 
 const StyledPageDiv = styled.div`
   display: flex;
@@ -81,17 +78,11 @@ export default function LibraryFetch() {
     });
   }, [search]);
 
-  // useEffect(() => {
-  //   if (!library) {
-  //     getGames();
-  //   }
-  // }, [search]);
-
-  // const getGames = async () => {
-  //   let res = await gameService.getAll();
-  //   console.log(res);
-  //   setLibrary(res);
-  // };
+  /*useEffect(() => {
+    getGames().then(games => {
+      setLibrary(games);
+    });
+  }, [search]);*/
 
   return (
     <>
