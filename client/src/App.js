@@ -25,7 +25,6 @@ export default function App() {
       <ThemeProvider theme={themeMode}>
         <GlobalStyles />
         <Toggle theme={theme} toggleTheme={toggleTheme} />
-
         <Router>
           <Switch>
             <Route exact path="/" component={StartScreen} />
@@ -37,8 +36,6 @@ export default function App() {
             <Route path="/fetch" component={Fetch} />
             <Route path="/news" exact component={News} />
             <Route path="/news/:gameId" component={GetGame} />
-            {/* <Route path="/contact" component={Contact} />
-        <Route component={Notfound} /> */}
           </Switch>
           <Footer />
         </Router>

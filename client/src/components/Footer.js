@@ -37,11 +37,12 @@ const FooterBar = styled.nav`
 const FooterBarAnimated = styled.nav`
   color: #4f5359;
   position: absolute;
- background: ${({ theme }) => theme.footer};
+  background: ${({ theme }) => theme.footer};
   height: 55px;
   width: 100vw;
   position: fixed;
   z-index: 100;
+
   box-shadow: 0 -8px 8px -2px #d2590b;
   list-style: none;
   border-radius: 10px 10px 0 0;
@@ -54,6 +55,7 @@ const FooterBarAnimated = styled.nav`
   justify-content: space-between;
 
   animation: ${buildUpFooter} 3s ease-out 1 both;
+  animation: ${({ theme }) => theme.animation};
 `;
 // const StyledHomeButton = styled.div`
 //   /* position: fixed; */
@@ -78,13 +80,10 @@ const StyledNavLink = styled(NavLink).attrs({
   activeClassName: activeClassName
 })`
   &.${activeClassName} {
-    background: #110b09;
-
     border-radius: 50%;
-
     animation: ${buildUpFooter} 1s ease-in 1 both;
-    stroke: #00ceff;
-    fill: #00ceff;
+    fill: ${({ theme }) => theme.fill};
+    background: ${({ theme }) => theme.footer};
   }
 `;
 

@@ -108,6 +108,21 @@ export const buildUpFooter = keyframes`
   100% { opacity:1; background:##110B09;box-shadow: 0 -4px 4px -2px #00ceff; }
 
 `;
+
+export const buildUpFooterRed = keyframes`
+ 0%   { opacity:0.1; box-shadow: none;}
+ 10%   { opacity:0.2;box-shadow: none}
+ 20%   { opacity:0.3; box-shadow: 0 -20px 20px -12px red}
+ 30%   { opacity:0.4; box-shadow: 0 -20px 20px -12px orange}
+  40%   { opacity:0.5; box-shadow:none}
+  50%   { opacity:0.6; background:#4F5359;}
+  60%   { opacity:0.7; background:#4F5359}
+  70%   { opacity:0.8; background:##110B09};
+  80%  { opacity:0.9; background:##110B09;box-shadow: 0 -48px 48px -42px #b9f1ff}
+  100% { opacity:1; background:##110B09;box-shadow: 0 -4px 4px -2px red; }
+
+`;
+
 export const logoBuildUp = keyframes`
 0%   { opacity:0; }
 10%   { opacity:0.2;  }

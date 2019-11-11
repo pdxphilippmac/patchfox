@@ -37,7 +37,7 @@ const FixedSearch = styled(Seachbar)`
 
 // `;
 const BackgroundDiv = styled.article`
-  background: #1e2222;
+  background-color: ${({ theme }) => theme.body};
   margin-bottom: 80px;
 `;
 

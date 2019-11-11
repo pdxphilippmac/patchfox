@@ -16,7 +16,7 @@ const StyledPageDiv = styled.div`
   flex-grow: 1;
   justify-content: center;
   overflow: auto;
-  background: #1e2222;
+  background-color: ${({ theme }) => theme.body};
   overflow: scroll;
   margin-bottom: 80px;
 `;
@@ -32,19 +32,19 @@ const FixedSearch = styled(Searchbar)`
 
 const SearchItem = styled.article`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ theme }) => theme.flexDirection};
   justify-content: space-between;
-
-  background-color: #262122e6;
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.listItemBackground};
   margin: 25px;
-  color: white;
+
   text-align: center;
 
   border-radius: 0px 0px 0px 30px;
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
-  color: lightslategray;
+
   padding: 25px;
 `;
 const Ascii = styled.p`
