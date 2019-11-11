@@ -9,14 +9,6 @@
       }
     },
     {
-      "title": "The Witcher 3 Wild Hunt - Complete Edition",
-      "id": 119402,
-      "cover": {
-        "id": 79333,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
-      }
-    },
-    {
       "title": "The Witcher 2 Assassins of Kings Enhanced Edition",
       "id": 20740,
       "cover": {
@@ -32,7 +24,6 @@
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1jsm.jpg"
       }
     },
-
     {
       "title": "League of Legends Wild Rift",
       "id": 124700,
@@ -47,6 +38,30 @@
       "cover": {
         "id": 82054,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rba.jpg"
+      }
+    },
+    {
+      "title": "Warcraft 3 Reign of Chaos",
+      "id": 132,
+      "cover": {
+        "id": 63923,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/ad2vrrlzdsfy3s2fjtgv.jpg"
+      }
+    },
+    {
+      "title": "Cyberpunk 2077",
+      "id": 1877,
+      "cover": {
+        "id": 82217,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rft.jpg"
+      }
+    },
+    {
+      "title": "The Witcher 3 Wild Hunt - Complete Edition",
+      "id": 119402,
+      "cover": {
+        "id": 79333,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
       }
     }
   ]

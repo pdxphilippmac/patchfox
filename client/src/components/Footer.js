@@ -55,7 +55,7 @@ const FooterBarAnimated = styled.nav`
   justify-content: space-between;
 
   animation: ${buildUpFooter} 3s ease-out 1 both;
-  animation: ${({ theme }) => theme.animation};
+  animation-delay: 4s;
 `;
 // const StyledHomeButton = styled.div`
 //   /* position: fixed; */

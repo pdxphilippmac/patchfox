@@ -104,8 +104,8 @@ export const buildUpFooter = keyframes`
   50%   { opacity:0.6; background:#4F5359;}
   60%   { opacity:0.7; background:#4F5359}
   70%   { opacity:0.8; background:##110B09};
-  80%  { opacity:0.9; background:##110B09;box-shadow: 0 -48px 48px -42px #b9f1ff}
-  100% { opacity:1; background:##110B09;box-shadow: 0 -4px 4px -2px #00ceff; }
+  80%  { opacity:0.9; background:##110B09;box-shadow: 0 -48px 48px -12px #b9f1ff}
+  100% { opacity:1; background:##110B09;box-shadow: 0 -6px 6px -2px #00ceff; }
 
 `;
 

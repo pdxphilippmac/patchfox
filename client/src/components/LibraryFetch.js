@@ -87,7 +87,7 @@ export default function LibraryFetch() {
       <FixedSearch autoFocus onSearch={setSearch} />
       <StyledPageDiv>
         {filterLibrary.map(game => (
-          <Fade bottom key={game.name} game={game}>
+          <Fade left key={game.name} game={game}>
             <SearchItem>
               <h1>{game.title}</h1>
               {/* <h2>{game.id ? game.id : game.game.id}</h2> */}

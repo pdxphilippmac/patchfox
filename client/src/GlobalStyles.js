@@ -28,6 +28,8 @@ body {
 	width: 100%;
 	z-index: -1;
 
+  transition: all 0.5s linear;
+
 }
  
 }

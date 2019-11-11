@@ -86,7 +86,7 @@ export default function DataFetch({ handleInputChange }) {
 
   function handleClick(name, game, cover) {
     addToJsonDbfromSearch(name, game, cover);
-    alert(`Saved ${name} to Library`);
+    // alert(`Saved ${name} to Library`);
     console.log(name);
   }
 

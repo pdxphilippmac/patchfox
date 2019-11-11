@@ -29,7 +29,6 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={StartScreen} />
             <Route exact path="/home" component={Home} />
-
             <Route path="/add" component={Add} />
             <Route path="/library" exact component={Library} />
             <Route path="/library/:gameId" component={GetDetails} />
