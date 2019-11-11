@@ -5,6 +5,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "framework7": "^5.0.4",
     "gsap": "^2.1.3",
@@ -24,8 +25,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "json": "json-server --watch db.json",
-    "server": "nodemon database.js",
-    "client": "npm run start",
+    "server": "nodemon server.js",
+    "client": "npm run start  --prefix client",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\""
   },
   "eslintConfig": {
@@ -61,5 +62,6 @@
     "react-router": "^5.1.2",
     "styled-components": "^4.4.0",
     "use-react-modal": "0.0.6"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }

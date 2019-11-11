@@ -4,7 +4,7 @@ export default function addToJsonDb(name, id, cover) {
     .post("/posts", {
       title: name,
       id: id,
-      cover:cover ? cover : false
+      cover: cover ? cover : false
     })
     .then(resp => {
       console.log(resp.data);
