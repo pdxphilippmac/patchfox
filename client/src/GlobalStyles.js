@@ -12,8 +12,12 @@ body {
   background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   border: ${({ theme }) => theme.border};
-  background-image: ${({ theme }) => theme.background};
-
+  background-image: ${({ theme }) => theme.backgroundImage};
+  height: 95vh;
+    margin: 0;
+    
+    padding: 0;
+   
  
   transition: all 0.5s linear;
  

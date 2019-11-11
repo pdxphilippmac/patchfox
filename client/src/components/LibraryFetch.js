@@ -21,9 +21,9 @@ const StyledPageDiv = styled.div`
   margin-bottom: 80px;
 `;
 const Cover = styled.img`
-  width: 264px;
-  height: 374px;
-  border-radius: 0px 0px 0px 30px;
+  width: ${({ theme }) => theme.imageWidth};
+  height: ${({ theme }) => theme.imageWidth};
+  border-radius: ${({ theme }) => theme.borderRadius};
 `;
 
 const FixedSearch = styled(Searchbar)`
@@ -40,7 +40,7 @@ const SearchItem = styled.article`
 
   text-align: center;
 
-  border-radius: 0px 0px 0px 30px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
@@ -116,9 +116,7 @@ export default function LibraryFetch() {
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
-              <StyledButton onClick={() => handleNav(game.id)}>
-                <h1>Get more info</h1>
-              </StyledButton>
+
               {/* <p>{game.id}</p>
               <p>{game.changes}</p> */}
               {/* 
