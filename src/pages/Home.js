@@ -8,7 +8,7 @@ import img from "../resources/camo.jpg";
 
 
 const BackgroundDiv = styled.main`
-  background-image: url(${img});
+  /*background-image: url(${img});*/
 
   background-repeat: no-repeat;
   background-size: 100% 100%;

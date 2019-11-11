@@ -10,6 +10,9 @@ import Fade from "react-reveal/Fade";
 import GlobalStyles from "../GlobalStyles";
 import { Link } from "@reach/router";
 
+//IMPORT SERVICE
+import gameService from "../services/gameService";
+
 const StyledPageDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,6 +80,18 @@ export default function LibraryFetch() {
       console.log(`this is ${library}`);
     });
   }, [search]);
+
+  // useEffect(() => {
+  //   if (!library) {
+  //     getGames();
+  //   }
+  // }, [search]);
+
+  // const getGames = async () => {
+  //   let res = await gameService.getAll();
+  //   console.log(res);
+  //   setLibrary(res);
+  // };
 
   return (
     <>

@@ -8,16 +8,27 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 body {
-/* background-image: url(${img}); */
-background:#1E2222;
-/* background-image: linear-gradient(#1E2222, black); */
+  align-items: center;
+  background: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
+  border: ${({ theme }) => theme.border};
+  background-image: ${({ theme }) => theme.background};
 
-background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin:0px;
-  width:100vw;
-  height:100vh;
-  
+ 
+  transition: all 0.25s linear;
  
 }
 `;
+/* body {
+    align-items: center;
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+   
+    transition: all 0.25s linear;
+  }*/

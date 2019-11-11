@@ -37,7 +37,7 @@ const FooterBar = styled.nav`
 const FooterBarAnimated = styled.nav`
   color: #4f5359;
   position: absolute;
-  background: #110b09;
+ background: ${({ theme }) => theme.footer};
   height: 55px;
   width: 100vw;
   position: fixed;
