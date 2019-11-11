@@ -6,7 +6,6 @@ import LoginModal from "../components/LoginModal";
 import LockSymbol from "../icons/lockSymbol";
 import img from "../resources/camo.jpg";
 
-
 const BackgroundDiv = styled.main`
   /*background-image: url(${img});*/
 
@@ -28,7 +27,6 @@ const StyledDiv = styled.div`
 
 export default function Home() {
   const [showLogin, setShowLogin] = useState(false);
-  
 
   return (
     <>
@@ -41,6 +39,7 @@ export default function Home() {
 
         <StyledDiv>
           <AlterHomescreenLogo />
+
           <AlterNeonGlow />
         </StyledDiv>
       </BackgroundDiv>

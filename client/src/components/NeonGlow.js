@@ -26,7 +26,7 @@ const StyledH2 = styled.span`
 
 const StyledDiv = styled.div`
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 `;
 
 export default function AlterNeonGlow({ name1, name2 }) {

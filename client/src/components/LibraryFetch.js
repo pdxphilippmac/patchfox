@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Searchbar from "../components/Search";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-import GlobalStyles from "../GlobalStyles";
+
 import { Link } from "@reach/router";
 
 //IMPORT games from mongodb?
@@ -36,20 +36,18 @@ const SearchItem = styled.article`
   justify-content: space-between;
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.listItemBackground};
-  margin: 25px;
-
+  margin: 20px;
   text-align: center;
-
   border-radius: ${({ theme }) => theme.borderRadius};
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
-
-  padding: 25px;
+  padding: 20px;
 `;
 const Ascii = styled.p`
   font-size: 30px;
 `;
+
 const StyledButton = styled.button`
   /* :hover {
     transform: scale(5.5);
@@ -86,10 +84,7 @@ export default function LibraryFetch() {
 
   return (
     <>
-      <GlobalStyles />
-
       <FixedSearch autoFocus onSearch={setSearch} />
-
       <StyledPageDiv>
         {filterLibrary.map(game => (
           <Fade bottom key={game.name} game={game}>
@@ -117,7 +112,9 @@ export default function LibraryFetch() {
                 )}
               </p>
 
-              {/* <p>{game.id}</p>
+              {/*  <StyledButton onClick={() => handleNav(game.id)}>
+                <h1>Get more info</h1>
+              </StyledButton><p>{game.id}</p>
               <p>{game.changes}</p> */}
               {/* 
               {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}
