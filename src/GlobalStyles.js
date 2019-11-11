@@ -12,7 +12,7 @@ body {
   background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   border: ${({ theme }) => theme.border};
-  
+  background-image: ${({ theme }) => theme.background};
 
  
   transition: all 0.25s linear;

@@ -33,7 +33,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <button onClick={toggleTheme}>Toggle theme</button>
+      <button onClick={toggleTheme}><span>🦊 Toggle Color </span></button>
       <Router>
         <Switch>
           <Route exact path="/" component={StartScreen} />
