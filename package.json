@@ -23,7 +23,8 @@
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "dev:server": "npm run build && cd .. && npm start",
     "server": "nodemon index.js --ignore './client/'",
-    "start": "node index.js"
+    "start": "node index.js",
+    "json": "json-server --watch db.json"
   },
   "eslintConfig": {
     "extends": "react-app"
