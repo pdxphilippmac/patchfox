@@ -30,14 +30,13 @@ const Margin = styled.div`
 
 const BodyStartpage = styled.div`
   height: 100vh;
-  background-image: url(${img});
 `;
 
 export default function StartScreen() {
   const [toMain, setToMain] = React.useState(false);
 
   useEffect(() => {
-    const handle = setTimeout(() => setToMain(true), 8200);
+    const handle = setTimeout(() => setToMain(true), 3000);
 
     return () => {
       clearTimeout(handle);

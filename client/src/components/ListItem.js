@@ -6,7 +6,7 @@ const ListItem = styled.article`
   justify-content: space-around;
 
   margin: 10px;
-
+  background-color: ${({ theme }) => theme.listItemBackground};
   text-align: center;
   padding: 3px;
 `;

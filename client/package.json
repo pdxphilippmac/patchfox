@@ -18,12 +18,11 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
-    "dev:server": "npm run build && cd .. && npm start",
-    "server": "nodemon index.js --ignore './client/'",
-    "start": "node index.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,5 +57,6 @@
     "react-router": "^5.1.2",
     "styled-components": "^4.4.0",
     "use-react-modal": "0.0.6"
-  }
+  },
+  "proxy": "http://127.0.0.1:3000"
 }

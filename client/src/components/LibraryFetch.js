@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
-
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-
 import Searchbar from "../components/Search";
-
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-import GlobalStyles from "../GlobalStyles";
+
 import { Link } from "@reach/router";
 
-//IMPORT SERVICE
-import gameService from "../services/gameService";
+//IMPORT games from mongodb?
+import getGames from "../api/getGames";
 
 const StyledPageDiv = styled.div`
   display: flex;
@@ -19,14 +16,14 @@ const StyledPageDiv = styled.div`
   flex-grow: 1;
   justify-content: center;
   overflow: auto;
-  background: #1e2222;
+  background-color: ${({ theme }) => theme.body};
   overflow: scroll;
   margin-bottom: 80px;
 `;
 const Cover = styled.img`
-  width: 264px;
-  height: 374px;
-  border-radius: 0px 0px 0px 30px;
+  width: ${({ theme }) => theme.imageWidth};
+  height: ${({ theme }) => theme.imageWidth};
+  border-radius: ${({ theme }) => theme.borderRadius};
 `;
 
 const FixedSearch = styled(Searchbar)`
@@ -35,24 +32,22 @@ const FixedSearch = styled(Searchbar)`
 
 const SearchItem = styled.article`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ theme }) => theme.flexDirection};
   justify-content: space-between;
-
-  background-color: #262122e6;
-  margin: 25px;
-  color: white;
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.listItemBackground};
+  margin: 20px;
   text-align: center;
-
-  border-radius: 0px 0px 0px 30px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
-  color: lightslategray;
-  padding: 25px;
+  padding: 20px;
 `;
 const Ascii = styled.p`
   font-size: 30px;
 `;
+
 const StyledButton = styled.button`
   /* :hover {
     transform: scale(5.5);
@@ -81,27 +76,18 @@ export default function LibraryFetch() {
     });
   }, [search]);
 
-  // useEffect(() => {
-  //   if (!library) {
-  //     getGames();
-  //   }
-  // }, [search]);
-
-  // const getGames = async () => {
-  //   let res = await gameService.getAll();
-  //   console.log(res);
-  //   setLibrary(res);
-  // };
+  /*useEffect(() => {
+    getGames().then(games => {
+      setLibrary(games);
+    });
+  }, [search]);*/
 
   return (
     <>
-      <GlobalStyles />
-
       <FixedSearch autoFocus onSearch={setSearch} />
-
       <StyledPageDiv>
         {filterLibrary.map(game => (
-          <Fade bottom key={game.name} game={game}>
+          <Fade left key={game.name} game={game}>
             <SearchItem>
               <h1>{game.title}</h1>
               {/* <h2>{game.id ? game.id : game.game.id}</h2> */}
@@ -125,10 +111,10 @@ export default function LibraryFetch() {
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
-              <StyledButton onClick={() => handleNav(game.id)}>
+
+              {/*  <StyledButton onClick={() => handleNav(game.id)}>
                 <h1>Get more info</h1>
-              </StyledButton>
-              {/* <p>{game.id}</p>
+              </StyledButton><p>{game.id}</p>
               <p>{game.changes}</p> */}
               {/* 
               {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}

@@ -1,43 +1,11 @@
 {
   "posts": [
     {
-      "title": "Remnant: From the Ashes",
-      "id": 105049,
-      "cover": {
-        "id": 75344,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1m4w.jpg"
-      }
-    },
-    {
       "title": "Destiny 2 The Collection",
       "id": 121825,
       "cover": {
         "id": 79363,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p8j.jpg"
-      }
-    },
-    {
-      "title": "The Witcher 3 Wild Hunt - Complete Edition",
-      "id": 119402,
-      "cover": {
-        "id": 79333,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
-      }
-    },
-    {
-      "title": "Spyro + Crash Remastered Game Bundle",
-      "id": 111449,
-      "cover": {
-        "id": 69347,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1hib.jpg"
-      }
-    },
-    {
-      "title": "Spyro Reignited Trilogy",
-      "id": 87683,
-      "cover": {
-        "id": 74927,
-        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ltb.jpg"
       }
     },
     {
@@ -57,27 +25,12 @@
       }
     },
     {
-      "title": "The Elder Scrolls Online Dragonhold",
-      "id": 119327,
-      "cover": false
-    },
-    {
       "title": "League of Legends Wild Rift",
       "id": 124700,
       "cover": {
         "id": 82952,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1s08.jpg"
       }
-    },
-    {
-      "title": "The Elder Scrolls Online Thieves Guild",
-      "id": 121725,
-      "cover": false
-    },
-    {
-      "title": "Spyro the Dragon",
-      "id": 1302209,
-      "cover": "//alfalfastudio.com/wp-content/uploads/2018/07/featured.jpg"
     },
     {
       "title": "Bloodborne",
@@ -88,9 +41,28 @@
       }
     },
     {
-      "title": "The Elder Scrolls Online Scalebreaker",
-      "id": 119326,
-      "cover": false
+      "title": "Warcraft 3 Reign of Chaos",
+      "id": 132,
+      "cover": {
+        "id": 63923,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/ad2vrrlzdsfy3s2fjtgv.jpg"
+      }
+    },
+    {
+      "title": "Cyberpunk 2077",
+      "id": 1877,
+      "cover": {
+        "id": 82217,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rft.jpg"
+      }
+    },
+    {
+      "title": "The Witcher 3 Wild Hunt - Complete Edition",
+      "id": 119402,
+      "cover": {
+        "id": 79333,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
+      }
     }
   ]
 }

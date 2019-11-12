@@ -9,7 +9,7 @@ import { buildList } from "../utils/animations";
 const ListContainerBorder = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #3b3434e6;
+  background-color: ${({ theme }) => theme.listItemBackground};
   margin: 5px;
   color: white;
   padding: 10px;

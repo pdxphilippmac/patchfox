@@ -11,7 +11,7 @@ import { Link } from "@reach/router";
 // import Plus from "../icons/footerPlus";
 
 const NewsItem = styled.article`
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   flex-direction: row;
   background-color: #262122e6;
@@ -22,7 +22,19 @@ const NewsItem = styled.article`
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
-  color: lightslategray;
+  color: lightslategray; */
+  padding: 10px;
+  display: flex;
+  flex-direction: ${({ theme }) => theme.flexDirection};
+  justify-content: space-between;
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.listItemBackground};
+  margin: 25px;
+  text-align: center;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  font-family: "futura";
+  align-items: center;
+  border: #4f5359e6 solid 0.5px;
 `;
 const StyLink = styled(Link)`
   text-decoration: none;
@@ -62,16 +74,22 @@ export default function NewsFetch({ news }) {
         <div key={game.id}>
           <Fade right>
             <NewsItem>
+              <CoverImg
+                src={
+                  game.cover.url
+                    ? game.cover.url.replace("t_thumb", "t_cover_small")
+                    : "game.cover"
+                }
+                alt="cover"
+              />
+
+              <MarginP>{game.name} </MarginP>
               <StyLink
                 onClick={() => handleNav(game.id)}
                 to={`/news/${game.id}`}
               >
-                <CoverImg
-                  src={game.cover.url.replace("t_thumb", "t_cover_small")}
-                  alt="cover"
-                />
+                More info
               </StyLink>
-              <MarginP>{game.name} </MarginP>
               {/* <p>Rating:{game.popularity}</p>
               <p>
                 {game.platforms.map(plat => (
