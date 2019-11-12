@@ -1,7 +1,12 @@
+# PatchFox ![PatchFoxLogo](client/public/images/favicon-32x32.png)
 
-![Screenshot1](client/public/images/1.png =250x)
-![Screenshot2](client/public/images/2.png =250x)
-![Screenshot3](client/public/images/3.png =250x)
+neuefische Gesellenstück: PatchFox: An App to browse for all kind of videogames, no matter which platform. Add them to your library and get all the informations you need!
+
+
+
+<img src="client/public/images/1.png" alt="drawing" width="150"/>          <img src="client/public/images/2.png" alt="drawing" width="150"/>
+
+
 # PatchFox
 
 neue fische Gesellenstück: PatchFox: An App to track patches and updates for the games you saved in your library.
