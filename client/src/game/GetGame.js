@@ -12,8 +12,8 @@ import NeonGlowLoading from "../components/NeonGlowLoading";
 import PlusIcon from "../icons/footerPlus";
 
 const StyledPlusIcon = styled.div`
-  border: 5px solid #00ceff;
   border-radius: 50%;
+  fill: ${({ theme }) => theme.fill};
 `;
 
 function handleClick(name, id, cover) {

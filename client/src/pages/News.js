@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import NewsFetch from "../components/NewsFetch";
 import GetGame from "../game/GetGame";
-import AlterNeonGlow from "../components/NeonGlow";
+import HomeScreenLettering from "../components/NeonGlow";
 import LoadingCircle from "../components/GSAPLoadingCircle";
 import PositionLoad from "../components/PositionLoad";
 
@@ -35,7 +35,7 @@ export default function News() {
 
   return (
     <>
-      <AlterNeonGlow name1=" Most popular games " />
+      <HomeScreenLettering name1=" Most popular games " />
       <Switch>
         <Route exact path="/News">
           {loading && (

@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import img from "../resources/camo.jpg";
 import { turner } from "../utils/animations";
-
 import { Redirect } from "react-router-dom";
 
-import AlterNeonGlow from "../components/NeonGlow";
+import HomeScreenLettering from "../components/NeonGlow";
 
 const StyledAdd = styled.img`
   width: 120px;
@@ -50,7 +48,7 @@ export default function StartScreen() {
       ) : (
         <BodyStartpage>
           <Margin>
-            <AlterNeonGlow name2="Powered by Team Burrito App" />
+            <HomeScreenLettering name2="Powered by Team Burrito App" />
             <div>
               <StyledAdd
                 src="http://getdrawings.com/free-icon/burrito-icon-58.png"

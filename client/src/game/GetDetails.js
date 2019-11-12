@@ -67,60 +67,44 @@ export default function GetDetails({ info, match }) {
                   {item.total_rating_count ? item.total_rating_count : "-"}{" "}
                   votes
                 </span>
-
-                {/* <p> 
-                  
-                  IGDB Rating: {item.rating.toFixed(1)}</p> */}
-
                 <p>
                   <h3>Release Date:</h3>
                   {item.release_dates ? item.release_dates[0].human : "tba"}
                 </p>
-                {/* <p>Game-ID:{item.id}</p> */}
 
-                {item.summary ? (
-                  <p>
-                    {" "}
-                    <h2>Summary:</h2>
-                    {item.summary}{" "}
-                  </p>
-                ) : null}
+                <h2>Summary:</h2>
+                {item.summary ? <article>{item.summary} </article> : null}
+
                 {item.storyline ? (
                   <p>
-                    {" "}
-                    <h2>Storyline:</h2>
-                    {item.storyline}{" "}
+                    <h3>Storyline:</h3>
+                    {item.storyline}
                   </p>
                 ) : null}
 
-                <p>
-                  <h3>Companies:</h3>
+                <h3>Companies:</h3>
 
-                  {item.involved_companies
-                    ? item.involved_companies.map(plat => (
-                        <p>{plat.company.name}</p>
-                      ))
-                    : " No Companies tracked"}
-                </p>
-                <p>
-                  <h3>Game Modes:</h3>
-                  {item.game_modes
-                    ? item.game_modes.map(plat => <p>{plat.name}</p>)
-                    : " No modes tracked"}
-                </p>
-                <p>
-                  <h3>Game Engines:</h3>
-                  {item.game_engines
-                    ? item.game_engines.map(plat => <p>{plat.name}</p>)
-                    : " No game engines tracked"}
-                </p>
+                {item.involved_companies
+                  ? item.involved_companies.map(plat => (
+                      <p>{plat.company.name}</p>
+                    ))
+                  : " No Companies tracked"}
 
-                <p>
-                  <h3>Platforms:</h3>
-                  {item.platforms
-                    ? item.platforms.map(plat => <p>{plat.name}</p>)
-                    : "PlayStation 4, Xbox One, Pc, Nintendo Switch"}
-                </p>
+                <h3>Game Modes:</h3>
+                {item.game_modes
+                  ? item.game_modes.map(plat => <p>{plat.name}</p>)
+                  : " No modes tracked"}
+
+                <h3>Game Engines:</h3>
+                {item.game_engines
+                  ? item.game_engines.map(plat => <p>{plat.name}</p>)
+                  : " No game engines tracked"}
+
+                <h3>Platforms:</h3>
+                {item.platforms
+                  ? item.platforms.map(plat => <p>{plat.name}</p>)
+                  : "PlayStation 4, Xbox One, Pc, Nintendo Switch"}
+
                 <p>Game Version 3.2.5</p>
               </FlexDiv>
             ))}

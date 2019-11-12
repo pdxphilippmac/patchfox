@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import AlterHomescreenLogo from "../icons/alterhomescreenlogo";
-import AlterNeonGlow from "../components/AlterNeonGlow";
+import AlterHomeScreenLogo from "../icons/AlterHomescreenLogo";
+import HomeScreenLettering from "../components/HomeScreenLettering";
 import LoginModal from "../components/LoginModal";
 import LockSymbol from "../icons/lockSymbol";
 import HeightControlDiv from "../components/HeightControlDiv";
@@ -20,9 +20,9 @@ export default function Home() {
         {showLogin && <LoginModal show={showLogin} />}
 
         <HeightControlDiv>
-          <AlterHomescreenLogo />
+          <AlterHomeScreenLogo />
 
-          <AlterNeonGlow />
+          <HomeScreenLettering />
         </HeightControlDiv>
       </ImageBackgroundDiv>
     </>

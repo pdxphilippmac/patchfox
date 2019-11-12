@@ -29,7 +29,7 @@ const StyledDiv = styled.div`
   padding: 10px;
 `;
 
-export default function AlterNeonGlow({ name1, name2 }) {
+export default function HomeScreenLettering({ name1, name2 }) {
   return (
     <StyledDiv>
       <StyledH1>{name1}</StyledH1> <StyledH2>{name2}</StyledH2>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AddApiIcon() {
+export default function SearchAddIcon() {
   return (
     <svg width="93.14" height="93" viewBox="0 0 103.14 103">
       <defs>

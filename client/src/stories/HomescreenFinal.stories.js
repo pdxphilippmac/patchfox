@@ -3,7 +3,7 @@ import GlobalStyles from "../GlobalStyles";
 import Footer from "../components/Footer";
 import HomescreenLogo from "../icons/homescreenLogo";
 import styled from "styled-components";
-import AlterNeonGlow from "../components/AlterNeonGlow";
+import HomeScreenLettering from "../components/HomeScreenLettering";
 import LockSymbol from "../icons/lockSymbol";
 
 const StyledDiv = styled.div`
@@ -27,7 +27,7 @@ export const HomeScreenTest = () => (
       <StyledDiv>
         <HomescreenLogo />
 
-        <AlterNeonGlow />
+        <HomeScreenLettering />
       </StyledDiv>
     </>
     <Footer />
