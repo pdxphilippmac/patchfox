@@ -25,7 +25,7 @@ export default function News() {
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl =
-      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,popularity&order=popularity:desc&expand=genres,cover";
+      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,popularity,rating&order=popularity:desc&expand=genres,cover";
     axios({
       url: proxyUrl + targetUrl,
       method: "POST",
@@ -45,7 +45,7 @@ export default function News() {
 
   return (
     <>
-      <AlterNeonGlow name1="Most popular games" />
+      <AlterNeonGlow name1=" Most popular games " />
       <Switch>
         <Route exact path="/News">
           {loading && (

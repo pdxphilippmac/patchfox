@@ -12,7 +12,7 @@ const animationRed = props =>
   `;
 
 export const lightTheme = {
-  flexDirection: "row-reverse",
+  flexDirection: "row",
   text: "black",
   boxShadow: " 0 -4px 4px -2px red;",
   toggleBorder: "red",

@@ -96,8 +96,6 @@ export default function DataFetch({ handleInputChange }) {
     console.log(value, search);
   }
   // const options = {
-  //   header: { "user-key": "e2715f17601c1d968b592f747c6aa839" }
-  // };
 
   return (
     <>

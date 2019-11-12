@@ -41,10 +41,10 @@ const StyLink = styled(Link)`
 `;
 const CoverImg = styled.img`
   /* border: lightgray 2px solid; */
-  border-radius: 0px 0px 0px 30px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   padding: 6px;
 `;
-const MarginP = styled.p`
+const MarginP = styled.h1`
   margin: 10px;
   padding: 10px;
 `;
@@ -82,6 +82,9 @@ export default function NewsFetch({ news }) {
                 }
                 alt="cover"
               />
+              <span>
+                <h3>{game.popularity.toFixed(2)} ⭐️</h3>
+              </span>
 
               <MarginP>{game.name} </MarginP>
               <StyLink
@@ -90,6 +93,7 @@ export default function NewsFetch({ news }) {
               >
                 More info
               </StyLink>
+
               {/* <p>Rating:{game.popularity}</p>
               <p>
                 {game.platforms.map(plat => (

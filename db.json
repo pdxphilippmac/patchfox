@@ -63,6 +63,30 @@
         "id": 79333,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
       }
+    },
+    {
+      "title": "Rune Factory 4 Special",
+      "id": 115278,
+      "cover": {
+        "id": 73933,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1l1p.jpg"
+      }
+    },
+    {
+      "title": "Star Stable",
+      "id": 60338,
+      "cover": {
+        "id": 62686,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/wymcxdjqca9ygfubjmlg.jpg"
+      }
+    },
+    {
+      "title": "DragonBall Z Dokkan Battle",
+      "id": 39259,
+      "cover": {
+        "id": 26894,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/cqza1vuieaokkkhmcqoq.jpg"
+      }
     }
   ]
 }

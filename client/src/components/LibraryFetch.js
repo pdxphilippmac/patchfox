@@ -76,11 +76,11 @@ export default function LibraryFetch() {
     });
   }, [search]);
 
-  /*useEffect(() => {
-    getGames().then(games => {
-      setLibrary(games);
-    });
-  }, [search]);*/
+  // useEffect(() => {
+  //   getGames().then(fetchedGames => {
+  //     setLibrary(fetchedGames);
+  //   });
+  // }, []);
 
   return (
     <>
@@ -90,7 +90,6 @@ export default function LibraryFetch() {
           <Fade left key={game.name} game={game}>
             <SearchItem>
               <h1>{game.title}</h1>
-              {/* <h2>{game.id ? game.id : game.game.id}</h2> */}
 
               <p>
                 {game.cover ? (
@@ -111,16 +110,7 @@ export default function LibraryFetch() {
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
-
-              {/*  <StyledButton onClick={() => handleNav(game.id)}>
-                <h1>Get more info</h1>
-              </StyledButton><p>{game.id}</p>
-              <p>{game.changes}</p> */}
-              {/* 
-              {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}
-              {/* <img alt="CoverImage" src={game.cover.id} /> */}
             </SearchItem>
-            {/* <HomeIcon /> */}
           </Fade>
         ))}
       </StyledPageDiv>
