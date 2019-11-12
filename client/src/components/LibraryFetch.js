@@ -5,9 +5,7 @@ import styled from "styled-components";
 import Searchbar from "../components/Search";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-
-//IMPORT games from mongodb?
-import getGames from "../api/getGames";
+import SearchItem from "../components/SearchItem";
 
 const StyledPageDiv = styled.div`
   display: flex;
@@ -33,20 +31,6 @@ const FixedSearch = styled(Searchbar)`
   position: fixed;
 `;
 
-const SearchItem = styled.article`
-  display: flex;
-  flex-direction: ${({ theme }) => theme.flexDirection};
-  justify-content: space-between;
-  color: ${({ theme }) => theme.text};
-  background-color: ${({ theme }) => theme.listItemBackground};
-  margin: 20px;
-  text-align: center;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  font-family: "futura";
-  align-items: center;
-  border: #4f5359e6 solid 0.5px;
-  padding: 20px;
-`;
 const Ascii = styled.p`
   font-size: 30px;
 `;
