@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import styled from "styled-components";
-
 import { Switch, Route } from "react-router-dom";
-
+import axios from "axios";
 import NewsFetch from "../components/NewsFetch";
 import GetGame from "../game/GetGame";
-
 import AlterNeonGlow from "../components/NeonGlow";
 import LoadingCircle from "../components/GSAPLoadingCircle";
-
-const PositionLoad = styled.section`
-  margin-top: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import PositionLoad from "../components/PositionLoad";
 
 export default function News() {
   const [loading, setLoading] = useState(true);

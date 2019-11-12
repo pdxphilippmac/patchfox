@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import { Link } from "@reach/router";
+import styled from "styled-components";
 import Searchbar from "../components/Search";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-
-import { Link } from "@reach/router";
 
 //IMPORT games from mongodb?
 import getGames from "../api/getGames";
@@ -24,6 +23,10 @@ const Cover = styled.img`
   width: ${({ theme }) => theme.imageWidth};
   height: ${({ theme }) => theme.imageWidth};
   border-radius: ${({ theme }) => theme.borderRadius};
+  &:hover {
+    transform: scale(1.2);
+    border: #79d7ed 2px solid;
+  }
 `;
 
 const FixedSearch = styled(Searchbar)`
@@ -46,14 +49,6 @@ const SearchItem = styled.article`
 `;
 const Ascii = styled.p`
   font-size: 30px;
-`;
-
-const StyledButton = styled.button`
-  /* :hover {
-    transform: scale(5.5);
-    border: red solid 10px;
-    border-radius: 0 0 0 20px;
-  } */
 `;
 
 export default function LibraryFetch() {

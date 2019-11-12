@@ -3,39 +3,15 @@ import axios from "axios";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Seachbar from "../components/Search";
-// import Plus from "../icons/footerPlus";
 import SearchLoading from "../components/SearchLoadingIndicator";
 import AddArrow from "../icons/addArrow";
 import addToJsonDbfromSearch from "../api/addToDbJsonFromSearch";
-
-// import Plus from "../icons/footerPlus";
-
-const AddButton = styled.button``;
-
-const SearchItem = styled.article`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.listItemBackground};
-  margin: 25px;
-  color: ${({ theme }) => theme.text};
-
-  border-radius: ${({ theme }) => theme.borderRadius};
-  font-family: "futura";
-  align-items: center;
-  border: #4f5359e6 solid 0.5px;
-  color: lightslategray;
-  padding: 25px;
-`;
+import SearchItem from "../components/SearchItem";
 
 const FixedSearch = styled(Seachbar)`
   position: fixed;
 `;
 
-// const CoverImage = styled.img`
-//   height: 150px;
-
-// `;
 const BackgroundDiv = styled.article`
   background-color: ${({ theme }) => theme.body};
   margin-bottom: 80px;
@@ -95,7 +71,6 @@ export default function DataFetch({ handleInputChange }) {
 
     console.log(value, search);
   }
-  // const options = {
 
   return (
     <>
@@ -113,7 +88,7 @@ export default function DataFetch({ handleInputChange }) {
             <div key={post.id}>
               <Fade right>
                 <SearchItem>
-                  <AddButton
+                  <button
                     name={post.name}
                     id={post.id}
                     onClick={() =>
@@ -125,7 +100,7 @@ export default function DataFetch({ handleInputChange }) {
                     }
                   >
                     <AddArrow />
-                  </AddButton>
+                  </button>
                   <p>{post.name}</p>
 
                   {post.popularity ? (

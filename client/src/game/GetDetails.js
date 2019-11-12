@@ -1,37 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-
-import styled from "styled-components";
-
+import FlexDiv from "../components/FlexDiv";
+import TestDiv from "../components/TestDiv";
+import CoverImg from "../components/CoverImg";
 import NeonGlowLoading from "../components/NeonGlowLoading";
-
-const TestDiv = styled.article`
-  background: #262122e6;
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  margin: 10px;
-  padding: 10px;
-  border: black solid 1px;
-  border-radius: 0 0px 0px 40px;
-  box-shadow: black 0px 6px 6px 6px;
-  color: lightslategray;
-  margin-bottom: 100px;
-`;
-const FlexDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-`;
-const CoverImg = styled.img`
-  /* border: lightgray 2px solid; */
-  border-radius: 0 0px 0px 40px;
-  box-shadow: #00ceff 0px 6px 6px 1px;
-  max-width: 300px;
-  margin: 35px;
-`;
 
 export default function GetDetails({ info, match }) {
   const [game, setGame] = useState([]);
