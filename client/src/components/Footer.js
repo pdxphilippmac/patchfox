@@ -58,7 +58,7 @@ export default function Footer() {
             <StyledNavLink to="/library" activeClassName="chosen">
               <List activeClassName="chosen" />
             </StyledNavLink>
-            <StyledNavLink to="/fetch" activeClassName="chosen">
+            <StyledNavLink to="/browsegames" activeClassName="chosen">
               <SearchAddIcon activeClassName="chosen" />
             </StyledNavLink>
           </FooterBarAnimated>

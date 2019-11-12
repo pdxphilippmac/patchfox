@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Fetch(className, onClick) {
+export default function BrowseGames(className, onClick) {
   return (
     <svg
       className={className}
