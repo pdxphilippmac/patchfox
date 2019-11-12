@@ -1,3 +1,7 @@
+
+![Screenshot1](client/public/images/1.png)
+![Screenshot2](client/public/images/2.png)
+![Screenshot3](client/public/images/3.png)
 # PatchFox
 
 neue fische Gesellenstück: PatchFox: An App to track patches and updates for the games you saved in your library.
