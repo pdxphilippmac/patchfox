@@ -12,11 +12,5 @@ const ListItem = styled.article`
 `;
 
 export default function Game(props) {
-  return (
-    <ListItem>
-      {props.game.title}
-
-      {/* {props.game.version} */}
-    </ListItem>
-  );
+  return <ListItem>{props.game.title}</ListItem>;
 }

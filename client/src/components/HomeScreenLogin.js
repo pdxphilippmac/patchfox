@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import FlexDiv from "../components/FlexDiv";
 // import { buildUp } from "../utils/animations";

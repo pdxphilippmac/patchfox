@@ -6,26 +6,8 @@ import Searchbar from "../components/Search";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 import SearchItem from "../components/SearchItem";
-
-const StyledPageDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
-  overflow: auto;
-  background-color: ${({ theme }) => theme.body};
-  overflow: scroll;
-  margin-bottom: 80px;
-`;
-const Cover = styled.img`
-  width: ${({ theme }) => theme.imageWidth};
-  height: ${({ theme }) => theme.imageWidth};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  &:hover {
-    transform: scale(1.2);
-    border: #79d7ed 2px solid;
-  }
-`;
+import LibraryCover from "./LibraryCover";
+import LibraryCard from "./LibraryCard";
 
 const FixedSearch = styled(Searchbar)`
   position: fixed;
@@ -55,16 +37,10 @@ export default function LibraryFetch() {
     });
   }, [search]);
 
-  // useEffect(() => {
-  //   getGames().then(fetchedGames => {
-  //     setLibrary(fetchedGames);
-  //   });
-  // }, []);
-
   return (
     <>
       <FixedSearch autoFocus onSearch={setSearch} />
-      <StyledPageDiv>
+      <LibraryCard>
         {filterLibrary.map(game => (
           <Fade left key={game.name} game={game}>
             <SearchItem>
@@ -76,7 +52,7 @@ export default function LibraryFetch() {
                     onClick={() => handleNav(game.game.id)}
                     to={`/library/${game.id}`}
                   >
-                    <Cover
+                    <LibraryCover
                       alt="ಥ_ಥ"
                       src={
                         game.cover.url
@@ -92,7 +68,7 @@ export default function LibraryFetch() {
             </SearchItem>
           </Fade>
         ))}
-      </StyledPageDiv>
+      </LibraryCard>
     </>
   );
 }

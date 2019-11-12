@@ -12,7 +12,7 @@ const SearchItem = styled.article`
   font-family: "futura";
   align-items: center;
   border: #4f5359e6 solid 0.5px;
-  color: lightslategray;
+
   padding: 25px;
 `;
 

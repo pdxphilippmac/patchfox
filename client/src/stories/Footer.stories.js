@@ -2,7 +2,7 @@ import React from "react";
 import Plus from "../icons/footerPlus";
 import Home from "../icons/footerHome";
 import List from "../icons/footerList";
-import Fetch from "../icons/footerFetch";
+import BrowseGames from "../icons/footerFetch";
 
 import PlusActive from "../icons/footerPlusActive";
 import HomeActive from "../icons/footerHomeActive";
@@ -20,4 +20,4 @@ export const HomeIconActive = () => <HomeActive />;
 export const ListIcon = () => <List />;
 export const ListIconActive = () => <ListActive />;
 
-export const FetchIcon = () => <Fetch />;
+export const FetchIcon = () => <BrowseGames />;
