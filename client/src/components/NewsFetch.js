@@ -55,7 +55,7 @@ export default function NewsFetch({ news }) {
                 alt="cover"
               />
               <span>
-                <h3>{game.popularity.toFixed(2)} ⭐️</h3>
+                <h3>{game.popularity.toFixed(0)} ⭐️</h3>
               </span>
 
               <MarginP>{game.name} </MarginP>

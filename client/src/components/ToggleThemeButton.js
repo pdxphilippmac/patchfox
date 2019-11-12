@@ -5,7 +5,7 @@ const Toggle = ({ toggleTheme }) => {
   return (
     <button onClick={toggleTheme}>
       <span role="img" label aria-label="colorToggleButton">
-        🦊🌗
+        🌗
       </span>
     </button>
   );
