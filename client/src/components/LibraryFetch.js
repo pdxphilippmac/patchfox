@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import { Link } from "@reach/router";
+import styled from "styled-components";
 import Searchbar from "../components/Search";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-
-import { Link } from "@reach/router";
-
-//IMPORT games from mongodb?
-import getGames from "../api/getGames";
+import SearchItem from "../components/SearchItem";
 
 const StyledPageDiv = styled.div`
   display: flex;
@@ -24,36 +21,18 @@ const Cover = styled.img`
   width: ${({ theme }) => theme.imageWidth};
   height: ${({ theme }) => theme.imageWidth};
   border-radius: ${({ theme }) => theme.borderRadius};
+  &:hover {
+    transform: scale(1.2);
+    border: #79d7ed 2px solid;
+  }
 `;
 
 const FixedSearch = styled(Searchbar)`
   position: fixed;
 `;
 
-const SearchItem = styled.article`
-  display: flex;
-  flex-direction: ${({ theme }) => theme.flexDirection};
-  justify-content: space-between;
-  color: ${({ theme }) => theme.text};
-  background-color: ${({ theme }) => theme.listItemBackground};
-  margin: 20px;
-  text-align: center;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  font-family: "futura";
-  align-items: center;
-  border: #4f5359e6 solid 0.5px;
-  padding: 20px;
-`;
 const Ascii = styled.p`
   font-size: 30px;
-`;
-
-const StyledButton = styled.button`
-  /* :hover {
-    transform: scale(5.5);
-    border: red solid 10px;
-    border-radius: 0 0 0 20px;
-  } */
 `;
 
 export default function LibraryFetch() {
@@ -76,11 +55,11 @@ export default function LibraryFetch() {
     });
   }, [search]);
 
-  /*useEffect(() => {
-    getGames().then(games => {
-      setLibrary(games);
-    });
-  }, [search]);*/
+  // useEffect(() => {
+  //   getGames().then(fetchedGames => {
+  //     setLibrary(fetchedGames);
+  //   });
+  // }, []);
 
   return (
     <>
@@ -90,7 +69,6 @@ export default function LibraryFetch() {
           <Fade left key={game.name} game={game}>
             <SearchItem>
               <h1>{game.title}</h1>
-              {/* <h2>{game.id ? game.id : game.game.id}</h2> */}
 
               <p>
                 {game.cover ? (
@@ -111,16 +89,7 @@ export default function LibraryFetch() {
                   <Ascii>ಥ_ಥ</Ascii>
                 )}
               </p>
-
-              {/*  <StyledButton onClick={() => handleNav(game.id)}>
-                <h1>Get more info</h1>
-              </StyledButton><p>{game.id}</p>
-              <p>{game.changes}</p> */}
-              {/* 
-              {game.cover.url && <img alt="LoL" src={game.cover.url} />} */}
-              {/* <img alt="CoverImage" src={game.cover.id} /> */}
             </SearchItem>
-            {/* <HomeIcon /> */}
           </Fade>
         ))}
       </StyledPageDiv>

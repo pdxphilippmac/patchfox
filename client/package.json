@@ -58,5 +58,5 @@
     "styled-components": "^4.4.0",
     "use-react-modal": "0.0.6"
   },
-  "proxy": "http://127.0.0.1:3000"
+  "proxy": "http://localhost:3000"
 }

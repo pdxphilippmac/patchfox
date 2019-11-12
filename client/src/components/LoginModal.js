@@ -4,7 +4,7 @@ import styled from "styled-components";
 import HomescreenPasswordInput from "./HomeScreenLogin";
 
 const ModalContainer = styled.div`
-  background-color: black;
+  background-color: ${({ theme }) => theme.modal};
   color: white;
   padding: 30px;
   position: fixed;
@@ -20,7 +20,7 @@ const ModalContainer = styled.div`
   box-shadow: 0px 4px 6px #00ceff;
   border-radius: 15px;
 `;
-/* ${props => (props.show ? "block" : "none")}; */
+
 const Container = styled.div`
   display: flex;
   margin-top: 10px;

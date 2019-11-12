@@ -4,7 +4,9 @@ import Fade from "react-reveal/Fade";
 
 import addToJsonDb from "../api/addToJsonDb";
 import styled from "styled-components";
-
+import CoverImg from "../components/CoverImg";
+import TestDiv from "../components/TestDiv";
+import FlexDiv from "../components/FlexDiv";
 import NeonGlowLoading from "../components/NeonGlowLoading";
 
 import PlusIcon from "../icons/footerPlus";
@@ -12,32 +14,6 @@ import PlusIcon from "../icons/footerPlus";
 const StyledPlusIcon = styled.div`
   border: 5px solid #00ceff;
   border-radius: 50%;
-`;
-const TestDiv = styled.article`
-  background: #262122e6;
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  margin: 10px;
-  padding: 10px;
-  border: black solid 1px;
-  border-radius: 0 0px 0px 40px;
-  box-shadow: black 0px 6px 6px 6px;
-  color: lightslategray;
-  margin-bottom: 100px;
-`;
-const FlexDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-`;
-const CoverImg = styled.img`
-  /* border: lightgray 2px solid; */
-  border-radius: 0 0px 0px 40px;
-  box-shadow: #00ceff 0px 6px 6px 1px;
-  max-width: 300px;
-  margin: 35px;
 `;
 
 function handleClick(name, id, cover) {

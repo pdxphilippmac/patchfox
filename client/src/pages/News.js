@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import styled from "styled-components";
-
 import { Switch, Route } from "react-router-dom";
-
+import axios from "axios";
 import NewsFetch from "../components/NewsFetch";
 import GetGame from "../game/GetGame";
-
 import AlterNeonGlow from "../components/NeonGlow";
 import LoadingCircle from "../components/GSAPLoadingCircle";
-
-const PositionLoad = styled.section`
-  margin-top: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import PositionLoad from "../components/PositionLoad";
 
 export default function News() {
   const [loading, setLoading] = useState(true);
@@ -25,7 +15,7 @@ export default function News() {
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl =
-      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,popularity&order=popularity:desc&expand=genres,cover";
+      "https://api-v3.igdb.com/games/?fields=name,platforms.name,genres.name,cover.url,popularity,rating&order=popularity:desc&expand=genres,cover";
     axios({
       url: proxyUrl + targetUrl,
       method: "POST",
@@ -45,7 +35,7 @@ export default function News() {
 
   return (
     <>
-      <AlterNeonGlow name1="Most popular games" />
+      <AlterNeonGlow name1=" Most popular games " />
       <Switch>
         <Route exact path="/News">
           {loading && (
