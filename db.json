@@ -63,6 +63,35 @@
         "id": 79333,
         "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1p7p.jpg"
       }
+    },
+    {
+      "title": "Rune Factory 4 Special",
+      "id": 115278,
+      "cover": {
+        "id": 73933,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1l1p.jpg"
+      }
+    },
+    {
+      "title": "Monster Hunter: World - Iceborne",
+      "id": 113344,
+      "cover": {
+        "id": 79552,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1pds.jpg"
+      }
+    },
+    {
+      "title": "Uncharted 3 Drake's Deception - Collector's Edition",
+      "id": 41880,
+      "cover": {
+        "id": 72307,
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1jsj.jpg"
+      }
+    },
+    {
+      "title": "The Elder Scrolls Online Dragonhold",
+      "id": 119327,
+      "cover": false
     }
   ]
 }
