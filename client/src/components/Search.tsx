@@ -1,6 +1,5 @@
-import React from "react";
+import React , {FC, ChangeEvent} from "react";
 import styled from "styled-components";
-// import { buildUp } from "../utils/animations";
 
 const SearchInput = styled.input`
   font-family: futura;
@@ -16,11 +15,18 @@ const SearchInput = styled.input`
   border: 2px solid #00ceff;
 `;
 
-export default function Seachbar({ onSearch }) {
-  function handleInputChange(event) {
-    const value = event.target.value;
+
+
+interface SeachbarProps {
+  onSearch: (value: string) => void
+}
+
+export const Seachbar: FC<SeachbarProps> = ({ onSearch  }) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value:string = event.target.value;
     onSearch(value);
   }
+
   return (
     <SearchInput
       type="search"
@@ -29,3 +35,5 @@ export default function Seachbar({ onSearch }) {
     />
   );
 }
+
+export default Seachbar

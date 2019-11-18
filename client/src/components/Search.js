@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-// import { buildUp } from "../utils/animations";
+
+
+
+
+
+
 
 const SearchInput = styled.input`
   font-family: futura;
@@ -17,10 +22,15 @@ const SearchInput = styled.input`
 `;
 
 export default function Seachbar({ onSearch }) {
-  function handleInputChange(event) {
+
+
+    function handleInputChange(event) {
     const value = event.target.value;
     onSearch(value);
   }
+  
+  
+  
   return (
     <SearchInput
       type="search"
